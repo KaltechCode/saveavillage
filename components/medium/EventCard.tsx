@@ -14,12 +14,12 @@ function EventCard({ event }: { event: IEvent }) {
             flex-col
             gap-5
             mobile-landscape:grid
-            mobile-landscape:grid-cols-2
-            md:grid md:grid-cols-2
+            mobile-landscape:grid-cols-1
+            md:grid md:grid
           "
     >
       {/* Image */}
-      <div className="relative shrink-0 w-full">
+      <div className="relative shrink-0 w-full mobile-landscape:h-[300px] md:h-[250px]">
         <div
           className="
                 absolute

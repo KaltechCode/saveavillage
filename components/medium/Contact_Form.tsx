@@ -29,7 +29,7 @@ function Contact_form() {
         <textarea
           name=""
           id=""
-          rows={7}
+          rows={4}
           className="border-[#ffffff40] border placeholder:text-white! rounded-medium placeholder:text-dull-text text-dull-text px-5 py-4 font-[15px] lg:col-span-2 mobile-landscape:col-span-2 md:col-span-2"
           placeholder="Type Your Message Here"
         ></textarea>

@@ -16,7 +16,7 @@ function Footer() {
     <footer className="pt-60 md:pt-32">
       <div className="bg-[#22002d] text-white relative bottom-0 left-0 flex items-center flex-col">
         {/* Contact Bar */}
-        <div className="mx-auto absolute -top-32 mobile-landscape:-top-24 lg:-top-16 md:-top-24 w-[90%] max-w-[1200px] 2xl:max-w-[1300px]">
+        <div className="mx-auto absolute -top-32 mobile-landscape:-top-24 lg:-top-16 md:-top-24 w-[90%] mobile-landscape:w-full px-4 max-w-[1200px] 2xl:max-w-[1300px]">
           <div className=" bg-primary flex px-4 py-8 rounded-2xl flex-col gap-8 mobile-landscape:grid mobile-landscape:grid-cols-2 md:grid  md:grid-cols-2 lg-grid-cols-3 lg:rounded-b-2xl lg:flex lg:flex-row lg:justify-between">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
@@ -57,7 +57,7 @@ function Footer() {
 
         {/* Main Footer */}
         <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto px-4 py-14  max-w-[1200px] 2xl:max-w-[1300px]">
-          <div className="grid grid-cols-1 gap-12 mobile-landscape:grid-cols-2 md:grid-cols-2 lg:grid-cols-11 xl:grid-cols-12">
+          <div className="grid grid-cols-1 gap-12 mobile-landscape:grid-cols-3 md:grid-cols-2 lg:grid-cols-11 xl:grid-cols-12">
             {/* Column 1 */}
             <div className="lg:col-span-3">
               <Image

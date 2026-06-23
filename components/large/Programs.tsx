@@ -22,10 +22,9 @@ function Programs() {
           top-0
           right-0
           h-full
+          linear-gradient(bg-primary, bg-primary,url(/save-a-village-beggar.jpg)
           w-[45%]
           rounded-l-full
-          bg-primary
-          opacity-95
           hidden
           lg:block
         "
@@ -62,7 +61,7 @@ function Programs() {
             "
             >
               {/* Donors */}
-              <div className="flex items-center hidden md:flex">
+              <div className="flex items-center flex">
                 <div className="flex -space-x-3">
                   <Image
                     src="/sva-avater-1.png"
@@ -126,7 +125,6 @@ function Programs() {
       bg-white
       shadow-sm
       cursor-pointer
-      md:hidden
     "
                   >
                     ←
@@ -135,7 +133,6 @@ function Programs() {
                   <button
                     ref={nextRef}
                     className="
-                  md:hidden
       h-12
       w-12
       rounded-full
@@ -152,28 +149,6 @@ function Programs() {
           </div>
 
           {/* Cards */}
-          <div
-            className="
-          hidden 
-            bg-white
-            rounded-[24px]
-            p-5
-
-            md:grid
-            grid-cols-1
-            gap-5
-
-            mobile-landscape:grid-cols-2
-
-            md:grid-cols-2
-
-            lg:grid-cols-4
-          "
-          >
-            {programs.map((program: IProgram, key: number) => (
-              <ProgramCard key={key} program={program} />
-            ))}
-          </div>
 
           <div className="">
             <Swiper
