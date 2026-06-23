@@ -1,16 +1,22 @@
 import Events from "@/components/large/Events";
 import HomeContact from "@/components/large/HomeContact";
 import LatestNews from "@/components/large/LatestNews";
+import Programs from "@/components/large/Programs";
+import Footer from "@/components/layout/footer";
 import Banner from "@/components/medium/Banner";
+import VolunteerDonateSection from "@/components/medium/DoubleBanner";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="h-screen">
-      <HomeContact />
+      <VolunteerDonateSection />
+      <Programs />
       <Banner />
+      <HomeContact />
       <Events />
       <LatestNews />
+      <Footer />
     </main>
   );
 }

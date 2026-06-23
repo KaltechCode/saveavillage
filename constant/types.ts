@@ -28,3 +28,16 @@ export type IEvent = {
   description: string;
   venue: string;
 };
+
+export type IProgram = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+};
+
+export type IDonationAmount = {
+  id: number;
+  amount: string;
+};

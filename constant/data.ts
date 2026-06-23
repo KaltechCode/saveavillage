@@ -1,4 +1,4 @@
-import { IEvent } from "./types";
+import { IDonationAmount, IEvent, IProgram } from "./types";
 
 export const footerLinks = [
   {
@@ -111,4 +111,47 @@ export const events: IEvent[] = [
       "Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.",
     venue: "350 5th Ave New York, NY 118 United States",
   },
+];
+
+export const programs: IProgram[] = [
+  {
+    id: 1,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
+  {
+    id: 2,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
+  {
+    id: 3,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
+  {
+    id: 4,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
+];
+
+export const donationAmounts: IDonationAmount[] = [
+  { id: 1, amount: "$10" },
+  { id: 2, amount: "$20" },
+  { id: 3, amount: "$50" },
+  { id: 4, amount: "$100" },
+  { id: 5, amount: "$1000" },
 ];

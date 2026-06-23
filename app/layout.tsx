@@ -32,10 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${quicksand.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-        <Footer />
-      </body>
+      <body className="min-h-full flex flex-col relative">{children}</body>
     </html>
   );
 }

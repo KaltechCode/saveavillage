@@ -16,11 +16,10 @@ function EventCard({ event }: { event: IEvent }) {
             mobile-landscape:grid
             mobile-landscape:grid-cols-2
             md:grid md:grid-cols-2
-        
           "
     >
       {/* Image */}
-      <div className="relative shrink-0 w-full h-full">
+      <div className="relative shrink-0 w-full">
         <div
           className="
                 absolute

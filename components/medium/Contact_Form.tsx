@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa6";
+import { FaAnglesRight, FaHeart } from "react-icons/fa6";
 
 function Contact_form() {
   return (
@@ -34,11 +34,22 @@ function Contact_form() {
           placeholder="Type Your Message Here"
         ></textarea>
 
-        <input
-          type="submit"
-          value={"Contact Now"}
-          className={`w-full py-3 text-white border-none  text-center rounded-circle bg-background-primary group-[first]: flex items-center justify-center gap-3 font-medium text-default lg:col-span-2 mobile-landscape:col-span-2 md:col-span-2`}
-        />
+        <div className="flex gap-2 bg-black py-2 pl-1 w-max rounded-full">
+          <div
+            className={`bg-white p-3 rounded-full flex justify-center items-center`}
+          >
+            <FaAnglesRight
+              //   style={{ color: primary ? "text-primary" : "text-white" }}
+              size={16}
+              className="text-black"
+            />
+          </div>
+          <input
+            type="submit"
+            value={"Send Message"}
+            className={`inline-flex btn pl-1 gap-2 pr-6 py-2 bg-black text-white }`}
+          />
+        </div>
       </div>
     </form>
   );

@@ -6,12 +6,12 @@ import Contact_form from "../medium/Contact_Form";
 
 function HomeContact() {
   return (
-    <section className="py-[6em] md:py-[2em] lg:py-[6em]">
-      <div className="">
-        <div className="grid h-full gap-10 lg:grid-cols-2">
+    <section className="py-[3em] md:py-[2em] lg:py-[6em]">
+      <div className="w-[90%] mx-auto">
+        <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2">
           {/* Form section*/}
           <motion.div
-            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-8 p-8"
+            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5 rounded-md"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -34,7 +34,7 @@ function HomeContact() {
 
           {/* image */}
 
-          <div className="w-full lg:h-full relative">
+          <div className="w-full lg:h-full relative md:hidden lg:grid rounded-md overflow-hidden">
             <motion.img
               src={"/save-a-village-poor-boy.jpg"}
               height={500}
