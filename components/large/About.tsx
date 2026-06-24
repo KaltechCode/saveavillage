@@ -7,9 +7,9 @@ import Button from "../small/Button";
 
 function About() {
   return (
-    <section className="section-padding overflow-hidden">
-      <div className="relative top-0 left-0">
-        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px] py-[4em]">
+    <section className="section-padding overflow-hidden  ">
+      <div className="relative top-0 left-0 py-8 xl:py-36">
+        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
           <div
             className="
             w-full
@@ -38,7 +38,7 @@ function About() {
           "
               >
                 <img
-                  src="/heart.png"
+                  src="/heart-2.png"
                   alt=""
                   className="w-full h-full object-contain"
                 />
