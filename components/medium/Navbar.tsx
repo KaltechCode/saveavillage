@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../small/Button";
+import { HiBars3 } from "react-icons/hi2";
 
 function Navbar() {
   return (
@@ -36,14 +37,18 @@ function Navbar() {
         <li>Contact Us</li>
       </ul>
 
-      <Button
-        label="Donate"
-        primary={true}
-        iconColor="text-primary"
-        handler="/"
-      />
+      <div className="hidden md:flex">
+        <Button
+          label="Donate"
+          primary={true}
+          iconColor="text-primary"
+          handler="/"
+        />
+      </div>
 
-      <button className="md:hidden">☰</button>
+      <button className="md:hidden bg-primary h-10 w-10 rounded-full flex justify-center items-center cursor-pointer">
+        <HiBars3 className="text-white" size={24} />
+      </button>
     </nav>
   );
 }

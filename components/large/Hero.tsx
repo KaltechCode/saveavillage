@@ -51,8 +51,7 @@ export default function Hero() {
                 relative
                 overflow-hidden
                 rounded-[20px]
-              
-                xl:h-[550px]
+              h-[350px]
                 mobile-landscape:h-[500px]
                 md:h-[650px]
                 lg:h-[750px]
