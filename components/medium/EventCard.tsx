@@ -15,7 +15,7 @@ function EventCard({ event }: { event: IEvent }) {
             gap-5
             mobile-landscape:grid
             mobile-landscape:grid-cols-1
-            md:grid md:grid
+            md:grid lg:grid-cols-2
           "
     >
       {/* Image */}

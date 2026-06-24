@@ -1,4 +1,4 @@
-import { IDonationAmount, IEvent, IProgram } from "./types";
+import { IDonationAmount, IEvent, IHeroSlide, IProgram } from "./types";
 
 export const footerLinks = [
   {
@@ -146,6 +146,22 @@ export const programs: IProgram[] = [
     image: "/save-a-village-by-gifting.jpg",
     slug: "education-support",
   },
+  {
+    id: 3,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
+  {
+    id: 4,
+    title: "Education Support",
+    description:
+      "We work together to make a lasting difference, helping people with kindness and hard work.",
+    image: "/save-a-village-by-gifting.jpg",
+    slug: "education-support",
+  },
 ];
 
 export const donationAmounts: IDonationAmount[] = [
@@ -154,4 +170,23 @@ export const donationAmounts: IDonationAmount[] = [
   { id: 3, amount: "$50" },
   { id: 4, amount: "$100" },
   { id: 5, amount: "$1000" },
+];
+
+export const heroSlides: IHeroSlide[] = [
+  {
+    id: 1,
+    title: "Empowering Hope Futures Lives Through Giving",
+    description:
+      "It is a long established fact that a reader will be distracted by readable content.",
+    image: "/images/hero/hero-1.jpg",
+    buttonText: "Join Us",
+  },
+  {
+    id: 2,
+    title: "Making Communities Stronger Together",
+    description:
+      "Support programs that bring positive change to people's lives.",
+    image: "/images/hero/hero-2.jpg",
+    buttonText: "Donate Now",
+  },
 ];

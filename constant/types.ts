@@ -41,3 +41,11 @@ export type IDonationAmount = {
   id: number;
   amount: string;
 };
+
+export type IHeroSlide = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  buttonText: string;
+};

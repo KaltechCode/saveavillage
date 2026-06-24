@@ -16,7 +16,7 @@ function Button({
   return (
     <Link
       href={handler}
-      className={`inline-flex btn pl-1 gap-2 pr-6 py-2 ${primary ? "bg-primary text-white" : "bg-white text-primary"}`}
+      className={`inline-flex w-max h-max btn pl-1 gap-2 pr-6 py-2 ${primary ? "bg-primary text-white" : "bg-white text-primary"}`}
     >
       <div
         className={`${primary ? "bg-white" : "bg-primary"} p-2 rounded-full`}

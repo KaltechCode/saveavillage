@@ -7,7 +7,7 @@ import Contact_form from "../medium/Contact_Form";
 function HomeContact() {
   return (
     <section className="py-[3em] md:py-[2em] lg:py-[2em]">
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
         <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2">
           {/* Form section*/}
           <motion.div
@@ -34,7 +34,7 @@ function HomeContact() {
 
           {/* image */}
 
-          <div className="w-full lg:h-full relative md:hidden lg:grid rounded-md overflow-hidden">
+          <div className=" lg:h-full max-h-[620px] relative md:hidden lg:grid rounded-md overflow-hidden">
             <motion.img
               src={"/save-a-village-poor-boy.jpg"}
               height={500}

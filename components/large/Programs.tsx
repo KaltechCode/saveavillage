@@ -15,22 +15,22 @@ function Programs() {
   return (
     <section className="relative overflow-hidden py-16 lg:py-24">
       {/* Background Shape */}
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
         <div
           className="
           absolute
           top-0
           right-0
           h-full
-          linear-gradient(bg-primary, bg-primary,url(/save-a-village-beggar.jpg)
-          w-[45%]
+          bg-[linear-gradient(rgba(102,0,155,0.9),rgba(102,0,155,0.5)),url('/save-a-village-beggar.jpg')]
+          w-[35%]
           rounded-l-full
-          hidden
+          hidden bg-no-repeat bg-cover bg-center
           lg:block
         "
         />
 
-        <div className="container relative z-10">
+        <div className="relative z-10">
           {/* Header */}
           <div
             className="
@@ -60,59 +60,6 @@ function Programs() {
               justify-end
             "
             >
-              {/* Donors */}
-              <div className="flex items-center flex">
-                <div className="flex -space-x-3">
-                  <Image
-                    src="/sva-avater-1.png"
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="rounded-full border-2 border-white"
-                  />
-                  <Image
-                    src="/sva-avater-2.png"
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="rounded-full border-2 border-white"
-                  />
-                  <Image
-                    src="/sva-avater-3.png"
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="rounded-full border-2 border-white"
-                  />
-                  <div
-                    className="
-                  ml-3
-                  flex
-                  items-center
-                  gap-2
-                "
-                  >
-                    <span
-                      className="
-                    flex
-                    h-10
-                    w-10
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-primary
-                    font-bold
-                    text-white
-                  "
-                    >
-                      2M
-                    </span>
-
-                    <span className="text-sm">Active donors</span>
-                  </div>
-                </div>
-              </div>
-
               {/* Arrows */}
               <div className="flex gap-3">
                 <div className="flex gap-3 ">
@@ -155,20 +102,27 @@ function Programs() {
               modules={[Navigation]}
               spaceBetween={20}
               slidesPerView={1}
+              loop
               navigation={{
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
               }}
               onBeforeInit={(swiper) => {
-                // @ts-ignore
-                swiper.params.navigation.prevEl = prevRef.current;
-                // @ts-ignore
-                swiper.params.navigation.nextEl = nextRef.current;
+                const navigation = swiper.params.navigation;
+
+                if (navigation && typeof navigation === "object") {
+                  navigation.prevEl = prevRef.current;
+                  navigation.nextEl = nextRef.current;
+                }
               }}
               className=""
               breakpoints={{
                 480: {
                   slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
                 },
               }}
             >
