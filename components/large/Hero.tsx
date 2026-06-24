@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { FaHeart } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -88,8 +89,11 @@ export default function Hero() {
                 "
               >
                 <div className="xl:w-[65%]">
-                  <p className="hero-label text-white">
-                    ♥ Change The World Together
+                  <p className="hero-label text-white flex gap-2 items-center">
+                    <span className="">
+                      <FaHeart className="text-primary" />
+                    </span>{" "}
+                    Change The World Together
                   </p>
 
                   <h1 className="hero-title-text text-white! leading-[1.2]!">
