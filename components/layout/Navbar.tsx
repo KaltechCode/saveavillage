@@ -2,12 +2,16 @@ import Image from "next/image";
 import React from "react";
 import Button from "../small/Button";
 import { HiBars3 } from "react-icons/hi2";
+import Link from "next/link";
+import { navlinks } from "@/constant/data";
+import { INAVLINK } from "@/constant/types";
 
 function Navbar() {
   return (
     <nav
       className="
-    flex
+      hidden
+   lg:flex
     items-center
     justify-between
     w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px]
@@ -33,11 +37,19 @@ function Navbar() {
       xl:gap-15
     "
       >
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Programs</li>
-        <li>Events</li>
-        <li>Contact Us</li>
+        {navlinks.map((link: INAVLINK, key: number) => {
+          return (
+            <li>
+              <Link
+                href={link.link}
+                className="cursor-pointer bold-p-text"
+                key={key}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
       <div className="hidden md:flex">

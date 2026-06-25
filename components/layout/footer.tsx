@@ -184,22 +184,25 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="flex p-1 bg-white rounded-lg mt-7">
+              <div className="flex gap-3 p-1 bg-white mt-7 rounded-full">
                 <input
                   type="email"
                   placeholder="Your Email Address"
-                  className="flex-1 h-12 px-4 text-black bg-white rounded-l-lg"
+                  className="w-full h-12 px-4 text-black bg-white rounded-full"
                 />
 
                 <button
                   className="
               w-12
-              lg:w-8
+              w-12
+              min-w-12
               bg-primary
-              rounded-r-lg
+              rounded-full
+              flex justify-center items-center min-
+                
             "
                 >
-                  →
+                  <FaAnglesRight className="text-white" size={14} />
                 </button>
               </div>
             </div>

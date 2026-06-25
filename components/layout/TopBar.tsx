@@ -4,6 +4,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BiSolidPhoneCall } from "react-icons/bi";
+import Link from "next/link";
 
 function TopBar() {
   return (
@@ -41,13 +42,32 @@ function TopBar() {
       <div className="flex items-center gap-4">
         <span>Follow us:</span>
         <span>
-          <FaFacebookF size={12} />
+          <Link
+            href={"https://www.facebook.com"}
+            target="_blank"
+            className="cursor-pointer"
+          >
+            <FaFacebookF size={12} />
+          </Link>
         </span>
         <span>
-          <RiTwitterXLine size={12} />
+          <Link
+            href={"https://x.com"}
+            target="_blank"
+            className="cursor-pointer"
+          >
+            <RiTwitterXLine size={12} />
+          </Link>
         </span>
         <span>
-          <FaLinkedinIn size={12} />
+          <Link
+            href={"https://www.linkedin.com"}
+            target="_blank"
+            className="cursor-pointer"
+          >
+            {" "}
+            <FaLinkedinIn size={12} />
+          </Link>
         </span>
       </div>
     </div>

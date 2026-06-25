@@ -10,7 +10,6 @@ function Page() {
   return (
     <main>
       <Header />
-
       <About />
       <Acheivement />
       <OurTeam />

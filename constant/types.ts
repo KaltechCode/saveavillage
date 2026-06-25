@@ -76,3 +76,8 @@ export type ISTATEMENT = {
   outro?: string;
   image: string;
 };
+
+export type INAVLINK = {
+  link: string;
+  label: string;
+};

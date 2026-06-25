@@ -4,16 +4,14 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import Image from "next/image";
 import { programs } from "@/constant/data";
-import { IProgram } from "@/constant/types";
 import ProgramCard from "../medium/ProgramCard";
 import { useRef } from "react";
 function Programs() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   return (
-    <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:p-24 ">
+    <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24 ">
       {/* Background Shape */}
       <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
         <div
@@ -120,9 +118,13 @@ function Programs() {
                 480: {
                   slidesPerView: 2,
                 },
-                1024: {
+                960: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1200: {
                   slidesPerView: 4,
-                  spaceBetween: 20,
+                  spaceBetween: 15,
                 },
               }}
             >

@@ -34,14 +34,7 @@ function HomeContact() {
 
           {/* image */}
 
-          <div className=" lg:h-full max-h-[620px] relative md:hidden lg:grid rounded-md overflow-hidden">
-            <motion.img
-              src={"/save-a-village-poor-boy.jpg"}
-              height={500}
-              width={300}
-              className="w-full rounded-medium lg:h-full"
-              alt="office cleaning"
-            />
+          <div className="w-full h-[500px] lg:h-full max-h-[620px] relative md:hidden lg:grid rounded-md overflow-hidden bg-[url(/save-a-village-poor-boy.jpg)] bg-center bg-cover">
             <motion.div
               className="h-full w-full bg-background-grey left-0 top-0 absolute z-90"
               initial={{ scaleY: 1 }}

@@ -26,30 +26,12 @@ function BlogCard({ blog }: { blog: IBlog }) {
                 object-cover
                 xsm:h-[200px]
                 sm:h-[240px]
-                md:h-[260px]
-                lg:h-[250px]"
+                md:h-[300px]
+                lg:h-[350px]"
         />
 
-        <div
-          className="
-                absolute
-                bottom-0
-                right-4 
-
-                bg-primary
-                text-white
-
-                rounded-t-md
-                flex
-                flex-col
-                items-center
-                justify-center
-                px-6
-                py-1
-              "
-        >
+        <div className="absolute bottom-2 right-4 bg-primary text-white flex flex-col items-center justify-center h-16 w-16 rounded-full">
           <span className="font-bold text-lg">15</span>
-
           <span className="sm-p-text mt-1.5 leading-0!">Dec</span>
         </div>
       </div>

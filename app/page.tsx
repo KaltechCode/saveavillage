@@ -8,6 +8,7 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/Header";
 import Banner from "@/components/medium/Banner";
 import VolunteerDonateSection from "@/components/medium/DoubleBanner";
+import Partners from "@/components/medium/Partners";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <Partners />
       <VolunteerDonateSection />
       <Programs />
       <Banner />

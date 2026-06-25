@@ -3,6 +3,7 @@ import {
   IDonationAmount,
   IEvent,
   IHeroSlide,
+  INAVLINK,
   IProgram,
   ISTATEMENT,
   ITeam,
@@ -307,5 +308,28 @@ export const statement: ISTATEMENT[] = [
     image: "/save-a-village-poor-boy.jpg",
     intro:
       "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mInteger lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br /> Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br />Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.attis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+  },
+];
+
+export const navlinks: INAVLINK[] = [
+  {
+    link: "/",
+    label: "Home",
+  },
+  {
+    link: "/about-us",
+    label: "About Us",
+  },
+  {
+    link: "/programs",
+    label: "Programs",
+  },
+  {
+    label: "Events",
+    link: "/events",
+  },
+  {
+    label: "Contact Us",
+    link: "/contact-us",
   },
 ];

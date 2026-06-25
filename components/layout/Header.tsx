@@ -1,10 +1,12 @@
 import React from "react";
-import TopBar from "../medium/TopBar";
-import Navbar from "../medium/Navbar";
+import TopBar from "./TopBar";
+import Navbar from "./Navbar";
+import MobileMenu from "./MobileNav";
 
 function Header() {
   return (
     <div className="">
+      <MobileMenu />
       <TopBar />
       <Navbar />
     </div>

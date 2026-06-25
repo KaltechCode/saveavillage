@@ -2,6 +2,7 @@ import { IProgram } from "@/constant/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaAnglesRight } from "react-icons/fa6";
 
 function ProgramCard({ program }: { program: IProgram }) {
   return (
@@ -61,13 +62,16 @@ function ProgramCard({ program }: { program: IProgram }) {
                   py-3
 
                   rounded-[12px]
-                  bg-[#250033]
+                  bg-primary
                   text-white
                   font-semibold
+                  group
                 "
       >
         More info
-        <span>↗</span>
+        <span>
+          <FaAnglesRight className="group-hover:-rotate-45 transition-all duration-700" />
+        </span>
       </Link>
     </article>
   );

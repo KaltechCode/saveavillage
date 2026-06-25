@@ -8,7 +8,7 @@ export default function VolunteerDonateSection() {
   const [selectedAmount, setSelectedAmount] = useState("$10");
 
   return (
-    <section className="relative md:mt-10 xl:my-16">
+    <section className="relative md:mb-10 xl:mb-16">
       <div
         className="
           grid
