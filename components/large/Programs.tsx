@@ -13,7 +13,7 @@ function Programs() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   return (
-    <section className="relative overflow-hidden py-16 lg:py-24">
+    <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:p-24 ">
       {/* Background Shape */}
       <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
         <div

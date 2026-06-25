@@ -4,36 +4,33 @@ import { FaHeart } from "react-icons/fa6";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Helping_Hand from "../small/Icons/Helping_Hande";
 import Button from "../small/Button";
+import Image from "next/image";
 
 function About() {
   return (
-    <section className="section-padding overflow-hidden  ">
-      <div className="relative top-0 left-0 py-8 xl:py-36">
+    <section className="h-auto mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem]">
+      <div className="">
         <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
           <div
             className="
             w-full
         grid
         grid-cols-1
-        gap-12
-
+        gap-5
         mobile-landscape:grid-cols-2
         mobile-landscape:items-center
-
         md:grid-cols-7
-
         xl:grid-cols-2
         lg:gap-20
       "
           >
             {/* Left Side */}
-            <div className="relative md:col-span-3 xl:col-span-1">
+            <div className="md:col-span-3 xl:col-span-1">
               {/* Background Shape */}
               <div
                 className="
-            absolute
             inset-0
-            hidden
+           h-[400px]
             md:block
           "
               >
@@ -43,50 +40,6 @@ function About() {
                   className="w-full h-full object-contain"
                 />
               </div>
-
-              {/* Paint Shape */}
-              {/* <div
-                className="
-            absolute
-            left-0
-            bottom-0
-
-            w-full
-            max-w-[500px]
-
-            opacity-30
-          "
-              >
-                <img src="/images/about-paint.png" alt="" className="w-full" />
-              </div> */}
-
-              {/* Heart Image */}
-              {/* <div
-                className="
-            relative
-            z-10
-
-            mx-auto
-
-            w-[220px]
-            h-[220px]
-
-            mobile-landscape:w-[260px]
-            mobile-landscape:h-[260px]
-
-            md:w-[320px]
-            md:h-[320px]
-
-            lg:w-[420px]
-            lg:h-[420px]
-          "
-              >
-                <img
-                  src="/images/about-heart.png"
-                  alt="About Us"
-                  className="w-full h-full object-contain"
-                />
-              </div> */}
             </div>
 
             {/* Right Side */}
@@ -166,21 +119,22 @@ function About() {
 
                 <div
                   className="
+                  mt-5
               flex
               justify-start
                overflow-hidden
-               w-[70%]
-               md:w-[70%]
-               xl:w-[45%]
+               w-[320px]
             "
                 >
-                  <img
+                  <Image
                     src="/save-a-village-team.jpg"
+                    height={200}
+                    width={200}
                     alt="Team"
                     className="
                     rounded-full
                 xl:w-full
-                h-[70px]
+                h-[60px]
                 w-full
               "
                   />
@@ -191,12 +145,8 @@ function About() {
               <div
                 className="
             flex
-            gap-5
-            mt-16
-            md:flex-col-
-            mobile-landscape:flex-row
-            mobile-landscape:items-center
-            mobile-landscape:flex-wrap
+            gap-5 justify-between md:justify-start md:gap-10
+            mt-10 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:flex-wrap
           "
               >
                 <Button

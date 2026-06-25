@@ -1,3 +1,5 @@
+import { IconType } from "react-icons/lib";
+
 export interface IFooterLinks {
   link: string;
   href: string;
@@ -48,4 +50,29 @@ export type IHeroSlide = {
   description: string;
   image: string;
   buttonText: string;
+};
+
+export type ITeam = {
+  name: string;
+  facebook: string;
+  x: string;
+  image: string;
+  linkedIn: string;
+  Instagram: string;
+  role: string;
+};
+
+export type IACHEIVEMENT = {
+  Icon: IconType;
+  count: number;
+  text: string;
+  image: string;
+};
+
+export type ISTATEMENT = {
+  title: string;
+  intro: string;
+  list?: string[];
+  outro?: string;
+  image: string;
 };

@@ -34,7 +34,7 @@ function TopBar() {
           <span>
             <MdEmail />
           </span>
-          saveavillageusa.org
+          info@saveavillageusa.org
         </p>
       </div>
 

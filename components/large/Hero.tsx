@@ -7,6 +7,7 @@ import { FaHeart } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Button from "../small/Button";
 
 const slides = [
   {
@@ -28,7 +29,7 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[90%] mx-auto mt-7">
+    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[1800px]">
       <Swiper
         modules={[Navigation]}
         loop
@@ -52,10 +53,11 @@ export default function Hero() {
                 relative
                 overflow-hidden
                 rounded-[20px]
-              h-[350px]
-                mobile-landscape:h-[500px]
-                md:h-[650px]
-                lg:h-[750px]
+              h-[400px]
+                mobile-landscape:h-[400px]
+                md:h-[500px]
+                lg:h-[650px]
+                xl:h-[750px]
               "
             >
               <Image
@@ -105,7 +107,12 @@ export default function Hero() {
                     distracted by readable content.
                   </p>
 
-                  <button className="btn">Join Us</button>
+                  <Button
+                    label="Join Us"
+                    handler="/"
+                    iconColor="text-primary"
+                    primary={true}
+                  />
                 </div>
               </div>
             </div>
@@ -119,11 +126,21 @@ export default function Hero() {
           absolute
           bottom-0
           left-1/2
-          -translate-x-1/2
+          -translate-x-[55%]
+          mobile-landscape:-translate-x-[50%]
           z-20
+          w-[70%]
+          lg:w-[38%]
+          xl:w-[35%]
+          max-auto
+          bg-red-900
+           display: flex;
+  align-items: center;
+  justify-content: center;
+
         "
       >
-        <div className="hero-nav">
+        <div className="hero-nav w-[110%]">
           <button
             ref={prevRef}
             className="
@@ -141,7 +158,7 @@ export default function Hero() {
               alt=""
               width={40}
               height={40}
-              className="rounded-full border-2 border-white"
+              className="rounded-full border-2 h-7.5 w-7.5 border-white overflow-hidden"
             />
 
             <Image
@@ -149,7 +166,7 @@ export default function Hero() {
               alt=""
               width={40}
               height={40}
-              className="rounded-full border-2 border-white"
+              className="rounded-full border-2  h-7.5 w-7.5 border-white"
             />
 
             <Image
@@ -157,7 +174,7 @@ export default function Hero() {
               alt=""
               width={40}
               height={40}
-              className="rounded-full border-2 border-white object-cover"
+              className="rounded-full border-2 border-white  h-7.5 w-7.5 object-cover"
             />
           </div>
 

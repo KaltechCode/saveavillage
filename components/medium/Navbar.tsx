@@ -10,8 +10,7 @@ function Navbar() {
     flex
     items-center
     justify-between
-
-    w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]
+    w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px]
     py-4
   "
     >
@@ -19,7 +18,8 @@ function Navbar() {
         src="/save-a-vilage-logo.png"
         height={200}
         width={200}
-        alt="save a vilage logo"
+        alt="save a vilage logo "
+        className="md:w-[180px]"
       />
 
       <ul
@@ -28,6 +28,9 @@ function Navbar() {
       md:flex
       items-center
       gap-10
+      md:gap-4
+      lg:gap-10
+      xl:gap-15
     "
       >
         <li>Home</li>

@@ -1,4 +1,18 @@
-import { IDonationAmount, IEvent, IHeroSlide, IProgram } from "./types";
+import {
+  IACHEIVEMENT,
+  IDonationAmount,
+  IEvent,
+  IHeroSlide,
+  IProgram,
+  ISTATEMENT,
+  ITeam,
+} from "./types";
+import {
+  FaBoxOpen,
+  FaHandshake,
+  FaHandshakeAngle,
+  FaHandsHoldingChild,
+} from "react-icons/fa6";
 
 export const footerLinks = [
   {
@@ -188,5 +202,110 @@ export const heroSlides: IHeroSlide[] = [
       "Support programs that bring positive change to people's lives.",
     image: "/images/hero/hero-2.jpg",
     buttonText: "Donate Now",
+  },
+];
+
+export const teamData: ITeam[] = [
+  {
+    name: "Agba Baller",
+    facebook: "https://www.facebook.com",
+    x: "https://x.com",
+    Instagram: "https://www.instagram.com",
+    linkedIn: "https://www.linkedin.com/login",
+    image: "/team.jpg",
+    role: "Manager",
+  },
+  {
+    name: "Victor Osihmen",
+    facebook: "https://www.facebook.com",
+    x: "https://x.com",
+    Instagram: "https://www.instagram.com",
+    linkedIn: "https://www.linkedin.com/login",
+    image: "/team-2.jpg",
+    role: "Manager",
+  },
+  {
+    name: "Agba Baller",
+    facebook: "https://www.facebook.com",
+    x: "https://x.com",
+    Instagram: "https://www.instagram.com",
+    linkedIn: "https://www.linkedin.com/login",
+    image: "/team.jpg",
+    role: "Manager",
+  },
+  {
+    name: "Victor Osihmen",
+    facebook: "https://www.facebook.com",
+    x: "https://x.com",
+    Instagram: "https://www.instagram.com",
+    linkedIn: "https://www.linkedin.com/login",
+    image: "/team-2.jpg",
+    role: "Manager",
+  },
+];
+
+export const acheivement: IACHEIVEMENT[] = [
+  {
+    Icon: FaHandsHoldingChild,
+    count: 260,
+    image: "/save-a-village-feeding-the-poor.jpg",
+    text: "Total Happy Children",
+  },
+  {
+    Icon: FaHandshake,
+    count: 110,
+    image: "/save-a-village-feeding-the-poor.jpg",
+    text: "Total Our Volunteer",
+  },
+  {
+    Icon: FaBoxOpen,
+    count: 190,
+    image: "/save-a-village-feeding-the-poor.jpg",
+    text: "Our Products & Gifts",
+  },
+  {
+    Icon: FaHandshakeAngle,
+    count: 560,
+    image: "/save-a-village-feeding-the-poor.jpg",
+    text: "Worldwide Donor",
+  },
+];
+
+export const statement: ISTATEMENT[] = [
+  {
+    title: "Where can I get some?",
+    intro:
+      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+    list: [
+      "Suspendisse pulvinar orci vitae condimentum feugiat.",
+      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
+      "Duis vehicula elit ut placerat rutrum.",
+      "Nunc et felis non neque vehicula porttitor.",
+    ],
+    image: "/save-a-village-hero-1.jpg",
+    outro:
+      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+  },
+  {
+    title: "Our Vission",
+    image: "/sva-team.jpg",
+    intro:
+      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+    list: [
+      "Suspendisse pulvinar orci vitae condimentum feugiat.",
+      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
+      "Duis vehicula elit ut placerat rutrum.",
+      "Nunc et felis non neque vehicula porttitor.",
+      "Suspendisse pulvinar orci vitae condimentum feugiat.",
+      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
+      "Duis vehicula elit ut placerat rutrum.",
+      "Nunc et felis non neque vehicula porttitor.",
+    ],
+  },
+  {
+    title: "Our History",
+    image: "/save-a-village-poor-boy.jpg",
+    intro:
+      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mInteger lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br /> Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br />Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.attis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
   },
 ];

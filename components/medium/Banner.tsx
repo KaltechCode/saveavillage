@@ -4,7 +4,7 @@ import Button from "../small/Button";
 
 export function Banner() {
   return (
-    <section className="py-10 lg:py-20">
+    <section className="py-10 lg:py-20 mt-12">
       <div className="relative rounded-[20px]">
         {/* Background Image */}
         <div
