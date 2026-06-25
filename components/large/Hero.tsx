@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { FaHeart } from "react-icons/fa6";
 
 import "swiper/css";
@@ -31,8 +32,9 @@ export default function Hero() {
   return (
     <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[1800px]">
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         loop
+        autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
@@ -133,7 +135,6 @@ export default function Hero() {
           lg:w-[38%]
           xl:w-[35%]
           max-auto
-          bg-red-900
            display: flex;
   align-items: center;
   justify-content: center;
@@ -156,9 +157,9 @@ export default function Hero() {
             <Image
               src="/save-a-village-hero-1.jpg"
               alt=""
-              width={40}
-              height={40}
-              className="rounded-full border-2 h-7.5 w-7.5 border-white overflow-hidden"
+              width={100}
+              height={100}
+              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
             />
 
             <Image
@@ -166,7 +167,7 @@ export default function Hero() {
               alt=""
               width={40}
               height={40}
-              className="rounded-full border-2  h-7.5 w-7.5 border-white"
+              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
             />
 
             <Image
@@ -174,7 +175,7 @@ export default function Hero() {
               alt=""
               width={40}
               height={40}
-              className="rounded-full border-2 border-white  h-7.5 w-7.5 object-cover"
+              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
             />
           </div>
 
