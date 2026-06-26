@@ -147,7 +147,7 @@ export default function Hero() {
             className="
               text-primary
               text-xl
-              font-bold
+              font-bold cursor-pointer
             "
           >
             ←
@@ -184,7 +184,7 @@ export default function Hero() {
             className="
               text-primary
               text-xl
-              font-bold
+              font-bold cursor-pointer
             "
           >
             →

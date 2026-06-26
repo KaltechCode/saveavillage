@@ -163,8 +163,8 @@ body {
 
   background: white;
 
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 
   display: flex;
   align-items: center;
@@ -178,21 +178,22 @@ body {
   position: absolute;
   bottom: 0;
 
-  width: 45px;
-  height: 45px;
+  width: 15px;
+  height: 15px;
 }
 
 .hero-nav::before {
-  top: 28px;
-  left: -35px;
-  transform: rotate(23);
-  border-bottom-right-radius: 40px;
-  box-shadow: 20px 20px 0 white;
+  top: 55px;
+  left: -15px;
+  /* transform: rotate(180deg); */
+  border-bottom-right-radius: 10px;
+  box-shadow: 5px 5px 0 #fff;
 }
 
 .hero-nav::after {
-  top: 28px;
-  right: -35px;
-  border-bottom-left-radius: 40px;
-  box-shadow: -20px 20px 0 white;
+  border-bottom-left-radius: 13px;
+  top: 55px;
+  right: -15px;
+  transform: rotate(0);
+  box-shadow: -5px 5px #fff;
 }

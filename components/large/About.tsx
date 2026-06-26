@@ -34,10 +34,12 @@ function About() {
             md:block
           "
               >
-                <img
+                <Image
                   src="/heart-2.png"
                   alt=""
-                  className="w-full h-full object-contain"
+                  height={400}
+                  width={400}
+                  className="w-full"
                 />
               </div>
             </div>
@@ -115,29 +117,6 @@ function About() {
                       There are many variations of solve
                     </p>
                   </div>
-                </div>
-
-                <div
-                  className="
-                  mt-5
-              flex
-              justify-start
-               overflow-hidden
-               w-[320px]
-            "
-                >
-                  <Image
-                    src="/save-a-village-team.jpg"
-                    height={200}
-                    width={200}
-                    alt="Team"
-                    className="
-                    rounded-full
-                xl:w-full
-                h-[60px]
-                w-full
-              "
-                  />
                 </div>
               </div>
 

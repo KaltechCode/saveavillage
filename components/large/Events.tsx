@@ -1,11 +1,17 @@
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
 import { events } from "@/constant/data";
-import React from "react";
+import React, { useRef } from "react";
 import EventCard from "../medium/EventCard";
 import { IEvent } from "@/constant/types";
 import Button from "../small/Button";
 import { FaHeart } from "react-icons/fa6";
 
 function Events() {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
   return (
     <section
       className="
@@ -28,16 +34,27 @@ function Events() {
             <h2 className="section-title-text text-white!">Event Schedule</h2>
           </div>
 
-          <Button
-            label="All Blogs"
-            handler="#"
-            primary={false}
-            iconColor="text-white"
-          />
+          <div className="flex gap-3">
+            <div className="flex gap-3 ">
+              <button
+                ref={prevRef}
+                className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
+              >
+                ←
+              </button>
+
+              <button
+                ref={nextRef}
+                className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
+              >
+                →
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Events Grid */}
-        <div
+        {/* <div
           className="
         grid
         grid-cols-1
@@ -51,6 +68,65 @@ function Events() {
           {events.map((event: IEvent, key: number) => (
             <EventCard event={event} key={key} />
           ))}
+        </div> */}
+
+        <div
+          className="
+              flex
+              items-center
+              gap-6
+              justify-end
+            "
+        >
+          {/* Arrows */}
+        </div>
+
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={20}
+          slidesPerView={1}
+          loop
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            const navigation = swiper.params.navigation;
+
+            if (navigation && typeof navigation === "object") {
+              navigation.prevEl = prevRef.current;
+              navigation.nextEl = nextRef.current;
+            }
+          }}
+          className=""
+          breakpoints={{
+            480: {
+              slidesPerView: 2,
+            },
+            960: {
+              slidesPerView: 1,
+              spaceBetween: 15,
+            },
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+          }}
+        >
+          {events.map((event, key: number) => (
+            <SwiperSlide key={key}>
+              <EventCard event={event} key={key} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="mt-16">
+          <Button
+            label="All Blogs"
+            handler="#"
+            primary={false}
+            iconColor="text-white"
+          />
         </div>
       </div>
     </section>

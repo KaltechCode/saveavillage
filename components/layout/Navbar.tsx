@@ -18,14 +18,15 @@ function Navbar() {
     py-4
   "
     >
-      <Image
-        src="/save-a-vilage-logo.png"
-        height={200}
-        width={200}
-        alt="save a vilage logo "
-        className="md:w-[180px]"
-      />
-
+      <Link href={"/"}>
+        <Image
+          src="/save-a-vilage-logo.png"
+          height={200}
+          width={200}
+          alt="save a vilage logo "
+          className="md:w-[180px]"
+        />
+      </Link>
       <ul
         className="
       hidden

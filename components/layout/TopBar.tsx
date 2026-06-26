@@ -15,60 +15,57 @@ function TopBar() {
 
     bg-[#250033]
     text-white
-
-    items-center
-    justify-between
-
-    px-6
     py-3
   "
     >
-      <div className="flex items-center gap-6">
-        <p className="flex items-center gap-2">
-          <span>
-            <BiSolidPhoneCall />
-          </span>
-          +1 (214) 642 7635
-        </p>
-        <p className="flex items-center gap-2">
-          {" "}
-          <span>
-            <MdEmail />
-          </span>
-          info@saveavillageusa.org
-        </p>
-      </div>
-
-      <div className="flex items-center gap-4">
-        <span>Follow us:</span>
-        <span>
-          <Link
-            href={"https://www.facebook.com"}
-            target="_blank"
-            className="cursor-pointer"
-          >
-            <FaFacebookF size={12} />
-          </Link>
-        </span>
-        <span>
-          <Link
-            href={"https://x.com"}
-            target="_blank"
-            className="cursor-pointer"
-          >
-            <RiTwitterXLine size={12} />
-          </Link>
-        </span>
-        <span>
-          <Link
-            href={"https://www.linkedin.com"}
-            target="_blank"
-            className="cursor-pointer"
-          >
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px] flex  items-center justify-between">
+        <div className="flex items-center gap-6">
+          <p className="flex items-center gap-2">
+            <span>
+              <BiSolidPhoneCall />
+            </span>
+            +1 (214) 642 7635
+          </p>
+          <p className="flex items-center gap-2">
             {" "}
-            <FaLinkedinIn size={12} />
-          </Link>
-        </span>
+            <span>
+              <MdEmail />
+            </span>
+            info@saveavillageusa.org
+          </p>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <span>Follow us:</span>
+          <span>
+            <Link
+              href={"https://www.facebook.com"}
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <FaFacebookF size={12} />
+            </Link>
+          </span>
+          <span>
+            <Link
+              href={"https://x.com"}
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <RiTwitterXLine size={12} />
+            </Link>
+          </span>
+          <span>
+            <Link
+              href={"https://www.linkedin.com"}
+              target="_blank"
+              className="cursor-pointer"
+            >
+              {" "}
+              <FaLinkedinIn size={12} />
+            </Link>
+          </span>
+        </div>
       </div>
     </div>
   );

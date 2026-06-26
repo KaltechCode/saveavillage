@@ -13,13 +13,22 @@ function EventCard({ event }: { event: IEvent }) {
             flex
             flex-col
             gap-5
+
             mobile-landscape:grid
             mobile-landscape:grid-cols-1
             md:grid lg:grid-cols-2
           "
     >
       {/* Image */}
-      <div className="relative shrink-0 w-full mobile-landscape:h-[300px] md:h-[250px]">
+      <div
+        className={`relative shrink-0 w-full bg-[url(${event.image})]  h-[280px] rounded-lg lg:h-full object-cover bg-center bg-no-repeat`}
+        style={{
+          backgroundImage: `url(${event.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          objectFit: "cover",
+        }}
+      >
         <div
           className="
                 absolute
@@ -43,18 +52,6 @@ function EventCard({ event }: { event: IEvent }) {
 
           <span className="text-primary!">{event.date.month}</span>
         </div>
-
-        <img
-          src={event.image}
-          alt={event.title}
-          className="
-                w-full h-full
-                object-cover
-                rounded-[20px]
-
-                mobile-landscape:h-full
-              "
-        />
       </div>
 
       {/* Content */}
