@@ -131,7 +131,7 @@ export default function Hero() {
           -translate-x-[55%]
           mobile-landscape:-translate-x-[50%]
           z-20
-          w-[70%]
+          w-[50%]
           lg:w-[38%]
           xl:w-[35%]
           max-auto

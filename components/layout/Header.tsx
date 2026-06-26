@@ -6,8 +6,8 @@ import MobileMenu from "./MobileNav";
 function Header() {
   return (
     <div className="">
-      <MobileMenu />
       <TopBar />
+      <MobileMenu />
       <Navbar />
     </div>
   );

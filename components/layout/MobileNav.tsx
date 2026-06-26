@@ -29,7 +29,7 @@ export default function MobileMenu() {
         />
 
         <button
-          className="md:hidden bg-primary h-10 w-10 rounded-full flex justify-center items-center cursor-pointer"
+          className="lg:hidden bg-primary h-10 w-10 rounded-full flex justify-center items-center cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
