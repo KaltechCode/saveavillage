@@ -24,7 +24,7 @@ function Page() {
                   CONTACT US
                 </p>
                 <h2 className="hero-title-text text-center text-primary! md:w-[80%] lg:w-[70%] mobile-landscape:w-[60%] mx-auto">
-                  Your Spotless Home Awaits! Contact Us Now
+                  Empowering Hope Futures Lives Through Giving
                 </h2>
               </div>
             </div>
