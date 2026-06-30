@@ -197,3 +197,8 @@ body {
   transform: rotate(0);
   box-shadow: -5px 5px #fff;
 }
+
+
+.swiper-wrapper {
+  transition-timing-function: ease-in-out !important; /* 👈 Makes start and stop smooth */
+}

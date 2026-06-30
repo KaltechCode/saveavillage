@@ -21,7 +21,9 @@ function Partners() {
         <div className="grid grid-cols-2 mobile-landscape:grid-cols-4 md:grid-cols-4 gap-4 lg:gap-10 xl:gap-16 mt-10 md:mt-12">
           {partners.map((item: string, key: number) => {
             return (
-              <div className="bg-[#F4F4F4] py-10 px-5 rounded-lg">{item}</div>
+              <div className="bg-[#F4F4F4] py-10 px-5 rounded-lg">
+                <p className="title-text">{item}</p>
+              </div>
             );
           })}
         </div>

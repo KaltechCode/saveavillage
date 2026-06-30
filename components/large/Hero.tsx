@@ -30,11 +30,12 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[1800px]">
+    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[1800px]  rounded-[20px] overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
         loop
-        autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+        autoplay={{ delay: 2300 }}
+        speed={1000}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
@@ -67,7 +68,7 @@ export default function Hero() {
                 alt={slide.title}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover  rounded-[20px]"
               />
 
               <div

@@ -1,12 +1,14 @@
+"use client";
 import Image from "next/image";
-import React from "react";
 import Button from "../small/Button";
 import { HiBars3 } from "react-icons/hi2";
 import Link from "next/link";
 import { navlinks } from "@/constant/data";
 import { INAVLINK } from "@/constant/types";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
+  const path = usePathname();
   return (
     <nav
       className="
@@ -43,7 +45,7 @@ function Navbar() {
             <li>
               <Link
                 href={link.link}
-                className="cursor-pointer bold-p-text"
+                className={`cursor-pointer bold-p-text font-bold! ${path === link.link ? "text-primary border-b border-b-2 border-primary py-1 transition-all duration-300" : "text-black py-1"}`}
                 key={key}
               >
                 {link.label}

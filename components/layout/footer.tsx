@@ -233,6 +233,16 @@ function Footer() {
             <div className="flex justify-center gap-6">
               <a href="#">Terms & Conditions</a>
               <a href="#">Privacy Policy</a>
+              <p>
+                Designed by{" "}
+                <Link
+                  href="https://kaltechconsultancy.tech/"
+                  target="_blank"
+                  className="text-[#f6d648]"
+                >
+                  Kaltech
+                </Link>
+              </p>
             </div>
           </div>
         </div>
