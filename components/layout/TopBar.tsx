@@ -18,15 +18,15 @@ function TopBar() {
     py-3
   "
     >
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px] flex  items-center justify-between">
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%] flex  items-center justify-between">
         <div className="flex items-center gap-6">
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 p-text">
             <span>
               <BiSolidPhoneCall />
             </span>
             +1 (214) 642 7635
           </p>
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 p-text">
             {" "}
             <span>
               <MdEmail />
@@ -36,7 +36,7 @@ function TopBar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <span>Follow us:</span>
+          <span className="p-text">Follow us:</span>
           <span>
             <Link
               href={"https://www.facebook.com"}

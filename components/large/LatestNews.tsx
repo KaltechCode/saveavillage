@@ -8,7 +8,7 @@ function LatestNews() {
   return (
     <div className="relative">
       <section className="section-padding pt-[4em] md:py-[5em] lg:py-[6em]">
-        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
           {/* Header */}
           <div className="flex flex-col items-center gap-4 mb-8 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:justify-between md:justify-between md:flex-row">
             <div className="flex flex-col gap-2 justify-center">

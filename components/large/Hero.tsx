@@ -30,7 +30,7 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[1800px]  rounded-[20px] overflow-hidden">
+    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[80%]  rounded-[20px] overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
         loop

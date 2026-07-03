@@ -16,7 +16,7 @@ function Navbar() {
    lg:flex
     items-center
     justify-between
-    w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px]
+    w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]
     py-4
   "
     >

@@ -8,9 +8,9 @@ import Image from "next/image";
 
 function About() {
   return (
-    <section className="h-auto mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem]">
+    <section className="h-auto xl:min-h-screen mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem]">
       <div className="">
-        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
           <div
             className="
             w-full
@@ -18,10 +18,7 @@ function About() {
         grid-cols-1
         gap-5
         mobile-landscape:grid-cols-2
-        mobile-landscape:items-center
-        md:grid-cols-7
-        xl:grid-cols-2
-        lg:gap-20
+        mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20
       "
           >
             {/* Left Side */}
@@ -37,8 +34,8 @@ function About() {
                 <Image
                   src="/heart-2.png"
                   alt=""
-                  height={400}
-                  width={400}
+                  height={600}
+                  width={600}
                   className="w-full"
                 />
               </div>
@@ -60,9 +57,9 @@ function About() {
            mt-7
           "
               >
-                Helping Each Other can Make
+                Helping Each Other can
                 <br />
-                World Better
+                Make World Better
               </h2>
 
               <p

@@ -20,7 +20,7 @@ function Events() {
     bg-[#22002d]
   "
     >
-      <div className=" relative top-0 left-0 py-[4em] md:py-[6em] lg:py-[10em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+      <div className=" relative top-0 left-0 py-[4em] md:py-[6em] lg:py-[10em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 mb-8 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:justify-between md:justify-between md:flex-row">
           <div className="flex flex-col gap-2 justify-center">

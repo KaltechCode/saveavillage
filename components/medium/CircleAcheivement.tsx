@@ -3,7 +3,7 @@ import React from "react";
 
 function CircleAcheivement({ item }: { item: IACHEIVEMENT }) {
   return (
-    <div className="relative top-0 left-0 h-60 w-60 mobile-landscape:h-45 mobile-landscape:w-45 border-2 border-white rounded-full  overflow-hidden group">
+    <div className="relative top-0 left-0 h-60 w-60 mobile-landscape:h-45 mobile-landscape:w-45 border-5 overflow-hidden border-white rounded-full  overflow-hidden group">
       <div
         className={`absolute z-10 left-0 top-0 w-full h-full`}
         style={{ backgroundImage: `url(${item.image})` }}

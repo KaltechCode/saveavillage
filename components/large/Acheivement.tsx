@@ -12,7 +12,7 @@ function Acheivement() {
   const [index, setIndex] = useState<number>(0);
   return (
     <section className="bg-gradient-start">
-      <div className="py-[4em] md:py-[6em] lg:py-[10em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+      <div className="py-[4em] md:py-[6em] lg:py-[10em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
         <div className="flex flex-wrap justify-between gap-10">
           {acheivement.map((item: IACHEIVEMENT, key: number) => {
             return <CircleAcheivement item={item} key={key} />;

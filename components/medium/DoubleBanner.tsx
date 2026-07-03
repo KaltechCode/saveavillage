@@ -17,7 +17,7 @@ export default function VolunteerDonateSection() {
         "
       >
         {/* Volunteer */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden ">
           <div
             className="
               absolute
@@ -49,6 +49,7 @@ export default function VolunteerDonateSection() {
               md:py-14
 
               lg:px-16
+              xl:pl-[10vw]
             "
           >
             <h3

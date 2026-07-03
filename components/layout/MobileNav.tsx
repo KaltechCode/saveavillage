@@ -19,7 +19,7 @@ export default function MobileMenu() {
   return (
     <>
       {/* Header */}
-      <header className="lg:hidden flex items-center justify-between bg-white py-4  w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1800px]">
+      <header className="lg:hidden flex items-center justify-between bg-white py-4  w-[90%] mx-auto ]">
         <Image
           src="/save-a-vilage-logo.png"
           height={200}

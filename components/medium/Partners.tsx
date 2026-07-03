@@ -10,7 +10,7 @@ function Partners() {
   ];
   return (
     <div className="bg-[#F8F9FA] md:mt-10 xl:mt-16 py-[3em] md:py-[5em] lg:py-[7em]">
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
         <p className="hero-label flex items-center gap-3">
           <span>
             <FaHeart className="text-primary" />

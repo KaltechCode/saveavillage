@@ -13,7 +13,7 @@ function Programs() {
   return (
     <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24 ">
       {/* Background Shape */}
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px]">
+      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
         <div
           className="
           absolute
