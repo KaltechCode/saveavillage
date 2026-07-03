@@ -8,7 +8,7 @@ import Image from "next/image";
 
 function About() {
   return (
-    <section className="h-auto xl:min-h-screen mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem]">
+    <section className="h-auto xl:min-h-screen mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem] flex items-center justify-center">
       <div className="">
         <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
           <div
