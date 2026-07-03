@@ -26,14 +26,14 @@ function FormSection() {
                 Contact us
               </p>
               <h2 className="section-title-text text-white!">
-                Become a Partner
+                Drop us a message, our team usually replies within a few hours.
               </h2>
             </div>
 
             <Contact_form />
           </motion.div>
 
-          <div className="rounded-[20px] border border-gray-300 bg-[#f5f5f5] p-6 md:p-8 mobile-landscape:col-span-2 lg:col-span-2 h-max md-landscape:order-3 ">
+          <div className="rounded-[20px] border border-gray-300 bg-[#f5f5f5] p-6 md:p-8 mobile-landscape:col-span-2 lg:col-span-2  md-landscape:order-3 ">
             <h3 className="title-text mb-2!">Quick Contacts</h3>
 
             <p className="">
