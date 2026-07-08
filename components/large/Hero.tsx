@@ -30,7 +30,7 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[90%] mx-auto mt-7 lg:max-w-[1200px] xl:max-w-[80%]  rounded-[20px] overflow-hidden">
+    <section className="relative  w-[95%] mx-auto mt-7   rounded-[20px] overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
         loop
@@ -55,7 +55,6 @@ export default function Hero() {
               className="
                 relative
                 overflow-hidden
-                rounded-[20px]
               h-[400px]
                 mobile-landscape:h-[400px]
                 md:h-[500px]
@@ -68,7 +67,7 @@ export default function Hero() {
                 alt={slide.title}
                 fill
                 priority
-                className="object-cover  rounded-[20px]"
+                className="object-cover "
               />
 
               <div

@@ -18,7 +18,7 @@ function TopBar() {
     py-3
   "
     >
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%] flex  items-center justify-between">
+      <div className="w-[90%] mx-auto w-[95%] flex  items-center justify-between">
         <div className="flex items-center gap-6">
           <p className="flex items-center gap-2 p-text">
             <span>

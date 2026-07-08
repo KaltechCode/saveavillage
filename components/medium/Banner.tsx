@@ -85,13 +85,13 @@ export function Banner() {
         {/* Wave Bottom */}
         <div className="absolute bottom-0 left-0 w-full leading-none">
           <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
-            <svg
+            {/* <svg
               viewBox="0 0 1440 120"
               preserveAspectRatio="none"
               className="block w-full h-[40px] fill-white"
             >
               <path d="M0,80 C40,20 80,120 120,80 C160,40 200,120 240,80 C280,40 320,120 360,80 C400,40 440,120 480,80 C520,40 560,120 600,80 C640,40 680,120 720,80 C760,40 800,120 840,80 C880,40 920,120 960,80 C1000,40 1040,120 1080,80 C1120,40 1160,120 1200,80 C1240,40 1280,120 1320,80 C1360,40 1400,120 1440,80 L1440,120 L0,120 Z" />
-            </svg>
+            </svg> */}
           </div>
         </div>
       </div>

@@ -13,50 +13,10 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="pt-60 md:pt-32">
+    <footer className="pt-20 md:pt-7">
       <div className="bg-[#22002d] text-white relative bottom-0 left-0 flex items-center flex-col">
-        {/* Contact Bar */}
-        <div className="mx-auto absolute -top-32 mobile-landscape:-top-24 lg:-top-16 md:-top-24 w-[90%] mobile-landscape:w-full max-w-[1200px] 2xl:max-w-[80%]">
-          <div className=" bg-primary flex px-4 py-8 rounded-2xl flex-col gap-8 mobile-landscape:grid mobile-landscape:grid-cols-2 md:grid  md:grid-cols-2 lg-grid-cols-3 lg:rounded-b-2xl lg:flex lg:flex-row lg:justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                <FaLocationDot className="text-primary" size={20} />
-              </div>
-
-              <div>
-                <p className="text-xs">Address</p>
-                <p className="title-text text-white!">
-                  4648 Dallas Road TX, 19206
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                <MdEmail className="text-primary" size={20} />
-              </div>
-
-              <div>
-                <p className="text-xs">Send Email</p>
-                <p className="title-text text-white!">info@saveavillage.org</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                <BiSolidPhoneCall className="text-primary" size={20} />
-              </div>
-
-              <div>
-                <p className="text-xs">Call Us</p>
-                <p className="title-text text-white!">+1 (214) 642 7635</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Main Footer */}
-        <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto px-4 py-14  max-w-[1200px] 2xl:max-w-[80%]">
+        <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] ">
           <div className="grid grid-cols-1 gap-12 mobile-landscape:grid-cols-3 md:grid-cols-2 lg:grid-cols-11 xl:grid-cols-12">
             {/* Column 1 */}
             <div className="lg:col-span-3">
@@ -69,8 +29,9 @@ function Footer() {
               />
 
               <p className="sm-p-text text-white mb-6 mt-7">
-                Phasellus ultricies aliquam volutpat ullamcorper laoreet neque,
-                a lacinia curabitur lacinia mollis
+                Filling gaps where support is needed most in our communities,
+                creating opportunities to positively impact lives in education,
+                safe housing, and life skills development.
               </p>
               <div className="mt-7">
                 {" "}
@@ -109,68 +70,7 @@ function Footer() {
 
             {/* Column 3 */}
             <div className="lg:col-span-3">
-              <h3 className="title-text mb-5 text-white!">Recent Posts</h3>
-
-              <div className="space-y-5 mt-7">
-                <div className="flex gap-3">
-                  <div className="w-16 h-16 rounded-md overflow-hidden">
-                    <Image
-                      height={50}
-                      width={50}
-                      src={"/save-a-village-feeding-the-poor.jpg"}
-                      alt="Save a village image"
-                      className="h-16 w-30"
-                    />
-                  </div>
-
-                  <div className="">
-                    <p className="bold-p-text mb-2">May 12, 2025</p>
-
-                    <p className="text-sm ">
-                      There are many variations of passages
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="w-16 h-16 rounded-md overflow-hidden">
-                    <Image
-                      height={50}
-                      width={50}
-                      src={"/save-a-village-sharing-moment-with-poor.jpg"}
-                      alt="Save a village image"
-                      className="h-16 w-30"
-                    />
-                  </div>
-                  <div>
-                    <p className="bold-p-text mb-2">May 12, 2025</p>
-
-                    <p className="text-sm">
-                      There are many variations of passages
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Column 4 */}
-            <div className="lg:col-span-3">
-              <h3 className="title-text mb-5 text-white!">Contact Us</h3>
-
-              <div className="space-y-4 mb-6 mt-7">
-                <p className="flex gap-2 items-center">
-                  <span>
-                    <MdEmail size={20} className="text-white" />
-                  </span>
-                  info@saveavillageusa.org
-                </p>
-                <p className="flex items-center gap-2">
-                  <span>
-                    <BiSolidPhoneCall className="text-white" size={20} />
-                  </span>
-                  +1 (214) 642 7635
-                </p>
-              </div>
+              <h3 className="title-text mb-5 text-white!">Follow Us</h3>
 
               <div className="flex gap-2 mt-7">
                 <div className="w-9 h-9 border border-gray-700!  flex justify-center items-center">
@@ -184,33 +84,53 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="flex gap-3 p-1 bg-white mt-7 rounded-full">
+              <div className="flex gap-3 p-1 bg-white mt-7 rounded-full w-max">
                 <input
                   type="email"
                   placeholder="Your Email Address"
-                  className="w-full h-12 px-4 text-black bg-white rounded-full"
+                  className="w-full h-12 px-4 text-black bg-white rounded-full focus:outline-none"
                 />
 
                 <button
-                  className="
-              w-12
-              w-12
-              min-w-12
-              bg-primary
-              rounded-full
-              flex justify-center items-center min-
-                
+                  className="h-12 w-12 min-w-12 bg-primary rounded-full flex justify-center items-center min-   
             "
                 >
                   <FaAnglesRight className="text-white" size={14} />
                 </button>
               </div>
             </div>
+
+            {/* Column 4 */}
+            <div className="lg:col-span-3">
+              <h3 className="title-text mb-5 text-white!">Contact Us</h3>
+
+              <div className="space-y-4 mb-6 mt-7">
+                <p className="flex gap-2 items-center">
+                  <span>
+                    <MdEmail size={20} className="text-white" />
+                  </span>
+                  info@saveavillageusa.org{" "}
+                </p>
+                <p className="flex items-center gap-2">
+                  <span>
+                    <BiSolidPhoneCall className="text-white" size={20} />
+                  </span>
+                  +1(214) 642 7635
+                </p>
+                <p className="flex items-center gap-2">
+                  <span>
+                    <FaLocationDot className="text-white" size={20} />
+                  </span>
+                  2733 Franklin Dr,
+                  <br /> Mesquite, TX 75150
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/10  w-full bg-primary ">
           <div
             className="
         container
