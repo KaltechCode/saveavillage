@@ -15,13 +15,12 @@ function EventCard({ event }: { event: IEvent }) {
             gap-5
 
             mobile-landscape:grid
-            mobile-landscape:grid-cols-1
-            md:grid lg:grid-cols-2
-          "
+            mobile-landscape:grid-cols-1 2xl:gap-16
+            xl:grid lg:grid-cols-2 xl:aspect-[8/7] h-full 2xl:aspect-[3/3] 3k:aspect-[6/3] 4k:aspect-[7/4] items-center"
     >
       {/* Image */}
       <div
-        className={`relative shrink-0 w-full bg-[url(${event.image})]  h-[280px] rounded-lg lg:h-full object-cover bg-center bg-no-repeat`}
+        className={`relative w-full bg-[url(${event.image})] h-[250px] xl:h-[80%]  rounded-lg object-cover bg-center bg-no-repeat`}
         style={{
           backgroundImage: `url(${event.image})`,
           backgroundSize: "cover",

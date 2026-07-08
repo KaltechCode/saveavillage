@@ -11,7 +11,7 @@ function HomeContact() {
         <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2">
           {/* Form section*/}
           <motion.div
-            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5 rounded-md"
+            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5 rounded-md xl:aspect-[8/8] flex justify-center flex-col"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -34,7 +34,7 @@ function HomeContact() {
 
           {/* image */}
 
-          <div className="w-full h-[500px] lg:h-full max-h-[620px] relative md:hidden lg:grid rounded-md overflow-hidden bg-[url(/save-a-village-poor-boy.jpg)] bg-center bg-cover">
+          <div className="w-full lg:h-full relative md:hidden lg:grid rounded-md overflow-hidden bg-[url(/save-a-village-poor-boy.jpg)] bg-center bg-cover xl:aspect-[8/8]">
             <motion.div
               className="h-full w-full bg-background-grey left-0 top-0 absolute z-90"
               initial={{ scaleY: 1 }}

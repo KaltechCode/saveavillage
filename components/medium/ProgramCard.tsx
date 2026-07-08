@@ -12,18 +12,18 @@ function ProgramCard({ program }: { program: IProgram }) {
                 rounded-[18px]
                 bg-[#fafafa]
                 p-4
+                aspect-square
               "
     >
-      <div className="relative mb-5">
+      <div className="relative mb-5 h-[50%]">
         <Image
           src={program.image}
           alt={program.title}
           width={300}
           height={200}
           className="
-                    h-[180px]
+          h-full
                     w-full
-                    rounded-[14px]
                     object-cover
                   "
         />

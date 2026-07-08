@@ -13,21 +13,23 @@ function BlogCard({ blog }: { blog: IBlog }) {
             overflow-hidden
             rounded-[20px]
             bg-white
+            lg:aspect-[8/13]
+            xl:aspect-[8/11]
+            2xl:aspect-[8/9]
+            3k:aspect-[8/8]
+            4k:aspect-[8/7]
+            shadow-md
           "
     >
       {/* Image */}
-      <div className="relative">
+      <div className="relative mobile-landscape:h-[45%] lg:h-[50%] xl:h-[50%] 3k:h-[55%] 4k:h-[60%]">
         <img
           src={blog.image}
           alt={blog.title}
           className="
                 w-full
-                h-[220px]
                 object-cover
-                xsm:h-[200px]
-                sm:h-[240px]
-                md:h-[300px]
-                lg:h-[350px]"
+                h-full"
         />
 
         <div className="absolute bottom-2 right-4 bg-primary text-white flex flex-col items-center justify-center h-16 w-16 rounded-full">
@@ -37,7 +39,7 @@ function BlogCard({ blog }: { blog: IBlog }) {
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="p-5 py-10">
         <div
           className={`
                 flex
@@ -63,7 +65,7 @@ function BlogCard({ blog }: { blog: IBlog }) {
 
         <h3 className=" title-text mb-7">{blog.title}</h3>
 
-        <div className="border-t border-gray-200 pt-4">
+        <div className="border-t border-gray-200 mt-4 pt-4">
           <a
             href={`/blog/${blog.slug}`}
             className="

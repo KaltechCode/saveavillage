@@ -100,14 +100,11 @@ function Events() {
           }}
           className=""
           breakpoints={{
-            480: {
+            650: {
               slidesPerView: 2,
             },
-            960: {
-              slidesPerView: 1,
-              spaceBetween: 15,
-            },
-            1200: {
+
+            1024: {
               slidesPerView: 2,
               spaceBetween: 15,
             },
