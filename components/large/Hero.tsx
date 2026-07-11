@@ -12,15 +12,15 @@ import Button from "../small/Button";
 
 const slides = [
   {
-    image: "/save-a-village-hero-1.jpg",
+    image: "/images/SAV-Team-1.webp",
     title: "Empowering Hope Futures Lives Through Giving",
   },
   {
-    image: "/save-a-village-donating-food.jpg",
+    image: "/images/SAV-Team-2.webp",
     title: "Supporting Communities Through Charity",
   },
   {
-    image: "/save-a-village-create-happy-moment.jpg",
+    image: "/images/SAV-Team-3.webp",
     title: "Creating Better Opportunities Together",
   },
 ];
@@ -30,7 +30,7 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[95%] mx-auto mt-7   rounded-[20px] overflow-hidden">
+    <section className="relative  w-[95%] mx-auto mt-7 rounded-[20px] overflow-hidden h-[calc(100vh-200px)] max-h-[1200px]">
       <Swiper
         modules={[Navigation, Autoplay]}
         loop
@@ -48,6 +48,7 @@ export default function Hero() {
             navigation.nextEl = nextRef.current;
           }
         }}
+        className="h-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index + 1}>
@@ -59,7 +60,7 @@ export default function Hero() {
                 mobile-landscape:h-[400px]
                 md:h-[500px]
                 lg:h-[650px]
-                xl:h-[750px]
+                xl:h-full
               "
             >
               <Image
@@ -92,7 +93,7 @@ export default function Hero() {
                   lg:px-20
                 "
               >
-                <div className="xl:w-[65%]">
+                <div className="xl:w-[65%] 3k:w-[50%]">
                   <p className="hero-label text-white flex gap-2 items-center">
                     <span className="">
                       <FaHeart className="text-primary" />
@@ -123,6 +124,7 @@ export default function Hero() {
       </Swiper>
 
       {/* Bottom Navigation */}
+
       <div
         className="
           absolute
@@ -131,14 +133,8 @@ export default function Hero() {
           -translate-x-[55%]
           mobile-landscape:-translate-x-[50%]
           z-20
-          w-[50%]
-          lg:w-[38%]
-          xl:w-[35%]
-          max-auto
-           display: flex;
-  align-items: center;
-  justify-content: center;
-
+          w-[50%] lg:w-[38%] xl:w-[35%] max-auto
+           flex items-center justify-between
         "
       >
         <div className="hero-nav w-[110%]">
@@ -153,30 +149,55 @@ export default function Hero() {
             ←
           </button>
 
-          <div className="flex">
-            <Image
-              src="/save-a-village-hero-1.jpg"
-              alt=""
-              width={100}
-              height={100}
-              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
-            />
+          <div className="flex w-[228px] justify-center">
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              loop
+              autoplay={{ delay: 2300 }}
+              speed={1000}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              onBeforeInit={(swiper) => {
+                const navigation = swiper.params.navigation;
 
-            <Image
-              src="/save-a-village-donating-food.jpg"
-              alt=""
-              width={40}
-              height={40}
-              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
-            />
-
-            <Image
-              src="/save-a-village-create-happy-moment.jpg"
-              alt=""
-              width={40}
-              height={40}
-              className="rounded-full border-2 h-12 w-12 border-white overflow-hidden object-cover"
-            />
+                if (navigation && typeof navigation === "object") {
+                  navigation.prevEl = prevRef.current;
+                  navigation.nextEl = nextRef.current;
+                }
+              }}
+              slidesPerView={3}
+              className="h-full"
+              spaceBetween={30}
+            >
+              {[
+                "/images/SAV-Team-1.webp",
+                "/images/SAV-Team-2.webp",
+                "/images/SAV-Team-3.webp",
+                "/images/SAV-Team-1.webp",
+                "/images/SAV-Team-2.webp",
+                "/images/SAV-Team-3.webp",
+              ].map((item, index) => {
+                return (
+                  <SwiperSlide key={index + 1} className="">
+                    {({ isActive }) => (
+                      <div
+                        className={`flex justify-center items-center h-14 w-14 ${isActive ? " p-1 border bc border-2 border-amber-800 rounded-full" : "p-1"}`}
+                      >
+                        <Image
+                          src={item}
+                          alt=""
+                          width={100}
+                          height={100}
+                          className={`rounded-full h-full w-full  border-white overflow-hidden object-cover`}
+                        />
+                      </div>
+                    )}
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
           </div>
 
           <button

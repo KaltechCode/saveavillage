@@ -13,12 +13,7 @@ function About() {
         <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
           <div
             className="
-            w-full
-        grid
-        grid-cols-1
-        gap-5
-        mobile-landscape:grid-cols-2
-        mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20
+            w-full grid grid-cols-1 gap-5 mobile-landscape:grid-cols-2 mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20
       "
           >
             {/* Left Side */}
@@ -27,14 +22,14 @@ function About() {
               <div
                 className="
             inset-0
-           h-[400px]
+           h-[200px]
             md:block
           "
               >
                 <Image
-                  src="/heart-2.png"
+                  src="/images/SAV-About-heart-image.webp"
                   alt=""
-                  height={600}
+                  height={400}
                   width={600}
                   className="w-full"
                 />

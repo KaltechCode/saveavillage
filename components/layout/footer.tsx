@@ -16,7 +16,7 @@ function Footer() {
     <footer className="pt-20 md:pt-7">
       <div className="bg-[#22002d] text-white relative bottom-0 left-0 flex items-center flex-col">
         {/* Main Footer */}
-        <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] ">
+        <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] lg:max-w-[1200px] xl:max-w-[80%]">
           <div className="grid grid-cols-1 gap-12 mobile-landscape:grid-cols-3 md:grid-cols-2 lg:grid-cols-11 xl:grid-cols-12">
             {/* Column 1 */}
             <div className="lg:col-span-3">

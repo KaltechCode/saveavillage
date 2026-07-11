@@ -134,43 +134,35 @@ export const programs: IProgram[] = [
     title: "Education Support",
     description:
       "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
+    image: "/images/Educational-Support.webp",
     slug: "education-support",
   },
   {
     id: 2,
-    title: "Education Support",
+    title: "Community Services",
     description:
       "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
+    image: "/images/Community-Services.webp",
     slug: "education-support",
   },
   {
     id: 3,
-    title: "Education Support",
+    title: "Financial literate",
     description:
       "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
+    image: "/images/Financial-literacy.webp",
     slug: "education-support",
   },
   {
     id: 4,
-    title: "Education Support",
+    title: "Counselling Services",
     description:
       "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
+    image: "/images/counceling-services.webp",
     slug: "education-support",
   },
   {
-    id: 3,
-    title: "Education Support",
-    description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
-    slug: "education-support",
-  },
-  {
-    id: 4,
+    id: 5,
     title: "Education Support",
     description:
       "We work together to make a lasting difference, helping people with kindness and hard work.",
