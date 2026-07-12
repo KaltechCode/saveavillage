@@ -13,7 +13,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="pt-20 md:pt-7">
+    <footer className="">
       <div className="bg-[#22002d] text-white relative bottom-0 left-0 flex items-center flex-col">
         {/* Main Footer */}
         <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] lg:max-w-[1200px] xl:max-w-[80%]">

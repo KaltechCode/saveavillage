@@ -8,32 +8,33 @@ import Image from "next/image";
 
 function About() {
   return (
-    <section className="h-auto xl:min-h-screen mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem] flex items-center justify-center">
+    <section className="h-auto  mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem] flex items-center justify-center">
       <div className="">
         <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
           <div
             className="
-            w-full grid grid-cols-1 gap-5 mobile-landscape:grid-cols-2 mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20
+            w-full grid grid-cols-1 gap-5 mobile-landscape:grid-cols-2 mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20 items-center
       "
           >
             {/* Left Side */}
-            <div className="md:col-span-3 xl:col-span-1">
+            <div className="md:col-span-3 xl:col-span-1 relative">
               {/* Background Shape */}
-              <div
-                className="
-            inset-0
-           h-[200px]
-            md:block
-          "
-              >
+              <div className="inset-0 h-full md:block ">
                 <Image
                   src="/images/SAV-About-heart-image.webp"
                   alt=""
-                  height={400}
-                  width={600}
-                  className="w-full"
+                  height={300}
+                  width={400}
+                  className="w-full aspect-[1/1]"
                 />
               </div>
+              <Image
+                src="/images/about-img-vector-1.png"
+                alt=""
+                height={400}
+                width={600}
+                className="w-full absolute bottom-0 -left-50 "
+              />
             </div>
 
             {/* Right Side */}

@@ -7,7 +7,7 @@ import { FaHeart } from "react-icons/fa6";
 function LatestNews() {
   return (
     <div className="relative">
-      <section className="section-padding pt-[4em] md:py-[5em] lg:py-[6em]">
+      <section className="section-padding pt-[4em] md:py-[5em] lg:py-[6em] xl:py-40 3k:py-64">
         <div className="w-[90%] mx-auto xl:max-w-[80%]">
           {/* Header */}
           <div className="flex flex-col items-center gap-4 mb-8 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:justify-between md:justify-between md:flex-row">
