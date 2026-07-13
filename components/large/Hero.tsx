@@ -76,7 +76,7 @@ export default function Hero() {
                   absolute
                   inset-0
 
-                  bg-[linear-gradient(90deg,rgba(38,7,53,.95)_0%,rgba(38,7,53,.7)_40%,rgba(38,7,53,.1)_100%)]
+                  bg-[linear-gradient(90deg,rgba(38,7,53,.65)_0%,rgba(38,7,53,.45)_40%,rgba(38,7,53,.1)_100%)]
                 "
               />
 
@@ -183,7 +183,7 @@ export default function Hero() {
                   <SwiperSlide key={index + 1} className="">
                     {({ isActive }) => (
                       <div
-                        className={`flex justify-center items-center h-14 w-14 ${isActive ? " p-1 border bc border-2 border-amber-800 rounded-full" : "p-1"}`}
+                        className={`flex justify-center items-center h-14 w-14 ${isActive ? " p-1 border bc border-2 border-primary rounded-full" : "p-1"}`}
                       >
                         <Image
                           src={item}
