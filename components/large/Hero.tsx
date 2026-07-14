@@ -34,7 +34,7 @@ export default function Hero() {
       <Swiper
         modules={[Navigation, Autoplay]}
         loop
-        autoplay={{ delay: 2300 }}
+        autoplay={{ delay: 3000 }}
         speed={1000}
         navigation={{
           prevEl: prevRef.current,
@@ -153,7 +153,7 @@ export default function Hero() {
             <Swiper
               modules={[Navigation, Autoplay]}
               loop
-              autoplay={{ delay: 2300 }}
+              autoplay={{ delay: 3000 }}
               speed={1000}
               navigation={{
                 prevEl: prevRef.current,
