@@ -20,6 +20,7 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   title: "Save a Village",
   description: "Save a Village",
+  keywords: "Save a village, saveavillage, charity donation",
 };
 
 export default function RootLayout({

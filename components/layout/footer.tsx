@@ -84,7 +84,11 @@ function Footer() {
                 </div>
               </div>
 
-              <div className="flex gap-3 p-1 bg-white mt-7 rounded-full w-max">
+              <div className=" mt-7 ">
+                <h3 className="title-text mb-5 text-white! ">Subscribe</h3>
+                <p>Get early access to.</p>
+              </div>
+              <div className="flex gap-3 p-1 bg-white mt-5 rounded-full w-max">
                 <input
                   type="email"
                   placeholder="Your Email Address"
