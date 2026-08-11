@@ -35,20 +35,20 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="mx-auto flex w-full flex-col gap-7 border border-gray-100 p-5 3k:p-12 rounded-md bg-white">
+    <div className="mx-auto flex w-full flex-col gap-7">
       {faqs.map((faq, index) => {
         const isOpen = activeIndex === index;
 
         return (
           <div
             key={index}
-            className="overflow-hidden border-b border-gray-100 last:border-none"
+            className="overflow-hidden rounded-medium border border-gray-300 bg-[#f3f3f3]"
           >
             <button
               onClick={() => toggleAccordion(index)}
-              className="flex w-full items-center justify-between px-6 py-6 text-left rounded-full "
+              className="flex w-full items-center justify-between px-6 py-6 text-left"
             >
-              <h3 className="pr-4 title-text">{faq.question}</h3>
+              <h3 className="pr-4 card-title">{faq.question}</h3>
 
               {isOpen ? (
                 <IoMdClose className="h-5 w-5 shrink-0 text-slate-500" />

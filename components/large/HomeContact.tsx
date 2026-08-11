@@ -7,7 +7,7 @@ import Contact_form from "../medium/Contact_Form";
 function HomeContact() {
   return (
     <section className="py-[3em] md:py-[6em]  lg:py-[10em] xl:py-40 3k:py-64  xl:flex xl:items-center">
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
+      <div className="w-[95%] mx-auto lg:max-w-[1200px] xl:max-w-[90%]">
         <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2">
           {/* Form section*/}
           <motion.div

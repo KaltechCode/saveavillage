@@ -6,17 +6,7 @@ function EventCard({ event }: { event: IEvent }) {
   return (
     <article
       key={event.id}
-      className="
-            bg-white
-            rounded-md
-            p-5
-            flex
-            flex-col
-            gap-5
-
-            mobile-landscape:grid
-            mobile-landscape:grid-cols-1 2xl:gap-16
-            xl:grid lg:grid-cols-2 xl:aspect-[8/7] h-full 2xl:aspect-[3/3] 3k:aspect-[6/3] 4k:aspect-[7/4] items-center"
+      className="bg-[#fafafa] rounded-md p-5 sm:p-10 600:p-4 md:p-7 900:p-10 lg:p-12 xl:p-5 flex flex-col gap-5 mobile-landscape:grid mobile-landscape:grid-cols-1 2xl:gap-16 xl:grid lg:grid-cols-2 xl:aspect-[8/7] h-full 2xl:aspect-[3/3] 3k:aspect-[6/3] 4k:aspect-[7/4] items-center"
     >
       {/* Image */}
       <div
@@ -63,7 +53,7 @@ function EventCard({ event }: { event: IEvent }) {
                 leading-tight
                 text-black
                 mb-4
-              "
+                line-clamp-2              "
         >
           {event.title}
         </h3>

@@ -41,15 +41,12 @@ export default function VolunteerDonateSection() {
             className="
               relative
               z-10
-
-              px-6
+              px-[2.5vw]
               py-10
-
-              md:px-10
+              md:px-[2.5vw]
               md:py-14
-
-              lg:px-16
-              xl:pl-[10vw]
+              lg:px-[2.5vw]
+              xl:pl-[5vw]
             "
           >
             <h3

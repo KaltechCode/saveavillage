@@ -1,15 +1,17 @@
+import Hero from "@/components/large/Hero";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/Header";
+import EventPage from "@/components/large/pages/EventPage";
 import Image from "next/image";
 import React from "react";
+import HeroBanner from "@/components/medium/HeroBanner";
 
 function page() {
   return (
-    <main className="h-screen w-screen flex flex-col">
+    <main className="">
       <Header />
-      <div className="flex-1 flex justify-center items-center">
-        <Image src="/coming-soon.gif" alt="" height={300} width={250} />
-      </div>
+      <HeroBanner text="Our Events" />
+      <EventPage />
       <Footer />
     </main>
   );

@@ -1,15 +1,18 @@
+import AccordionSection from "@/components/large/contact/AccordionSection";
+import Hero from "@/components/large/Hero";
+import Program from "@/components/large/pages/program";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/Header";
-import Image from "next/image";
-import React from "react";
+import HeroBanner from "@/components/medium/HeroBanner";
 
 function page() {
   return (
-    <main className="h-screen w-screen flex flex-col">
+    <main className="">
       <Header />
-      <div className="flex-1 flex justify-center items-center">
-        <Image src="/coming-soon.gif" alt="" height={300} width={250} />
-      </div>
+      {/* <Hero /> */}
+      <HeroBanner text="Our Programs" />
+      <Program />
+      <AccordionSection />
       <Footer />
     </main>
   );

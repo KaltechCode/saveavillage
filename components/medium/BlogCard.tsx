@@ -11,7 +11,7 @@ function BlogCard({ blog }: { blog: IBlog }) {
       key={blog.id}
       className="
             overflow-hidden
-            rounded-[20px]
+            rounded-md
             bg-white
             lg:aspect-[8/13]
             xl:aspect-[8/11]

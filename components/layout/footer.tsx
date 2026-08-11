@@ -16,7 +16,7 @@ function Footer() {
     <footer className="">
       <div className="bg-[#22002d] text-white relative bottom-0 left-0 flex items-center flex-col">
         {/* Main Footer */}
-        <div className="mt-32 mobile-landscape:mt-24 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] lg:max-w-[1200px] xl:max-w-[80%]">
+        <div className="mt-12 mobile-landscape:mt-16 md:mt-24 lg:mt-16 mx-auto py-14  w-[95%] xl:max-w-[95%]">
           <div className="grid grid-cols-1 gap-12 mobile-landscape:grid-cols-3 md:grid-cols-2 lg:grid-cols-11 xl:grid-cols-12">
             {/* Column 1 */}
             <div className="lg:col-span-3">
@@ -86,9 +86,9 @@ function Footer() {
 
               <div className=" mt-7 ">
                 <h3 className="title-text mb-5 text-white! ">Subscribe</h3>
-                <p>Get early access to.</p>
+                <p>Get early access to our events.</p>
               </div>
-              <div className="flex gap-3 p-1 bg-white mt-5 rounded-full w-max">
+              <div className="flex gap-3 p-1 bg-white mt-5 rounded-full w- mobile-landscape:w-full">
                 <input
                   type="email"
                   placeholder="Your Email Address"
@@ -126,7 +126,8 @@ function Footer() {
                     <FaLocationDot className="text-white" size={20} />
                   </span>
                   2733 Franklin Dr,
-                  <br /> Mesquite, TX 75150
+                  <br /> Mesquite, <br />
+                  TX 75150.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ function Programs() {
   return (
     <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24 ">
       {/* Background Shape */}
-      <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
+      <div className="w-[95%] mx-auto xl:max-w-[90%]">
         <div
           className="
           absolute
@@ -116,15 +116,24 @@ function Programs() {
               className=""
               breakpoints={{
                 480: {
-                  slidesPerView: 2,
+                  slidesPerView: 1,
                 },
+                600: { slidesPerView: 2, spaceBetween: 15 },
                 960: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
+                  slidesPerView: 2,
+                  spaceBetween: 50,
                 },
                 1200: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                1800: {
                   slidesPerView: 4,
-                  spaceBetween: 15,
+                  spaceBetween: 30,
+                },
+                2500: {
+                  slidesPerView: 5,
+                  spaceBetween: 50,
                 },
               }}
             >

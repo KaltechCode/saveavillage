@@ -21,7 +21,7 @@ function TeamCard({ team }: { team: ITeam }) {
         <div className="">
           {/* Image */}
           <div className="">
-            <Image
+            <img
               src={team.image}
               height={200}
               width={150}

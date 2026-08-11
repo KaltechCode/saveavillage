@@ -30,7 +30,7 @@ export default function Hero() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section className="relative  w-[95%] mx-auto mt-7 rounded-[20px] overflow-hidden h-[calc(100vh-200px)] max-h-[1200px]">
+    <section className="relative  w-[95%] mx-auto mt-7 rounded-[20px] overflow-hidden h-[calc(100vh-200px)] mobile-landscape:h-[400px] md:h-[600px] lg:h-[650px] xl:h-[750] max-h-[1200px]">
       <Swiper
         modules={[Navigation, Autoplay]}
         loop
@@ -56,11 +56,11 @@ export default function Hero() {
               className="
                 relative
                 overflow-hidden
-              h-[400px]
+                h-[100%]
                 mobile-landscape:h-[400px]
-                md:h-[500px]
+                md:h-[600px]
                 lg:h-[650px]
-                xl:h-full
+                xl:h-[750]
               "
             >
               <Image
@@ -93,7 +93,7 @@ export default function Hero() {
                   lg:px-20
                 "
               >
-                <div className="xl:w-[65%] 3k:w-[50%]">
+                <div className="600:w-[80%] md:w-[70%] xl:w-[65%] 3k:w-[50%]">
                   <p className="hero-label text-white flex gap-2 items-center">
                     <span className="">
                       <FaHeart className="text-primary" />
@@ -129,11 +129,14 @@ export default function Hero() {
         className="
           absolute
           bottom-0
-          left-1/2
-          -translate-x-[55%]
+          left-[5%]
+          sm:left-[15%]
+          mobile-landscape:left-1/2
+          lg:left-[31%]
+          xl:left-[32.5%]
           mobile-landscape:-translate-x-[50%]
           z-20
-          w-[50%] lg:w-[38%] xl:w-[35%] max-auto
+          w-[90%] sm:w-[70%] lg:w-[38%] xl:w-[35%] max-auto
            flex items-center justify-between
         "
       >

@@ -10,7 +10,7 @@ function About() {
   return (
     <section className="h-auto  mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem] flex items-center justify-center">
       <div className="">
-        <div className="w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
+        <div className="w-[95%] mx-auto lg:max-w-[1200px] xl:max-w-[90%]">
           <div
             className="
             w-full grid grid-cols-1 gap-5 mobile-landscape:grid-cols-2 mobile-landscape:items-center md:grid-cols-7 xl:grid-cols-2 lg:gap-20 items-center
