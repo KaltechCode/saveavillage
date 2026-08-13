@@ -2,12 +2,14 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, EffectFade } from "swiper/modules";
 import { Autoplay } from "swiper/modules";
 import { FaHeart } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
 import Button from "../small/Button";
 import { becomePartnerLink } from "@/constant/data";
 
@@ -33,22 +35,24 @@ export default function Hero() {
   return (
     <section className="relative  w-[95%] mx-auto mt-7 rounded-[20px] overflow-hidden h-[calc(100vh-200px)] mobile-landscape:h-[400px] md:h-[600px] lg:h-[650px] xl:h-[750] max-h-[1200px]">
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation, Autoplay, EffectFade]}
         loop
-        autoplay={{ delay: 3000 }}
-        speed={1000}
+        autoplay={{ delay: 2000 }}
+        speed={4000}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
-        onBeforeInit={(swiper) => {
-          const navigation = swiper.params.navigation;
+        effect={"fade"}
+        fadeEffect={{ crossFade: true }}
+        // onBeforeInit={(swiper) => {
+        //   const navigation = swiper.params.navigation;
 
-          if (navigation && typeof navigation === "object") {
-            navigation.prevEl = prevRef.current;
-            navigation.nextEl = nextRef.current;
-          }
-        }}
+        //   if (navigation && typeof navigation === "object") {
+        //     navigation.prevEl = prevRef.current;
+        //     navigation.nextEl = nextRef.current;
+        //   }
+        // }}
         className="h-full"
       >
         {slides.map((slide, index) => (

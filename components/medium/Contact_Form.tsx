@@ -30,11 +30,11 @@ function Contact_form() {
           name=""
           id=""
           rows={4}
-          className="border-[#ffffff40] border placeholder:text-white! rounded-medium placeholder:text-dull-text text-dull-text px-5 py-4 font-[15px] lg:col-span-2 mobile-landscape:col-span-2 md:col-span-2 focus:outline-none outline-none"
+          className="border-[#ffffff40] border text-white placeholder:text-white! rounded-medium placeholder:text-dull-text text-dull-text px-5 py-4 font-[15px] lg:col-span-2 mobile-landscape:col-span-2 md:col-span-2 focus:outline-none outline-none"
           placeholder="Type Your Message Here"
         ></textarea>
 
-        <div className="flex gap-2 bg-black py-2 pl-1 w-max rounded-full lg:mt-7">
+        <div className="flex gap-2 bg-[#22002d] hover:bg-white py-2 pl-1 w-max rounded-full lg:mt-7 group transition-all duration-500">
           <div
             className={`bg-white p-3 rounded-full flex justify-center items-center`}
           >
@@ -47,7 +47,7 @@ function Contact_form() {
           <input
             type="submit"
             value={"Send Message"}
-            className={`inline-flex btn pl-1 gap-2 pr-6 py-2 bg-black text-white }`}
+            className={`inline-flex btn pl-1 gap-2 pr-6 py-2  text-white group-hover:text-[#22002d] transition-all duration-500}`}
           />
         </div>
       </div>

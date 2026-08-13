@@ -109,25 +109,37 @@ function Footer() {
               <h3 className="title-text mb-5 text-white!">Contact Us</h3>
 
               <div className="space-y-4 mb-6 mt-7">
-                <p className="flex gap-2 items-center">
+                <Link
+                  href={"mailto:info@saveavillageusa.org"}
+                  className="flex gap-2 items-center cursor-pointer"
+                >
                   <span>
                     <MdEmail size={20} className="text-white" />
                   </span>
                   info@saveavillageusa.org{" "}
-                </p>
-                <p className="flex items-center gap-2">
+                </Link>
+                <Link
+                  href={"tel:+1(214) 642 7635"}
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <span>
                     <BiSolidPhoneCall className="text-white" size={20} />
                   </span>
                   +1(214) 642 7635
-                </p>
-                <p className="flex items-center gap-2">
+                </Link>
+                <Link
+                  href={
+                    "https://www.google.com/maps/place/2733+Franklin+Dr+d+1525,+Mesquite,+TX+75150,+USA/@32.8000431,-96.6246014,17z/data=!3m1!4b1!4m5!3m4!1s0x864ea432d7547a1d:0xa7e69827c209bfcb!8m2!3d32.8000431!4d-96.6220211?entry=ttu&g_ep=EgoyMDI2MDgxMC4wIKXMDSoASAFQAw%3D%3D"
+                  }
+                  className="flex items-center gap-2 cursor-pointer"
+                  target="_blank"
+                >
                   <span>
                     <FaLocationDot className="text-white" size={20} />
                   </span>
                   2733 Franklin D,
                   <br /> Apartment 1525, <br /> Mesquite, TX 75150
-                </p>
+                </Link>
               </div>
             </div>
           </div>

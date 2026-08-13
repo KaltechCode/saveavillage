@@ -20,19 +20,25 @@ function TopBar() {
     >
       <div className="w-[90%] mx-auto w-[95%] flex  items-center justify-between">
         <div className="flex items-center gap-6">
-          <p className="flex items-center gap-2 p-text">
+          <Link
+            href={"tel: +1 (214) 642 7635"}
+            className="flex items-center gap-2 p-text cursor-pointer"
+          >
             <span>
               <BiSolidPhoneCall />
             </span>
             +1 (214) 642 7635
-          </p>
-          <p className="flex items-center gap-2 p-text">
+          </Link>
+          <Link
+            href={"mailto:info@saveavillageusa.org"}
+            className="flex items-center gap-2 p-text cursor-pointer"
+          >
             {" "}
             <span>
               <MdEmail />
             </span>
             info@saveavillageusa.org
-          </p>
+          </Link>
         </div>
 
         <div className="flex items-center gap-4">

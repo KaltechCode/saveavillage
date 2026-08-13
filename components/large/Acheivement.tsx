@@ -25,7 +25,7 @@ function Acheivement() {
           {/* Background Shape */}
           <div className="relative z-10">
             {/* Header */}
-            <div className=" flex flex-col gap-8 mb-10 md:flex-row md:items-center md:justify-between">
+            {/* <div className=" flex flex-col gap-8 mb-10 md:flex-row md:items-center md:justify-between">
               <div>
                 <motion.p
                   className="hero-label text-white! mb-2 flex items-center gap-2"
@@ -73,7 +73,7 @@ function Acheivement() {
                   primary={true}
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Cards */}
 
@@ -84,7 +84,11 @@ function Acheivement() {
               </div> */}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-7 lg:gap-10 bg-white rounded-lg w-full p-5 lg:p-10">
+          <div className="">
+            <Control index={index} setIndex={setIndex} />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-7 lg:gap-10 bg-white rounded-lg w-full p-5 lg:p-10 mt-16 lg:mt-24">
             {/* image */}
             <div
               className="col-span-1 py-5 lg:col-span-2 rounded-lg overflow-hidden h-[400px] md:"
@@ -136,9 +140,9 @@ function Acheivement() {
             </div>
           </div>
 
-          <div className="mt-16 lg:mt-24">
+          {/* <div className="mt-16 lg:mt-24">
             <Control index={index} setIndex={setIndex} />
-          </div>
+          </div> */}
         </section>
       </div>
     </section>

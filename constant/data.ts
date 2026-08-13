@@ -22,7 +22,7 @@ export const footerLinks = [
   },
   {
     link: "Our Program",
-    href: "/our-programs",
+    href: "/programs",
   },
   {
     link: "Events",
@@ -30,7 +30,7 @@ export const footerLinks = [
   },
   {
     link: "Contact Us",
-    href: "Ccontact-us",
+    href: "contact-us",
   },
 ];
 
@@ -320,6 +320,6 @@ export const navlinks: INAVLINK[] = [
 ];
 
 export const paymentLink =
-  "https://cliq.zoho.com/company/904814955/chats/2243222046281379970/messages/1786467065862_2413532290865";
+  "https://www.paypal.com/donate/?hosted_button_id=L3H6DYJGXZDLW";
 
-export const becomePartnerLink = "#become-partner";
+export const becomePartnerLink = "/contact-us";

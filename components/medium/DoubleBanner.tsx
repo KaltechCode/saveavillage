@@ -28,7 +28,7 @@ export default function VolunteerDonateSection() {
             className="
               absolute
               inset-0
-              bg-[url('/save-a-village-donating-food.jpg')]
+              bg-[url('/images/Educational-Support.webp')]
               bg-cover
               bg-center
               opacity-20
@@ -130,7 +130,7 @@ export default function VolunteerDonateSection() {
             className="
               absolute
               inset-0
-              bg-[url('/save-a-village-beggar.jpg')]
+              bg-[url('/images/Community-Services.webp')]
               bg-cover
               bg-center
               opacity-10

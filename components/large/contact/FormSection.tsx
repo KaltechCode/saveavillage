@@ -23,7 +23,7 @@ function FormSection() {
                   y: [0, -10, 0, -10, 0],
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2.5,
                   repeat: Infinity,
                   ease: "easeOut",
                 }}

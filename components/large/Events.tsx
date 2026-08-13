@@ -51,12 +51,23 @@ function Events() {
         {/* Header */}
         <div className="flex flex-col items-center gap-4 mb-8 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:justify-between md:justify-between md:flex-row">
           <div className="flex flex-col gap-2 justify-center">
-            <div className="flex gap-2 justify-center mobile-landscape:justify-start md:justify-start">
+            <motion.p
+              className="flex gap-2 justify-center mobile-landscape:justify-start md:justify-start"
+              initial={{ y: 0 }}
+              animate={{
+                y: [0, -10, 0, -10, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                ease: "easeOut",
+              }}
+            >
               <span className="flex items-center gap-2">
                 <FaHeart className="text-primary mt-0.5" />
               </span>
               <span className="hero-label text-white! ">Upcoming Events</span>
-            </div>
+            </motion.p>
 
             <h2 className="section-title-text text-white!">Event Schedule</h2>
           </div>
