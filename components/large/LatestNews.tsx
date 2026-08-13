@@ -26,9 +26,10 @@ function LatestNews() {
 
             <Button
               label="All Blogs"
-              handler="#"
+              url="/blog"
               primary={true}
               iconColor="text-primary"
+              link={true}
             />
           </div>
 
