@@ -20,9 +20,10 @@ export default function Home() {
       <VolunteerDonateSection />
       <Programs />
       <Banner />
-      <HomeContact />
+
       <Events />
-      <LatestNews />
+      <HomeContact />
+      {/* <LatestNews /> */}
       <Footer />
     </main>
   );

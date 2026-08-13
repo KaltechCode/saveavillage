@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
-import React from "react";
 import Button from "../small/Button";
+import { motion } from "framer-motion";
+import { paymentLink } from "@/constant/data";
 
 export function Banner() {
   return (
@@ -49,7 +51,7 @@ export function Banner() {
                 text-center
               "
           >
-            <span
+            {/* <span
               className="
                   hero-label
                   text-primary
@@ -57,26 +59,32 @@ export function Banner() {
                 "
             >
               ♥ Make A Better Future
-            </span>
+            </span> */}
 
-            <h2
-              className="
-                  hero-title-text
-                  text-white
-                  mb-6
-                "
+            <motion.h2
+              className="hero-title-text text-white mb-6"
+              initial={{ scale: 1 }}
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             >
-              Children Need Your Help By
+              We Need Your Help By
               <br className="" />
               Donating Today
-            </h2>
+            </motion.h2>
 
             <div className="">
               <Button
                 label="Donate Now"
                 iconColor="text-primary"
                 primary={true}
-                handler="#"
+                url={paymentLink}
+                link={true}
               />
             </div>
           </div>

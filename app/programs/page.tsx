@@ -7,14 +7,19 @@ import HeroBanner from "@/components/medium/HeroBanner";
 
 function page() {
   return (
-    <main className="">
-      <Header />
-      {/* <Hero /> */}
-      <HeroBanner text="Our Programs" />
-      <Program />
-      <AccordionSection />
-      <Footer />
-    </main>
+    <>
+      <main className="">
+        <Header />
+        {/* <Hero /> */}
+        <HeroBanner
+          text="Our Programs"
+          image="bg-[url(/images/Educational-Support.webp)]"
+        />
+        <Program />
+        {/* <AccordionSection /> */}
+        <Footer />
+      </main>
+    </>
   );
 }
 

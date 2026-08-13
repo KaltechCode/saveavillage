@@ -9,19 +9,20 @@ import { FaHeart } from "react-icons/fa6";
 import "swiper/css";
 import "swiper/css/navigation";
 import Button from "../small/Button";
+import { becomePartnerLink } from "@/constant/data";
 
 const slides = [
   {
     image: "/images/SAV-Team-1.webp",
-    title: "Empowering Hope Futures Lives Through Giving",
+    title: "Passion for Impacting  Lives",
   },
   {
     image: "/images/SAV-Team-2.webp",
-    title: "Supporting Communities Through Charity",
+    title: "No Communities Left Behind",
   },
   {
     image: "/images/SAV-Team-3.webp",
-    title: "Creating Better Opportunities Together",
+    title: "Giving All We Can to Change Lives",
   },
 ];
 
@@ -93,26 +94,27 @@ export default function Hero() {
                   lg:px-20
                 "
               >
-                <div className="600:w-[80%] md:w-[70%] xl:w-[65%] 3k:w-[50%]">
-                  <p className="hero-label text-white flex gap-2 items-center">
+                <div className="600:w-[70%] md:w-[60%] xl:w-[55%] 3k:w-[40%]">
+                  {/* <p className="hero-label text-white flex gap-2 items-center">
                     <span className="">
                       <FaHeart className="text-primary" />
                     </span>{" "}
                     Change The World Together
-                  </p>
+                  </p> */}
 
                   <h1 className="hero-title-text text-white! leading-[1.2]!">
                     {slide.title}
                   </h1>
 
-                  <p className="hero-text text-white/90">
+                  {/* <p className="hero-text text-white/90">
                     It is a long established fact that a reader will be
                     distracted by readable content.
-                  </p>
+                  </p> */}
 
                   <Button
                     label="Join Us"
-                    handler="/"
+                    link={true}
+                    url={becomePartnerLink}
                     iconColor="text-primary"
                     primary={true}
                   />

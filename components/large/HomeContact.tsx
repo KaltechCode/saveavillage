@@ -8,7 +8,7 @@ function HomeContact() {
   return (
     <section className="py-[3em] md:py-[6em]  lg:py-[10em] xl:py-40 3k:py-64  xl:flex xl:items-center">
       <div className="w-[95%] mx-auto lg:max-w-[1200px] xl:max-w-[90%]">
-        <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2">
+        <div className="grid h-full gap-10 mobile-landscape: lg:grid-cols-2 lg:gap-16 2xl:gap-30">
           {/* Form section*/}
           <motion.div
             className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5 rounded-md xl:aspect-[8/8] flex justify-center flex-col"
@@ -18,12 +18,23 @@ function HomeContact() {
             transition={{ duration: 0.9 }}
           >
             <div className="">
-              <p className="flex gap-2 subtitle font-openSans justify-start! text-white! hero-label">
+              <motion.p
+                className="flex gap-2 subtitle font-openSans justify-start! items-center text-white! hero-label"
+                initial={{ y: 0 }}
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              >
                 <span>
                   <FaHeart />
                 </span>
                 Contact us
-              </p>
+              </motion.p>
               <h2 className="section-title-text text-white!">
                 Become a Partner
               </h2>
@@ -33,14 +44,13 @@ function HomeContact() {
           </motion.div>
 
           {/* image */}
-
-          <div className="w-full lg:h-full relative md:hidden lg:grid rounded-md overflow-hidden bg-[url(/save-a-village-poor-boy.jpg)] bg-center bg-cover xl:aspect-[8/8]">
+          <div className="w-full lg:h-full relative rounded-md overflow-hidden h-full bg-[url(/images/Community-Services.webp)] bg-cover bg-center">
             <motion.div
-              className="h-full w-full bg-background-grey left-0 top-0 absolute z-90"
+              className="h-full w-full bg-primary/55 left-0 top-0 absolute z-90"
               initial={{ scaleY: 1 }}
               whileInView={{ scaleY: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1.5 }}
               style={{ transformOrigin: "bottom" }}
             ></motion.div>
           </div>

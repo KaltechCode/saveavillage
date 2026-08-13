@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaHeart } from "react-icons/fa6";
@@ -5,8 +6,11 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Helping_Hand from "../small/Icons/Helping_Hande";
 import Button from "../small/Button";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { aboutText } from "@/constant/data";
 
-function About() {
+function About({ hideBtn }: { hideBtn?: boolean }) {
   return (
     <section className="h-auto  mt-8 pt-10 md:mt-16 pb-[4rem]  lg:p-[6rem] flex items-center justify-center">
       <div className="">
@@ -39,39 +43,54 @@ function About() {
 
             {/* Right Side */}
             <div className="md:col-span-4 xl:col-span-1">
-              <p className="hero-label text-primary! mb-3 flex items-center gap-2">
+              <motion.p
+                className="hero-label text-primary! mb-3 flex items-center gap-2"
+                initial={{ y: 0 }}
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              >
                 <span>
                   <FaHeart className="text-primary leading-[1.3]" />
                 </span>
                 About Us
+              </motion.p>
+
+              <motion.h2
+                className=" section-title-text mt-7"
+                initial={{ scaleY: 0, opacity: 0.5 }}
+                whileInView={{ scaleY: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35 }}
+                style={{ transformOrigin: "bottom" }}
+              >
+                Compassion is Our Strength
+              </motion.h2>
+
+              <p className="hero-text text-gray-600 mt-7">
+                We are purpose driven nonprofit organization committed to
+                uplifting low income families and underserved communities
+                through meaningful, sustainable support. At our core, we believe
+                that every individual, regardless of their circumstances,
+                deserves access to the fundamental resources that foster
+                dignity, stability, and opportunity.
               </p>
 
-              <h2
-                className="
-            section-title-text
-
-           mt-7
-          "
-              >
-                Helping Each Other can
-                <br />
-                Make World Better
-              </h2>
-
-              <p
-                className="
-            hero-text
-            text-gray-600
-            mt-7
-          "
-              >
-                Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                sit. The aspernatur aut odit aut fugit, sed quia consequuntur.
-              </p>
-
-              {/* Team */}
-              <div
-                className="
+              {hideBtn && (
+                <div
+                  dangerouslySetInnerHTML={{ __html: aboutText }}
+                  className="hero-text text-gray-600"
+                />
+              )}
+              {!hideBtn && (
+                <>
+                  <div
+                    className="
             flex
             flex-col
             gap-5
@@ -80,11 +99,11 @@ function About() {
             xl:items-center
             xl:justify-between
           "
-              >
-                <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className="
+                  >
+                    <div>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div
+                          className="
                   flex
                   items-center
                   justify-center
@@ -96,41 +115,43 @@ function About() {
                   bg-primary
                   text-white
                 "
-                    >
-                      <Helping_Hand />
+                        >
+                          <Helping_Hand />
+                        </div>
+
+                        <h3 className="title-text mb-0">
+                          Passion for Impacting Lives
+                        </h3>
+                      </div>
+
+                      <div className="flex gap-2 items-center">
+                        <IoMdCheckmarkCircleOutline className="text-primary" />
+
+                        <p className="sm-p-text mb-0!">
+                          Giving All We Can to Change Lives
+                        </p>
+                      </div>
                     </div>
-
-                    <h3 className="title-text mb-0">Start Helping Team</h3>
                   </div>
 
-                  <div className="flex gap-2 items-center">
-                    <IoMdCheckmarkCircleOutline className="text-primary" />
-
-                    <p className="sm-p-text mb-0!">
-                      There are many variations of solve
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Buttons */}
-              <div
-                className="
+                  <div
+                    className="
             flex
             gap-5 justify-between md:justify-start md:gap-10
             mt-10 mobile-landscape:flex-row mobile-landscape:items-center mobile-landscape:flex-wrap
           "
-              >
-                <Button
-                  label="Explore More"
-                  primary={true}
-                  handler="#"
-                  iconColor="text-primary"
-                />
+                  >
+                    <Button
+                      label="Read More"
+                      primary={true}
+                      url="/about-us"
+                      iconColor="text-primary"
+                      link={true}
+                    />
 
-                <div className="flex items-center gap-4">
-                  <div
-                    className="
+                    <div className="flex items-center gap-4">
+                      <div
+                        className="
                 flex
                 items-center
                 justify-center
@@ -142,17 +163,26 @@ function About() {
                 border
                 border-primary
               "
-                  >
-                    <BiSolidPhoneCall size={24} />
-                  </div>
+                      >
+                        <BiSolidPhoneCall size={24} />
+                      </div>
 
-                  <div>
-                    <p className="text-sm text-gray-500">Call Us:</p>
+                      <div>
+                        <p className="text-sm text-gray-500">Call Us:</p>
 
-                    <p className="bold-p-text">+1(214) 642 7635</p>
+                        <p className="bold-p-text">
+                          <Link
+                            href="tel:+1(214) 642 7635"
+                            className="cursor-pointer"
+                          >
+                            +1(214) 642 7635
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import { FaHeart } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 function Partners() {
   const partners = [
@@ -11,12 +13,23 @@ function Partners() {
   return (
     <div className="bg-[#F8F9FA] md:mt-10 xl:mt-16 py-[3em] md:py-[5em] lg:py-[7em]">
       <div className="w-[95%] mx-auto lg:max-w-[1200px] xl:max-w-[90%]">
-        <p className="hero-label flex items-center gap-3">
+        <motion.p
+          className="hero-label flex items-center gap-3"
+          initial={{ y: 0 }}
+          animate={{
+            y: [0, -10, 0, -10, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeOut",
+          }}
+        >
           <span>
             <FaHeart className="text-primary" />
           </span>
           <span className="text-primary">Partners</span>
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-2 mobile-landscape:grid-cols-4 md:grid-cols-4 gap-4 lg:gap-10 xl:gap-16 mt-10 md:mt-12">
           {partners.map((item: string, key: number) => {

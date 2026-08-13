@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button from "../small/Button";
 import { HiBars3 } from "react-icons/hi2";
 import Link from "next/link";
-import { navlinks } from "@/constant/data";
+import { navlinks, paymentLink } from "@/constant/data";
 import { INAVLINK } from "@/constant/types";
 import { usePathname } from "next/navigation";
 
@@ -60,7 +60,8 @@ function Navbar() {
           label="Donate"
           primary={true}
           iconColor="text-primary"
-          handler="/"
+          link={true}
+          url={paymentLink}
         />
       </div>
 

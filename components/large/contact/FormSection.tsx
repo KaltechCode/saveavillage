@@ -1,6 +1,4 @@
-import { FaLocationDot } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
-import { BiSolidPhoneCall } from "react-icons/bi";
+"use client";
 
 import { motion } from "motion/react";
 import Contact_form from "@/components/medium/Contact_Form";
@@ -19,13 +17,23 @@ function FormSection() {
             transition={{ duration: 0.9 }}
           >
             <div className="">
-              <p className="flex gap-2 subtitle font-openSans justify-start! items-center text-white! hero-label">
+              <motion.p
+                className="flex gap-2 subtitle font-openSans justify-start! items-center text-white! hero-label"
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              >
                 <span>
                   <FaHeart />
                 </span>
                 Contact us
-              </p>
-              <h2 className="section-title-text text-white!">
+              </motion.p>
+              <h2 className="title-text text-white! w-[80%] lg:w-[70%] 2xl:w-[60%]">
                 Drop us a message, our team usually replies within a few hours.
               </h2>
             </div>
@@ -33,35 +41,20 @@ function FormSection() {
             <Contact_form />
           </motion.div>
 
-          <div className="rounded-[20px] border border-gray-300 bg-[#f5f5f5] p-6 md:p-8 mobile-landscape:col-span-2 lg:col-span-2  md-landscape:order-3 ">
-            <h3 className="title-text mb-2!">Quick Contacts</h3>
-
-            <p className="">
-              Drop us a message, our team usually replies within a few hours.
-            </p>
-
-            <div className="mt-10 flex flex-col gap-8">
-              {/* Phone */}
-              <div className="flex items-center gap-4">
-                <BiSolidPhoneCall size={32} className="fill-primary" />
-
-                <p className="">Mobile: +1 (214) 642 7635</p>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <MdEmail size={32} className="fill-primary" />
-
-                <p className="">info@saveavillageusa.org</p>
-              </div>
-
-              {/* Address */}
-              <div className="flex items-center gap-4">
-                <FaLocationDot size={32} className="fill-primary" />
-
-                <p className="">102 Some Address Road</p>
-              </div>
-            </div>
+          <div className="rounded-md overflow-hidden relative border border-gray-300 bg-[#f5f5f5]  mobile-landscape:col-span-2 lg:col-span-2  md-landscape:order-3 h-full w-full bg-[url(/images/Community-Services.webp)] bg-cover bg-center">
+            {/* <img
+              src="/images/Community-Services.webp"
+              alt=""
+              className="h-full w-full object-cover"
+            /> */}
+            <motion.div
+              className="h-full w-full bg-primary/70 left-0 top-0 absolute z-90"
+              initial={{ scaleY: 1 }}
+              whileInView={{ scaleY: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.5 }}
+              style={{ transformOrigin: "bottom" }}
+            ></motion.div>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
-import { teamData } from "@/constant/data";
+"use client";
+import { becomePartnerLink, teamData } from "@/constant/data";
 import Button from "../small/Button";
 import { ITeam } from "@/constant/types";
 import TeamCard from "../medium/TeamCard";
+import { motion } from "framer-motion";
 function OurTeam() {
   return (
     <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24 ">
@@ -22,11 +24,31 @@ function OurTeam() {
           "
           >
             <div>
-              <p className="hero-label text-primary mb-2">Our Programs</p>
+              <motion.p
+                className="hero-label text-primary mb-2"
+                initial={{ y: 0 }}
+                animate={{
+                  y: [0, -10, 0, -10, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              >
+                Our Programs
+              </motion.p>
 
-              <h2 className="section-title-text max-w-[600px]">
+              <motion.h2
+                className="section-title-text max-w-[600px]"
+                initial={{ scaleY: 0, opacity: 0.5 }}
+                whileInView={{ scaleY: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35 }}
+                style={{ transformOrigin: "bottom" }}
+              >
                 Inspiring and Helping for Better Lifestyle
-              </h2>
+              </motion.h2>
             </div>
 
             <div
@@ -38,10 +60,11 @@ function OurTeam() {
             "
             >
               <Button
-                handler="#"
+                url={becomePartnerLink}
                 iconColor="text-primary"
                 label="Join Us"
                 primary={true}
+                link={true}
               />
             </div>
           </div>

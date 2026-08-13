@@ -34,12 +34,12 @@ function Footer() {
                 safe housing, and life skills development.
               </p>
               <div className="mt-7">
-                {" "}
                 <Button
-                  handler="/"
+                  url="/contact-us"
                   label="Become A Volunteer"
                   primary={false}
                   iconColor="text-white"
+                  link={true}
                 />
               </div>
             </div>
@@ -125,9 +125,8 @@ function Footer() {
                   <span>
                     <FaLocationDot className="text-white" size={20} />
                   </span>
-                  2733 Franklin Dr,
-                  <br /> Mesquite, <br />
-                  TX 75150.
+                  2733 Franklin D,
+                  <br /> Apartment 1525, <br /> Mesquite, TX 75150
                 </p>
               </div>
             </div>

@@ -1,6 +1,10 @@
 "use client";
 
-import { donationAmounts } from "@/constant/data";
+import {
+  becomePartnerLink,
+  donationAmounts,
+  paymentLink,
+} from "@/constant/data";
 import { useState } from "react";
 import Button from "../small/Button";
 
@@ -9,13 +13,7 @@ export default function VolunteerDonateSection() {
 
   return (
     <section className="relative md:mb-10 xl:mb-16">
-      <div
-        className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-        "
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Volunteer */}
         <div className="relative overflow-hidden ">
           <div
@@ -67,8 +65,8 @@ export default function VolunteerDonateSection() {
                 max-w-[500px]
               "
             >
-              Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-              sit. The aspernatur aut odit aut fugit.
+              We have beliefs developed solely on Biblical principles. We are
+              pleased to have volunteers who have a similar belief system.
             </p>
 
             <div
@@ -82,18 +80,44 @@ export default function VolunteerDonateSection() {
                 mobile-landscape:flex-wrap
               "
             >
-              <span className="text-white text-sm">✓ Donate Money</span>
+              <span className="text-white text-sm">
+                ✓ We believe God created humans as male or female only, and that
+                scientifically, these are unchangeable.
+              </span>
 
-              <span className="text-white text-sm">✓ Handle With Care</span>
+              <span className="text-white text-sm">
+                ✓ We believe life begins at the moment of fertilization of an
+                egg by a sperm. We believe in the sanctity of life, with every
+                human life having an intrinsic and sacred value that deserves to
+                be protected from fertilization, up to natural death.
+              </span>
 
-              <span className="text-white text-sm">✓ Donate Money</span>
+              <span className="text-white text-sm">
+                ✓ We believe that marriage is the legal and God-ordained union
+                solely between a natural male and a natural female.
+              </span>
+              <span className="text-white text-sm">
+                ✓ We believe that marriage is the legal and God-ordained union
+                solely between a natural male and a natural female.
+              </span>
+              <span className="text-white text-sm">
+                ✓ We believe that parents have a moral, emotional, and religious
+                responsibility to guide their own children on life issues till
+                adulthood, with no external hindrance.
+              </span>
+              <span className="text-white text-sm">
+                ✓ To volunteer with Save A Village, you will need to line up
+                with our belief system, and if there are any questions, please
+                let us know.
+              </span>
             </div>
 
             <Button
               label="Become A Volunteer"
               primary={false}
               iconColor="text-white"
-              handler="#"
+              url={becomePartnerLink}
+              link={true}
             />
           </div>
         </div>
@@ -135,18 +159,17 @@ export default function VolunteerDonateSection() {
                 mb-4
               "
             >
-              Send a Gift For Children's
+              Send a Gift to Support Us
             </h3>
 
             <p
               className="
-                text-white/90
-                mb-6
-                max-w-[500px]
+                text-white/90  mb-6 max-w-[500px]
               "
             >
-              Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-              sit. The aspernatur aut odit aut fugit.
+              Your donation can help provide essential resources, hope, and
+              lasting opportunities to families in need. Together, we can save a
+              community and build a brighter future one generous gift at a time.
             </p>
 
             <div
@@ -185,7 +208,8 @@ export default function VolunteerDonateSection() {
               label="Donate Now"
               primary={false}
               iconColor="text-white"
-              handler="#"
+              link={true}
+              url={paymentLink}
             />
           </div>
         </div>

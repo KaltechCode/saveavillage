@@ -6,11 +6,11 @@ function EventCard({ event }: { event: IEvent }) {
   return (
     <article
       key={event.id}
-      className="bg-[#fafafa] rounded-md p-5 sm:p-10 600:p-4 md:p-7 900:p-10 lg:p-12 xl:p-5 flex flex-col gap-5 mobile-landscape:grid mobile-landscape:grid-cols-1 2xl:gap-16 xl:grid lg:grid-cols-2 xl:aspect-[8/7] h-full 2xl:aspect-[3/3] 3k:aspect-[6/3] 4k:aspect-[7/4] items-center"
+      className="bg-[#fafafa] rounded-md p-5 sm:p-10 600:p-4 md:p-7 900:p-10 lg:p-12 xl:p-5 flex flex-col gap-5 mobile-landscape:grid mobile-landscape:grid-cols-1 2xl:gap-16 xl:grid lg:grid-cols-2 xl:aspect-[8/7] h-full 2xl:aspect-[7/4] 3k:aspect-[6/3] 4k:aspect-[2/2] items-center"
     >
       {/* Image */}
       <div
-        className={`relative w-full bg-[url(${event.image})] h-[250px] xl:h-[80%]  rounded-lg object-cover bg-center bg-no-repeat`}
+        className={`relative w-full bg-[url(${event.image})] h-[250px]   rounded-lg object-cover bg-center bg-no-repeat`}
         style={{
           backgroundImage: `url(${event.image})`,
           backgroundSize: "cover",
@@ -69,8 +69,9 @@ function EventCard({ event }: { event: IEvent }) {
         <Button
           label="Event Details"
           primary={true}
-          handler="#"
+          link={true}
           iconColor="text-primary"
+          url={`/events/${event.slug}`}
         />
       </div>
     </article>

@@ -1,9 +1,19 @@
 import React from "react";
 
-function HeroBanner({ text }: { text: string }) {
+function HeroBanner({ text, image }: { text: string; image: string }) {
   return (
-    <section className=" py-16 lg:py-24 bg-primary">
-      <div className="w-[95%] mx-auto xl:[95%] flex justify-center items-center h-40 mobile-landscape:h-30">
+    <section className="bg-primary relative overflow-hidden w-screen h-70 lg:h-100">
+      <div
+        className="
+              absolute
+              inset-0
+              z-20
+               bg-[#22002d]/90
+            "
+      />
+
+      <div className={`absolute z-10 inset-0 bg-cover bg-center ${image}`} />
+      <div className="mx-auto  flex justify-center items-center h-full w-full  absolute z-30">
         <h3 className="hero-title-text text-center text-white">{text}</h3>
       </div>
     </section>

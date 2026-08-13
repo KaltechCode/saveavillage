@@ -8,10 +8,37 @@ import EventCard from "../medium/EventCard";
 import { IEvent } from "@/constant/types";
 import Button from "../small/Button";
 import { FaHeart } from "react-icons/fa6";
+import { motion, type Variants } from "framer-motion";
 
 function Events() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
+
+  const text = "Event Coming Soon";
+
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const wordVariants: Variants = {
+    hidden: {
+      y: 30,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
     <section
       className="
@@ -34,97 +61,110 @@ function Events() {
             <h2 className="section-title-text text-white!">Event Schedule</h2>
           </div>
 
-          <div className="flex gap-3">
-            <div className="flex gap-3 ">
-              <button
-                ref={prevRef}
-                className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
-              >
-                ←
-              </button>
+          {false && (
+            <div className="flex gap-3">
+              <div className="flex gap-3 ">
+                <button
+                  ref={prevRef}
+                  className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
+                >
+                  ←
+                </button>
 
-              <button
-                ref={nextRef}
-                className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
-              >
-                →
-              </button>
+                <button
+                  ref={nextRef}
+                  className="h-12 w-12 rounded-full bg-white shadow-sm cursor-pointer"
+                >
+                  →
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
-        {/* Events Grid */}
-        {/* <div
-          className="
-        grid
-        grid-cols-1
-        gap-6
-        mobile-landscape:grid-cols-2
-        md:grid-cols-2
-        mt-16
-        lg:grid-cols-2
-      "
-        >
-          {events.map((event: IEvent, key: number) => (
-            <EventCard event={event} key={key} />
-          ))}
-        </div> */}
-
-        <div
-          className="
+        {/* Empty Event */}
+        {true ? (
+          <div className="flex h-100 w-full justify-center items-center">
+            <motion.h2
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                repeat: Infinity,
+                repeatDelay: 2,
+              }}
+              className="title-text text-white! font-bold"
+            >
+              {text.split(" ").map((item, index) => (
+                <motion.span
+                  key={index}
+                  variants={wordVariants}
+                  className="mr-4 inline-block text-white!"
+                >
+                  {item}
+                </motion.span>
+              ))}
+            </motion.h2>
+          </div>
+        ) : (
+          <>
+            {" "}
+            <div
+              className="
               flex
               items-center
               gap-6
               justify-end
             "
-        >
-          {/* Arrows */}
-        </div>
+            >
+              {/* Arrows */}
+            </div>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              onBeforeInit={(swiper) => {
+                const navigation = swiper.params.navigation;
 
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            const navigation = swiper.params.navigation;
+                if (navigation && typeof navigation === "object") {
+                  navigation.prevEl = prevRef.current;
+                  navigation.nextEl = nextRef.current;
+                }
+              }}
+              className=""
+              breakpoints={{
+                650: {
+                  slidesPerView: 2,
+                },
 
-            if (navigation && typeof navigation === "object") {
-              navigation.prevEl = prevRef.current;
-              navigation.nextEl = nextRef.current;
-            }
-          }}
-          className=""
-          breakpoints={{
-            650: {
-              slidesPerView: 2,
-            },
-
-            1024: {
-              slidesPerView: 2,
-              spaceBetween: 15,
-            },
-          }}
-        >
-          {events.map((event, key: number) => (
-            <SwiperSlide key={key}>
-              <EventCard event={event} key={key} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div className="mt-16">
-          <Button
-            label="All Blogs"
-            handler="#"
-            primary={false}
-            iconColor="text-white"
-          />
-        </div>
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 15,
+                },
+              }}
+            >
+              {events.map((event, key: number) => (
+                <SwiperSlide key={key}>
+                  <EventCard event={event} key={key} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="mt-16">
+              <Button
+                label="All Events"
+                url="/events"
+                primary={false}
+                iconColor="text-white"
+                link={true}
+              />
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

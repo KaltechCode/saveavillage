@@ -131,9 +131,9 @@ export const events: IEvent[] = [
 export const programs: IProgram[] = [
   {
     id: 1,
-    title: "Education Support",
+    title: "Educational Support",
     description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
+      "<p>We offer educational assistance in many different ways. A few of the things we do are: supply of resources such as text books, payment of teachers, renovation and upgrading of school buildings, tuition assistance to students who qualify. Future and current educational support needs are vast, with the need for infrastructure that will motivate children to go to school. There is a need for play grounds, sports teams, bands, computer labs, science labs, and much ore.<br /> <br /> So far, we have supplied textbooks to children in one village, we are paying the salary for a PTA -hired teacher, subsidized tuition for students whose parents cannot afford, and subsidized the upgrading of a school building.</p>",
     image: "/images/Educational-Support.webp",
     slug: "education-support",
   },
@@ -141,34 +141,34 @@ export const programs: IProgram[] = [
     id: 2,
     title: "Community Services",
     description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
+      "We are dedicated to empowering vulnerable communities by providing sustainable support where it is needed most. We strongly believe that healthy communities create a healthy society. Our community services focus on breaking the cycle of poverty through holistic initiatives that secure clean water access, feeding assistance, improve local healthcare infrastructure, and establish quality education for children. By partnering directly with village leaders, we build and maintain critical facilities, offer vocational training for adults, and implement climate resilient agricultural programs. Together, we do not just deliver temporary aid; we equip residents with the tools, resources, and knowledge required to foster long-term self-reliance and thrive for generations to come.",
     image: "/images/Community-Services.webp",
     slug: "education-support",
   },
   {
     id: 3,
-    title: "Financial literate",
+    title: "Financial Literacy",
     description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
+      "We believe that true community growth starts with financial empowerment. We provide free financial literacy services designed to help you take control of your money and build a secure future. Money management is a challenge to many individuals and families; we offer easy to understand workshops, one-on-one coaching, and practical tools to master everyday money skills. Whether you want to create a budget that works, or start saving for your family's dreams, our team is here to support you every step of the way. Together, we are building stronger, more resilient communities by turning financial stress into lifelong confidence.",
     image: "/images/Financial-literacy.webp",
     slug: "education-support",
   },
   {
     id: 4,
-    title: "Counselling Services",
+    title: "Counseling Services",
     description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
+      "We offer free counseling services to individuals, heterosexual couples, and families as need be. Our counseling services are aimed at restoring peace, self-confidence, and a balanced approach to life struggles and challenges. We believe that emotional well-being is the foundation for a happy and successful life. Our organization offers free, confidential counseling services to help people navigate life's challenges in a safe and supportive space. Our caring counselors are here to listen and guide people through stress, family difficulties, or personal struggles. We work hand in hand with people to build healthy coping skills, heal from tough times, and restore peace of mind. No matter what they are going through, they do not have to carry the weight alone; we are here to support everyone's journey toward hope and healing.",
     image: "/images/counceling-services.webp",
     slug: "education-support",
   },
-  {
-    id: 5,
-    title: "Education Support",
-    description:
-      "We work together to make a lasting difference, helping people with kindness and hard work.",
-    image: "/save-a-village-by-gifting.jpg",
-    slug: "education-support",
-  },
+  // {
+  //   id: 5,
+  //   title: "Education Support",
+  //   description:
+  //     "We work together to make a lasting difference, helping people with kindness and hard work.",
+  //   image: "/save-a-village-by-gifting.jpg",
+  //   slug: "education-support",
+  // },
 ];
 
 export const donationAmounts: IDonationAmount[] = [
@@ -266,42 +266,35 @@ export const acheivement: IACHEIVEMENT[] = [
 
 export const statement: ISTATEMENT[] = [
   {
-    title: "Where can I get some?",
+    title: "Our Mission",
     intro:
-      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
-    list: [
-      "Suspendisse pulvinar orci vitae condimentum feugiat.",
-      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
-      "Duis vehicula elit ut placerat rutrum.",
-      "Nunc et felis non neque vehicula porttitor.",
-    ],
+      "Our mission is rooted in a holistic approach to community empowerment. Rather than addressing challenges in isolation, we focus on the interconnected needs of families by providing access to essential services in education, food security, shelter, and clothing. By doing so, we aim to break cycles of poverty and create pathways toward long term self sufficiency.",
+    // list: [
+    //   "Suspendisse pulvinar orci vitae condimentum feugiat.",
+    //   "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
+    //   "Duis vehicula elit ut placerat rutrum.",
+    //   "Nunc et felis non neque vehicula porttitor.",
+    // ],
     image: "/save-a-village-hero-1.jpg",
-    outro:
-      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+    // outro:
+    //   "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
   },
   {
     title: "Our Vission",
     image: "/sva-team.jpg",
     intro:
-      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
-    list: [
-      "Suspendisse pulvinar orci vitae condimentum feugiat.",
-      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
-      "Duis vehicula elit ut placerat rutrum.",
-      "Nunc et felis non neque vehicula porttitor.",
-      "Suspendisse pulvinar orci vitae condimentum feugiat.",
-      "Curabitur cursus sapien eu ex cursus ultrices ac nec purus.",
-      "Duis vehicula elit ut placerat rutrum.",
-      "Nunc et felis non neque vehicula porttitor.",
-    ],
+      "Our vision is to create thriving communities where all individuals have access to quality education, safe housing, improved health conditions, and essential life-skills development needed to achieve success and a better quality of life.",
   },
   {
-    title: "Our History",
+    title: "Our Values",
     image: "/save-a-village-poor-boy.jpg",
-    intro:
-      "Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mInteger lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br /> Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna. <br /> <br />Integer lobortis, velit quis facilisis pellentesque, massa quam pretium ligula, eget mattis arcu elit at nisi. Nullam nec enim at urna tempor fringilla. Vestibulum sed nibh laoreet, vulputate nibh a, sollicitudin arcu. Nam tempus nisl arcu. Phasellus cursus et tellus eget tincidunt. Phasellus mattis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.attis sagittis luctus. Maecenas vel justo sollicitudin, laoreet mauris vitae, rutrum urna.",
+    intro: "",
+    list: ["Faith", "Compassion", "Sacrifice", "Hard work"],
   },
 ];
+
+export const aboutText =
+  "<p>We understand that education is one of the most powerful tools for transformation. We actively support children and adults alike by connecting them with learning resources, mentorship opportunities, and educational programs that encourage growth, confidence, and future success. Simultaneously, we work to alleviate immediate hardships by ensuring families have reliable access to nutritious food and necessities that form the foundation of a stable life. <br /> <br /> Our work is driven by compassion, collaboration, and community engagement. We partner with local organizations, volunteers, and supporters who share our vision of creating stronger, healthier communities. Together, we strive to not only meet urgent needs but also empower individuals to build brighter futures for themselves and the generations that follow.<br /> <br /> We are more than an organization; we are a movement centered on hope, resilience, and collective responsibility. By standing alongside those in need and investing in their potential, we are helping to build communities where everyone has the opportunity to thrive.</p>";
 
 export const navlinks: INAVLINK[] = [
   {
@@ -325,3 +318,8 @@ export const navlinks: INAVLINK[] = [
     link: "/contact-us",
   },
 ];
+
+export const paymentLink =
+  "https://cliq.zoho.com/company/904814955/chats/2243222046281379970/messages/1786467065862_2413532290865";
+
+export const becomePartnerLink = "#become-partner";

@@ -17,7 +17,7 @@ const icons: IconType[] = [
 function TeamCard({ team }: { team: ITeam }) {
   return (
     <div className="md:odd:mt-10">
-      <div className="relative rounded-lg overflow-hidden group ">
+      <div className="relative rounded-lg overflow-hidden shadow-none group hover:shadow-2xl">
         <div className="">
           {/* Image */}
           <div className="">
@@ -38,7 +38,7 @@ function TeamCard({ team }: { team: ITeam }) {
         </div>
 
         {/* overlay when hover */}
-        <div className="hidden group-hover:flex flex-col justify-end items-center transition-[display] duration-[5s] absolute top-0 left-0 h-full w-full z-10 bg-[linear-gradient(45deg,rgba(38,7,53,.95)_0%,rgba(38,7,53,.7)_40%,rgba(38,7,53,.1)_100%)]">
+        <div className="flex opacity-0 group-hover:opacity-100 flex-col justify-end items-center transition-all duration-500 absolute top-0 left-0 h-full w-full z-10 bg-[linear-gradient(45deg,rgba(38,7,53,.95)_0%,rgba(38,7,53,.7)_40%,rgba(38,7,53,.1)_100%)]">
           <div className="flex gap-3 opacity-0 -mb-7 group-hover:opacity-100 group-hover:mb-7 transition-all duration-1000">
             {icons.map((Icon: IconType, key: number) => {
               return (

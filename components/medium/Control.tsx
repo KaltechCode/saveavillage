@@ -15,7 +15,7 @@ function Control({
         return (
           <button
             onClick={() => setIndex(key)}
-            className={`title-text py-5 text-left px-4 border-0 border-b-2 ${index == key ? "border-primary text-primary!" : "border-white text-white!"}`}
+            className={`title-text py-5  px-4 border-0 border-b-2 text-center md:text-left ${index == key ? "border-[#ce7df9] text-[#ce7df9]!" : "border-white text-white!"}`}
             key={key}
           >
             {label}

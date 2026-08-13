@@ -1,5 +1,5 @@
 "use client";
-import { acheivement, statement } from "@/constant/data";
+import { acheivement, paymentLink, statement } from "@/constant/data";
 import { IACHEIVEMENT } from "@/constant/types";
 import React, { useState } from "react";
 import CircleAcheivement from "../medium/CircleAcheivement";
@@ -7,34 +7,54 @@ import Button from "../small/Button";
 import { FaHeart } from "react-icons/fa6";
 import Control from "../medium/Control";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Acheivement() {
   const [index, setIndex] = useState<number>(0);
   return (
     <section className="bg-gradient-start">
       <div className="py-[4em] md:py-[6em] lg:py-[10em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[80%]">
-        <div className="flex flex-wrap justify-between gap-10">
+        {/* <div className="flex flex-wrap justify-between gap-10">
           {acheivement.map((item: IACHEIVEMENT, key: number) => {
             return <CircleAcheivement item={item} key={key} />;
           })}
-        </div>
+        </div> */}
 
-        <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24 ">
+        {/* <section className="relative overflow-hidden md:mt-10 xl:mt-20 py-16 lg:py-24"> */}
+        <section className="relative overflow-hidden py-5">
           {/* Background Shape */}
           <div className="relative z-10">
             {/* Header */}
             <div className=" flex flex-col gap-8 mb-10 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="hero-label text-white! mb-2 flex items-center gap-2">
+                <motion.p
+                  className="hero-label text-white! mb-2 flex items-center gap-2"
+                  initial={{ y: 0 }}
+                  animate={{
+                    y: [0, -10, 0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeOut",
+                  }}
+                >
                   <span>
                     <FaHeart className="text-white" />
                   </span>
                   Our Organization History
-                </p>
+                </motion.p>
 
-                <h2 className="section-title-text max-w-[600px] text-white!">
+                <motion.h2
+                  className="section-title-text max-w-[600px] text-white!"
+                  initial={{ scaleY: 0, opacity: 0.5 }}
+                  whileInView={{ scaleY: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35 }}
+                  style={{ transformOrigin: "bottom" }}
+                >
                   Charitics Information of Event Schedule
-                </h2>
+                </motion.h2>
               </div>
 
               <div
@@ -46,7 +66,8 @@ function Acheivement() {
             "
               >
                 <Button
-                  handler="#"
+                  url={paymentLink}
+                  link={true}
                   iconColor="text-primary"
                   label="Donate Now"
                   primary={true}
