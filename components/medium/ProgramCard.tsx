@@ -1,18 +1,16 @@
 "use client";
 import { IProgram } from "@/constant/types";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
-import { FaAnglesRight } from "react-icons/fa6";
 import Button from "../small/Button";
 import { motion } from "framer-motion";
 
 function ProgramCard({
   program,
   handler,
+  blank,
 }: {
   program: IProgram;
   handler: () => void;
+  blank?: boolean;
 }) {
   return (
     <>

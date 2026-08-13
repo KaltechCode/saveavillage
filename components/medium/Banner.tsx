@@ -85,6 +85,7 @@ export function Banner() {
                 primary={true}
                 url={paymentLink}
                 link={true}
+                blank={true}
               />
             </div>
           </div>

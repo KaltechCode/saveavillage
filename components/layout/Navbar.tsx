@@ -62,6 +62,7 @@ function Navbar() {
           iconColor="text-primary"
           link={true}
           url={paymentLink}
+          blank={true}
         />
       </div>
 

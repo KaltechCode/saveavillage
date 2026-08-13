@@ -210,6 +210,7 @@ export default function VolunteerDonateSection() {
               iconColor="text-white"
               link={true}
               url={paymentLink}
+              blank={true}
             />
           </div>
         </div>

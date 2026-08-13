@@ -9,6 +9,7 @@ function Button({
   iconColor,
   link,
   url,
+  blank,
 }: {
   handler?: () => void;
   url?: string;
@@ -16,10 +17,12 @@ function Button({
   primary: boolean;
   iconColor: string;
   link?: boolean;
+  blank?: boolean;
 }) {
   return link && url ? (
     <Link
       href={url}
+      target={blank ? "_blank" : "_self"}
       className={` inline-flex w-max h-max btn pl-1 transition-all duration-700 cursor-pointer gap-2 pr-6 py-2 ${primary ? "bg-primary text-white hover:bg-white hover:text-primary hover:border hover:border-2 hover:border-primary" : "bg-white text-primary"}`}
     >
       <div
