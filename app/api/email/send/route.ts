@@ -17,9 +17,9 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: {
         name: "save a village",
-        address: process.env.SMTP_FROM || "usfj_auth@kaltechconsultancy.tech",
+        address: process.env.SMTP_FROM || "info@saveavillageusa.org",
       },
-      to: email,
+      to: process.env.SMTP_FROM || "info@saveavillageusa.org",
       replyTo: email,
       subject: `New message from ${name}`,
       html: `
