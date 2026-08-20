@@ -50,7 +50,7 @@ export default function MobileMenu() {
           <ul className="space-y-5 text-[15px] text-slate-700">
             {navlinks.map((link: INAVLINK, key: number) => {
               return (
-                <li>
+                <li key={key}>
                   <Link
                     href={link.link}
                     className="cursor-pointer bold-p-text"

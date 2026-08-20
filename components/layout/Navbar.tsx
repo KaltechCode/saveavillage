@@ -42,7 +42,7 @@ function Navbar() {
       >
         {navlinks.map((link: INAVLINK, key: number) => {
           return (
-            <li>
+            <li key={key}>
               <Link
                 href={link.link}
                 className={`cursor-pointer bold-p-text font-bold! ${path === link.link ? "text-primary border-b border-b-2 border-primary py-1 transition-all duration-300" : "text-black py-1"}`}

@@ -7,10 +7,10 @@ import { FaHeart } from "react-icons/fa6";
 function FormSection() {
   return (
     <div>
-      <div className="py-[2em] md:py-[2em] lg:py-[7em] w-[90%] mx-auto lg:max-w-[1200px] xl:max-w-[1500px] ">
-        <div className="grid grid-cols-1 gap-7 lg:gap-16 xl:gap-16 md-landscape:grid-cols-5 lg:grid-cols-5">
+      <div className="py-[2em] md:py-[2em] lg:py-[7em] w-[90%] mx-auto lg:w-[80%] xl:w-[90%]">
+        <div className="grid grid-cols-1 gap-7 lg:gap-16 xl:gap-16 md-landscape:grid-cols-5 lg:grid-cols-5 xl:gap-20">
           <motion.div
-            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5 xl:px-10 rounded-lg mobile-landscape:col-span-3 lg:col-span-3"
+            className="bg-title rounded-medium lg:order-2 pb-10 bg-primary py-[3em] px-5  rounded-lg mobile-landscape:col-span-3 lg:col-span-3 xl:px-20 xl:gap-16"
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
