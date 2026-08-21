@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: {
-        name: "save a village",
+        name: "Save a Village",
         address: process.env.SMTP_FROM || "info@saveavillageusa.org",
       },
       to: process.env.SMTP_FROM || "info@saveavillageusa.org",

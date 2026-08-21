@@ -6,10 +6,13 @@ import { z } from "zod";
 import { transporter } from "@/libs/mail";
 
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 function Contact_form() {
+  const [sending, setSending] = useState<boolean>(false);
   const showSuccess = () => toast.success("Email sent seccessfully");
   const showError = () => toast.error("Error occur when sending email");
+
   const schema = z.object({
     name: z
       .string()
@@ -31,6 +34,7 @@ function Contact_form() {
   const {
     register: registerField,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<schemaType>({
     resolver: zodResolver(schema),
@@ -53,6 +57,11 @@ function Contact_form() {
     //   }),
     // });
     try {
+      if (sending == true) {
+        return;
+      }
+
+      setSending(true);
       await fetch("/api/email/send", {
         method: "POST",
         headers: {
@@ -62,10 +71,13 @@ function Contact_form() {
           values,
         }),
       });
+      setSending(false);
+      reset();
       showSuccess();
     } catch (error) {
       console.log(error);
       showError();
+      setSending(false);
     }
   }
 
@@ -132,7 +144,7 @@ function Contact_form() {
           </div>
           <input
             type="submit"
-            value={"Send Message"}
+            value={sending ? "Sending" : "Send Message"}
             className={`inline-flex btn pl-1 gap-2 pr-6 py-2  text-white group-hover:text-[#22002d] transition-all duration-500}`}
           />
         </div>
