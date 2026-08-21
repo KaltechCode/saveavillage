@@ -3,8 +3,13 @@ import { FaAnglesRight, FaHeart } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { transporter } from "@/libs/mail";
+
+import { toast } from "react-toastify";
 
 function Contact_form() {
+  const showSuccess = () => toast.success("Email sent seccessfully");
+  const showError = () => toast.error("Error occur when sending email");
   const schema = z.object({
     name: z
       .string()
@@ -38,15 +43,30 @@ function Contact_form() {
   });
 
   async function onSubmit(values: schemaType) {
-    await fetch("/api/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        values,
-      }),
-    });
+    // await fetch("/api/email/send", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     values,
+    //   }),
+    // });
+    try {
+      await fetch("/api/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          values,
+        }),
+      });
+      showSuccess();
+    } catch (error) {
+      console.log(error);
+      showError();
+    }
   }
 
   return (

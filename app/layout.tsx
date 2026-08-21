@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Quicksand, Caveat } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/layout/footer";
+import "react-toastify/dist/ReactToastify.css";
 
 const manrope = Manrope({
   variable: "--font-manrope",

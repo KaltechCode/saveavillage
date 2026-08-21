@@ -8,6 +8,7 @@ import FormSection from "@/components/large/contact/FormSection";
 import AccordionSection from "@/components/large/contact/AccordionSection";
 import HeroBanner from "@/components/medium/HeroBanner";
 import { motion } from "framer-motion";
+import { ToastContainer } from "react-toastify";
 
 function Page() {
   return (
@@ -59,6 +60,7 @@ function Page() {
 
         {/* <AccordionSection /> */}
       </main>
+      <ToastContainer position="top-right" autoClose={3000} />
       <Footer />
     </>
   );
