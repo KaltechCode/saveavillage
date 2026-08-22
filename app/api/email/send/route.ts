@@ -17,10 +17,10 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: {
         name: "Save a Village",
-        address: process.env.SMTP_FROM || "info@saveavillageusa.org",
+        address: process.env.SMTP_FROM as string,
       },
-      to: process.env.SMTP_FROM || "info@saveavillageusa.org",
-      replyTo: email,
+      to: "info@saveavillageusa.org",
+      replyTo: "admin@saveavillageusa.org",
       subject: `New message from ${name}`,
       html: `
   <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">

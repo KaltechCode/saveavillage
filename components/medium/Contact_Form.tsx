@@ -62,7 +62,7 @@ function Contact_form() {
       }
 
       setSending(true);
-      await fetch("/api/email/send", {
+      const response = await fetch("/api/email/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,9 +71,13 @@ function Contact_form() {
           values,
         }),
       });
+
+      if (response.ok) {
+        reset();
+        showSuccess();
+      }
+
       setSending(false);
-      reset();
-      showSuccess();
     } catch (error) {
       console.log(error);
       showError();
