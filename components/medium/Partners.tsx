@@ -2,14 +2,20 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa6";
 import { motion, number } from "framer-motion";
+import Marquee from "react-fast-marquee";
+
+const images = [
+  "/partners/Andi_Logo.webp",
+  "/partners/JOptiman.webp",
+  "/partners/Kaltech.webp",
+  "/partners/kumis_foundation.webp",
+  "/partners/La_Bella.webp",
+  "/partners/Kiki_Victory.webp",
+  "/partners/WOVD.webp",
+  "/partners/Upwealth_Logo.webp",
+];
 
 function Partners() {
-  const partners = [
-    "Kaltech Consultancy",
-    "JOptiman Consultancy",
-    "USFJesus",
-    "Access to Water",
-  ];
   return (
     <div className="bg-[#F8F9FA] md:mt-10 xl:mt-16 py-[3em] md:py-[5em] lg:py-[7em]">
       <div className="w-[95%] mx-auto lg:max-w-[1200px] xl:max-w-[90%]">
@@ -31,16 +37,27 @@ function Partners() {
           <span className="text-primary">Partners</span>
         </motion.p>
 
-        <div className="grid grid-cols-2 mobile-landscape:grid-cols-4 md:grid-cols-4 gap-4 lg:gap-10 xl:gap-16 mt-10 md:mt-12">
-          {partners.map((item: string, key: number) => {
-            return (
-              <div className="bg-[#F4F4F4] py-10 px-5 rounded-lg" key={key}>
-                <p className="title-text">{item}</p>
-              </div>
-            );
-          })}
-        </div>
+        <Marquee pauseOnHover={true} speed={50} gradient={false}>
+          <ImageComponents />
+        </Marquee>
       </div>
+    </div>
+  );
+}
+
+function ImageComponents() {
+  return (
+    <div className="flex mt-10">
+      {images.map((item: string, key: number) => {
+        return (
+          <img
+            className="rounded-lg aspect-[5/1] w-[200px] md:w-[300px] object-contain mx-2 md:w-mx-5 "
+            key={key}
+            src={item}
+            alt={`Partner ${key + 1}`}
+          />
+        );
+      })}
     </div>
   );
 }

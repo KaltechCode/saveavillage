@@ -322,4 +322,13 @@ export const navlinks: INAVLINK[] = [
 export const paymentLink =
   "https://www.paypal.com/donate/?hosted_button_id=L3H6DYJGXZDLW";
 
-export const becomePartnerLink = "/contact-us";
+export const becomePartnerLink = "/join-us";
+
+export const formTitles = [
+  "Our Core Belief",
+  "Personal Information",
+  "Your Personal Interest",
+  "Your Christian Background",
+  "Background History",
+  "Emergency Contact",
+];

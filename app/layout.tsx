@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Quicksand, Caveat } from "next/font/google";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import ReduxProvider from "@/components/ReduxProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -33,7 +34,9 @@ export default function RootLayout({
       lang="en"
       className={`${manrope.variable} ${quicksand.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col relative">{children}</body>
+      <body className="min-h-full flex flex-col relative">
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
     </html>
   );
 }
