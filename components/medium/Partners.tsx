@@ -8,7 +8,7 @@ const images = [
   "/partners/Andi_Logo.webp",
   "/partners/JOptiman.webp",
   "/partners/Kaltech.webp",
-  "/partners/kumis_foundation.webp",
+  "/partners/Kumis_foundation.webp",
   "/partners/La_Bella.webp",
   "/partners/Kiki_Victory.webp",
   "/partners/WOVD.webp",
