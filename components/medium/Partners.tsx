@@ -12,7 +12,7 @@ const images = [
   "/partners/La_Bella.webp",
   "/partners/Kiki_Victory.webp",
   "/partners/WOVD.webp",
-  "/partners/Upwealth_Logo.webp",
+  "/partners/UpWealth_Logo.webp",
 ];
 
 function Partners() {
