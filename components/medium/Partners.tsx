@@ -36,7 +36,8 @@ function Partners() {
           </span>
           <span className="text-primary">Partners</span>
         </motion.p>
-
+      </div>
+      <div className="w-full px-[1vw]">
         <Marquee pauseOnHover={true} speed={50} gradient={false}>
           <ImageComponents />
         </Marquee>
