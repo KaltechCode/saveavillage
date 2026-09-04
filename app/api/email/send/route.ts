@@ -1,15 +1,15 @@
-import { transporter } from "@/libs/mail";
+import { brandedEmail, escapeHtml, transporter } from "@/libs/mail";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const { name, email, message, phone, organization } = body.values;
+    const { name, email, message, phone, organization } = body?.values ?? {};
 
-    if (!name || !email || !message || !phone || !organization) {
+    if (!name || !email || !message || !phone) {
       return NextResponse.json(
-        { message: "All credential are required" },
+        { message: "Name, email, phone, and message are required." },
         { status: 400 },
       );
     }
@@ -21,52 +21,22 @@ export async function POST(request: Request) {
       },
       to: "info@saveavillageusa.org",
       replyTo: "admin@saveavillageusa.org",
-      subject: `New message from ${name}`,
-      html: `
-  <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
-    <div style="padding: 24px; background-color: rgb(102, 0, 155); border-bottom: 3px solid #f3f3f3;">
-      <h2 style="margin: 0; color: #fff; font-weight: 600; text-align: center;">New Contact Form Submission</h2>
-      <p style="margin: 6px 0 0; color: #fff; text-align: center;">
-        A new message has been submitted through your website.
-      </p>
-    </div>
-
-    <div style="padding: 24px; background-color: rgb(102, 0, 155);">
-      <h3 style="margin-top: 0; color: #fff; font-size: 20px; font-weight: 500;">Contact Details</h3>
-
-      <p style="color: #fff;">
-        <strong>Name:</strong><br />
-        ${name}
-      </p>
-
-      <p style="color: #fff;">
-        <strong>Email Address:</strong><br />
-        <a href="mailto:${email}" style="color: rgb(246, 214, 72);">
-          ${email}
-        </a>
-      </p>
-
-      <div style="margin-top: 24px; color: #fff;">
-        <h3 style="margin-bottom: 8px; color: #fff; font-size: 20px; font-weight:700;">Message</h3>
-
-        <div style="padding: 16px; background-color: rgb(102, 0, 155); border-left: 4px solid rgb(102, 0, 155);">
-          <p style="margin: 0; white-space: pre-line; color: #fff;">
-            ${message}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div style="padding: 20px 24px; background-color: rgb(102, 0, 155); color: #777; font-size: 13px;">
-      <p style="margin: 0; color: #fff; text-align:center;">
-        This message was submitted through the website contact form.
-      </p>
-      <p style="margin: 2px 0 0; color: #fff; text-align:center;">
-        You can reply directly to this email to respond to ${name}.
-      </p>
-    </div>
-  </div>
-`,
+      subject: `New contact message from ${name}`,
+      html: brandedEmail({
+        title: "New contact form submission",
+        intro:
+          "A new message has been submitted through the Save a Village website.",
+        content: `
+          <div style="padding:20px;background:#f5f3f6;border-left:4px solid #f6d648;">
+            <p style="margin:0 0 10px;"><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p style="margin:0 0 10px;"><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}" style="color:#66009b;">${escapeHtml(email)}</a></p>
+            <p style="margin:0 0 10px;"><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+            <p style="margin:0 0 10px;"><strong>Organization:</strong> ${escapeHtml(organization || "Not provided")}</p>
+            <p style="margin:0;"><strong>Message:</strong><br />${escapeHtml(message).replaceAll("\n", "<br />")}</p>
+          </div>
+        `,
+        footer: `You can reply directly to this email to respond to ${name}.`,
+      }),
     });
 
     return NextResponse.json({
@@ -79,7 +49,8 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        message: error || "Failed to send email",
+        message:
+          error instanceof Error ? error.message : "Failed to send email.",
       },
       { status: 500 },
     );

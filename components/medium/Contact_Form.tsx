@@ -3,14 +3,15 @@ import { FaAnglesRight, FaHeart } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { transporter } from "@/libs/mail";
-
 import { toast } from "react-toastify";
 import { useState } from "react";
 
 function Contact_form() {
   const [sending, setSending] = useState<boolean>(false);
-  const showSuccess = () => toast.success("Email sent seccessfully");
+  const showSuccess = () =>
+    toast.success(
+      "Volunteer application submitted successfully. Check your inbox or spam folder for confirmation.",
+    );
   const showError = () => toast.error("Error occur when sending email");
 
   const schema = z.object({
@@ -72,16 +73,21 @@ function Contact_form() {
         }),
       });
 
+      const result = await response.json().catch(() => ({}));
+
       if (response.ok) {
         reset();
         showSuccess();
+      } else {
+        toast.error(result.message ?? "We could not send your message.");
       }
 
       setSending(false);
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       showError();
       setSending(false);
+      toast.error(error?.message ?? "We could not send your message.");
     }
   }
 
