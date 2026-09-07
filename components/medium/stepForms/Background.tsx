@@ -133,7 +133,7 @@ export default function Background({
       {/* hear about us */}
       <div className="lg:col-span-6 md:col-span-6 mobile-landscape:col-span-6 space-y-2">
         <label className="block p-text text-primary">
-          How do you here about Save a Village?
+          How do you hear about Save a Village?
         </label>
 
         {/* Custom Multi-Select Dropdown Container */}
