@@ -11,6 +11,7 @@ export default function Belief({
   registerField,
 }: RegisterErrorControlTriggerValueProps) {
   const handler = useDispatch<AppDispatch>();
+
   const validateNext = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const isStepValid = await trigger("belief");
@@ -24,7 +25,12 @@ export default function Belief({
       {/* input container */}
       <SaveAVillageBeliefs />
       <div className="border-t border-slate-200 py-5">
-        <input type="checkbox" id="beleive" {...registerField("belief")} />
+        <input
+          type="checkbox"
+          id="beleive"
+          {...registerField("belief")}
+          className="accent-primary"
+        />
         <label htmlFor="beleive" className="p-text text-primary ml-2">
           Please read about what we believe and make sure you understand and
           acknowledge before proceeding with your application.{" "}

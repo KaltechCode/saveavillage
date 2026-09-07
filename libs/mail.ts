@@ -23,18 +23,23 @@ export function brandedEmail({
   action?: { label: string; url: string };
   footer?: string;
 }) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  const logoUrl = siteUrl ? `${siteUrl}/save-a-vilage-logo.png` : undefined;
+  console.log(logoUrl);
+
   return `
     <div style="margin:0;background:#f5f3f6;padding:32px 16px;font-family:Arial,sans-serif;color:#22002d;line-height:1.6;">
       <div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #eadfea;">
-        <div style="padding:28px 32px;background:#22002d;border-bottom:5px solid #f6d648;">
-          <div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#f6d648;font-weight:bold;">Save a Village</div>
+        <div style="padding:28px 32px;background:#66009b;text-align:left;color:#ffffff;font-size:24px;line-height:1.4;">
+          ${logoUrl ? `<div><img src="${escapeHtml(logoUrl)}" alt="Save a Village" style="height:40px;display:block;" /></div>` : "Save a Village"}
           <h1 style="margin:10px 0 0;color:#ffffff;font-size:28px;line-height:1.2;">${escapeHtml(title)}</h1>
         </div>
-        <div style="padding:32px;">
+        <div style="padding:32px; padding-top:40px;">
           <p style="margin:0 0 18px;font-size:16px;">${escapeHtml(intro)}</p>
           ${content}
-          ${action ? `<p style="margin:28px 0;text-align:center;"><a href="${escapeHtml(action.url)}" style="display:inline-block;padding:13px 22px;background:#66009b;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:4px;">${escapeHtml(action.label)}</a></p>` : ""}
+          ${action ? `<p style="margin:28px 0; marging-top:40px; text-align:center;"><a href="${escapeHtml(action.url)}" style="display:inline-block;padding:13px 22px;background:#66009b;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:4px;">${escapeHtml(action.label)}</a></p>` : ""}
         </div>
+
         <div style="padding:18px 32px;background:#66009b;color:#ffffff;font-size:13px;text-align:center;">${escapeHtml(footer)}</div>
       </div>
     </div>

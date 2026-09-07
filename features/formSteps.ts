@@ -22,7 +22,7 @@ const stepsSlice = createSlice({
         action.payload >= 1 &&
         action.payload <= state.StepperState.totalSteps
       ) {
-        state.StepperState.currentStep = action.payload;
+        state.step = action.payload;
       }
     },
   },

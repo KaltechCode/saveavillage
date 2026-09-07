@@ -94,9 +94,9 @@ export default function Background({
                 value={opt}
                 /* Register the single target path name. React Hook Form links these together naturally */
                 {...registerField("background.faith_community")}
-                className="h-4 w-4 border-[#ffffff40] bg-transparent text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+                className="h-4 w-4 border-[#ffffff40] bg-transparent text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer accent-primary"
               />
-              <span className="text-sm font-medium text-primary/80 group-hover:text-primary transition-colors">
+              <span className="text-sm font-medium text-primary/80 group-hover:text-primary transition-colors accent-primary">
                 {/* Format the enum output string to look professional (e.g. Prefer Not To Say) */}
                 {opt
                   .replace(/_/g, " ")

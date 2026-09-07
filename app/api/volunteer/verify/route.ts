@@ -1,31 +1,8 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { createServerClient } from "@supabase/ssr";
 import { joinUsSchema } from "@/utils/schema";
 import { readVerificationToken } from "@/libs/volunteerVerification";
 import { brandedEmail } from "@/libs/mail";
-
-function createClient(cookieStore: Awaited<ReturnType<typeof cookies>>) {
-  return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
-      process.env.PUBLISHABLE_KEY!,
-    {
-      cookies: {
-        getAll: () => cookieStore.getAll(),
-        setAll: (cookiesToSet) => {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options),
-            );
-          } catch {
-            // Cookie writes are unavailable in this route's read-only context.
-          }
-        },
-      },
-    },
-  );
-}
+import { createAdminClient } from "@/utils/supabase";
 
 function verificationError(message: string, status: number) {
   return new Response(
@@ -74,10 +51,32 @@ export async function GET(request: Request) {
       background_history,
       emergency_contact,
     } = parsed.data;
-    const supabase = createClient(await cookies());
+    const supabase = createAdminClient();
+    const email = personalInfo.email.trim().toLowerCase();
+    const { data: existingVolunteer, error: lookupError } = await supabase
+      .from("Volunteer")
+      .select("email")
+      .ilike("email", email)
+      .maybeSingle();
+
+    if (lookupError) {
+      console.error("Volunteer email lookup error:", lookupError);
+      return verificationError(
+        "We could not submit your volunteer application right now.",
+        500,
+      );
+    }
+
+    if (existingVolunteer) {
+      return verificationError(
+        "A volunteer application already exists for this email address.",
+        409,
+      );
+    }
+
     const { error } = await supabase.from("Volunteer").insert({
       name: `${personalInfo.first_name} ${personalInfo.last_name}`,
-      email: personalInfo.email,
+      email,
       phone: personalInfo.phone,
       state: personalInfo.state,
       city: personalInfo.city,
@@ -102,6 +101,13 @@ export async function GET(request: Request) {
     });
 
     if (error) {
+      if (error.code === "23505") {
+        return verificationError(
+          "A volunteer application already exists for this email address.",
+          409,
+        );
+      }
+
       console.error("Volunteer application error:", error);
       return verificationError(
         "We could not submit your volunteer application right now.",

@@ -59,7 +59,7 @@ export default function BackgroundHistory({
                 value={opt}
                 /* Register the single target path name. React Hook Form links these together naturally */
                 {...registerField("background_history.crime")}
-                className="h-4 w-4 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer"
+                className="h-4 w-4 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0 cursor-pointer accent-primary"
               />
               <span className="text-sm font-medium text-primary/80 group-hover:text-primary transition-colors">
                 {/* Format the enum output string to look professional (e.g. Prefer Not To Say) */}
@@ -102,7 +102,7 @@ export default function BackgroundHistory({
             type="checkbox"
             /* Register the single target path name. React Hook Form links these together naturally */
             {...registerField("background_history.background_check")}
-            className="h-4 w-4 border-primary bg-transparent text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+            className="h-4 w-4 border-primary bg-transparent text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer accent-primary"
           />
           <span className="text-sm font-medium text-primary/80 group-hover:text-primary transition-colors">
             {/* Format the enum output string to look professional (e.g. Prefer Not To Say) */}

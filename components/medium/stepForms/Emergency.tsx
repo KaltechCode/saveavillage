@@ -105,7 +105,7 @@ export default function Emergency({
               type="checkbox"
               /* Register the single target path name. React Hook Form links these together naturally */
               {...registerField("emergency_contact.terms")}
-              className="h-4 w-4 border-primary bg-white text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+              className="h-4 w-4 border-primary bg-white text-purple-600 focus:ring-0 focus:ring-offset-0 cursor-pointer accent-primary"
             />
             <span className="p-text text-primary/80 group-hover:text-primary transition-colors">
               {/* Format the enum output string to look professional (e.g. Prefer Not To Say) */}
@@ -125,9 +125,9 @@ export default function Emergency({
       <div className="flex gap-10 justify-between w-full mt-7 col-span-1 md:col-span-6 mobile-landscape:col-span-6">
         <PrevButton handler={() => handler(prevStep())} />
 
-        <div className="flex gap-2 bg-[#22002d] hover:bg-white py-2 pl-1 w-max rounded-full lg:mt-7 xl:mt-0 group transition-all duration-500">
+        <div className="flex gap-2 bg-primary cursor-pointer hover:bg-white py-2 pl-1 w-max rounded-full lg:mt-7 xl:mt-0 group transition-all duration-500">
           <div
-            className={`bg-white p-3 rounded-full flex justify-center items-center`}
+            className={`bg-white p-3 rounded-full cursor-pointer flex justify-center items-center`}
           >
             <FaAnglesRight
               //   style={{ color: primary ? "text-primary" : "text-white" }}
@@ -138,7 +138,7 @@ export default function Emergency({
           <input
             type="submit"
             value={isLoading ? "Sending" : "Send Message"}
-            className={`inline-flex btn pl-1 gap-2 pr-6 py-2  text-white group-hover:text-[#22002d] transition-all duration-500}`}
+            className={`inline-flex btn pl-1 gap-2 pr-6 py-2  text-white group-hover:text-[#22002d] transition-all duration-500} cursor-pointer`}
           />
         </div>
       </div>

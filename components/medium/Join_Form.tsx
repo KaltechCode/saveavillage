@@ -17,6 +17,10 @@ import Background from "./stepForms/Background";
 import { RootState } from "@/services/store";
 import MultiStepControl from "./stepForms/Stepper";
 import { formTitles } from "@/constant/data";
+import { useRouter } from "next/navigation";
+import { AppDispatch } from "@/services/store";
+import { useDispatch } from "react-redux";
+import { setStep } from "@/features/formSteps";
 
 function Join_form() {
   const [addVolunteer, { isLoading, isSuccess, isError, error }] =
@@ -74,6 +78,8 @@ function Join_form() {
   });
 
   const step = useSelector((state: RootState) => state.steps.step);
+  const handler = useDispatch<AppDispatch>();
+  const navigate = useRouter();
 
   async function onSubmit(values: JOINUSTYPE) {
     try {
@@ -81,9 +87,11 @@ function Join_form() {
       const response = await addVolunteer(values).unwrap();
 
       reset();
+      handler(setStep(1));
       toast.success(response.message ?? "Registration submitted successfully.");
     } catch (err: any) {
-      toast.error(err?.message);
+      console.log(err);
+      toast.error(err?.data.message);
     }
   }
 
