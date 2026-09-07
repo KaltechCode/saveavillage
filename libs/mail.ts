@@ -24,8 +24,9 @@ export function brandedEmail({
   footer?: string;
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  const logoUrl = siteUrl ? `${siteUrl}/save-a-vilage-logo.png` : undefined;
-  console.log(logoUrl);
+  const logoUrl = siteUrl
+    ? `${siteUrl}/save-a-village-footer-logo.png`
+    : undefined;
 
   return `
     <div style="margin:0;background:#f5f3f6;padding:32px 16px;font-family:Arial,sans-serif;color:#22002d;line-height:1.6;">
