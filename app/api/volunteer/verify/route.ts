@@ -122,20 +122,20 @@ export async function GET(request: Request) {
 
     const csvUrl = downloadCSV(data);
 
-    await transporter.sendMail({
-      from: {
-        name: "Save a Village",
-        address: process.env.SMTP_FROM as string,
-      },
-      to: "test@kaltechconultancy.tech",
-      subject: "New volunteer application",
-      html: brandedEmail({
-        title: "New volunteer application",
-        intro: `A new volunteer application has been submitted.`,
-        content: '<p style="margin:0;color:#555555;">.</p>',
-        action: { label: "View new Application", url: csvUrl },
-      }),
-    });
+    // await transporter.sendMail({
+    //   from: {
+    //     name: "Save a Village",
+    //     address: process.env.SMTP_FROM as string,
+    //   },
+    //   to: "test@kaltechconultancy.tech",
+    //   subject: "New volunteer application",
+    //   html: brandedEmail({
+    //     title: "New volunteer application",
+    //     intro: `A new volunteer application has been submitted.`,
+    //     content: '<p style="margin:0;color:#555555;">.</p>',
+    //     action: { label: "View new Application", url: csvUrl },
+    //   }),
+    // });
 
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
