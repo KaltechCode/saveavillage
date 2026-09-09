@@ -2,7 +2,6 @@ import About from "@/components/large/About";
 import Events from "@/components/large/Events";
 import Hero from "@/components/large/Hero";
 import HomeContact from "@/components/large/HomeContact";
-import LatestNews from "@/components/large/LatestNews";
 import Programs from "@/components/large/Programs";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/Header";

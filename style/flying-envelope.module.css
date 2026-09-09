@@ -1,0 +1,318 @@
+.stage {
+  --flight-duration: 3s;
+  --settle-duration: 0.5s;
+  --flap-open-duration: 0.8s;
+  --card-rise-duration: 0.95s;
+  --sparkle-duration: 1.4s;
+  --float-duration: 4.5s;
+  --open-delay: 3.05s;
+  --card-delay: 3.45s;
+  --sparkle-delay: 3.6s;
+
+  position: relative;
+  width: min(100%, 28rem);
+  height: 20rem;
+  margin-inline: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.trail {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Full-stage layers so trail-fade % translates move across the stage */
+.trailDot {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 18% 72%,
+    #66009b 0 0.28rem,
+    #efe6f7 0.28rem 0.38rem,
+    transparent 0.42rem
+  );
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Full-stage wrapper so fly-in % translates travel across the stage */
+.flyer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.float {
+  display: grid;
+  place-items: center;
+}
+
+.envelope {
+  position: relative;
+  width: 10rem;
+  height: 5.625rem;
+  filter: drop-shadow(0 14px 22px rgb(38 7 53 / 0.28));
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  bottom: 1.15rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 5.25rem;
+  height: 3.5rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f6ef 100%);
+  border: 2px solid #260735;
+  box-shadow: 0 8px 16px rgb(38 7 53 / 0.18);
+  opacity: 0;
+  transform: translate(-50%, 1.6rem) scale(0.86);
+}
+
+.heart {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.check {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.check svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.bodySvg,
+.flapSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.flap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 3.5rem;
+  transform-origin: 50% 89%;
+  will-change: transform;
+}
+
+.sparkles {
+  position: absolute;
+  inset: -2rem -0.5rem auto;
+  height: 5rem;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  left: calc(6% + var(--s) * 12%);
+  top: calc(10% + var(--s) * 6%);
+  width: 0.45rem;
+  height: 0.45rem;
+  background: #d4a84b;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  opacity: 0;
+}
+
+.animate:not(.reduced) .flyer {
+  animation: fly-in var(--flight-duration) cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+.animate:not(.reduced) .float {
+  animation: gentle-float var(--float-duration) ease-in-out
+    calc(var(--flight-duration) + var(--settle-duration)) infinite;
+}
+
+.animate:not(.reduced) .flap {
+  animation: flap-open var(--flap-open-duration) cubic-bezier(0.22, 1, 0.36, 1)
+    var(--open-delay) forwards;
+}
+
+.animate:not(.reduced) .card {
+  animation: card-rise 0.95s cubic-bezier(0.22, 1, 0.36, 1) var(--card-delay)
+    forwards;
+}
+
+.animate:not(.reduced) .trailDot {
+  animation: trail-fade calc(var(--flight-duration) + 0.15s) ease-out forwards;
+  animation-delay: calc(var(--i) * 0.07s);
+}
+
+.animate:not(.reduced) .sparkle {
+  animation: sparkle 1.4s ease-out forwards;
+  animation-delay: calc(var(--sparkle-delay) + (var(--s) * 0.06s));
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translate(-58%, 48%) rotate(-18deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-28%, 22%) rotate(-4deg);
+  }
+  70% {
+    transform: translate(-8%, 6%) rotate(8deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes trail-fade {
+  0% {
+    transform: translate(0, 0) scale(0.55);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(
+        calc(52% + var(--i) * 5%),
+        calc(-58% - var(--i) * 2.5%)
+      )
+      scale(0.15);
+    opacity: 0;
+  }
+}
+
+/* Flip flap upward around its hinge so the underside faces up */
+@keyframes flap-open {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  100% {
+    transform: rotate(180deg) translateY(-6px);
+  }
+}
+
+@keyframes card-rise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 1.6rem) scale(0.86);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -3.35rem) scale(1);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.3);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-32px) scale(0.2);
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+/* Final settled state for reduced motion */
+.reduced .flyer {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+}
+.reduced .flap {
+  transform: rotate(180deg) translateY(-6px);
+}
+.reduced .card {
+  opacity: 1;
+  transform: translate(-50%, -3.35rem) scale(1);
+}
+.reduced .trail,
+.reduced .sparkles {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flyer,
+  .float,
+  .flap,
+  .card,
+  .trailDot,
+  .sparkle {
+    animation: none !important;
+  }
+  .flyer {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  .flap {
+    transform: rotate(180deg) translateY(-6px);
+  }
+  .card {
+    opacity: 1;
+    transform: translate(-50%, -3.35rem) scale(1);
+  }
+  .trail,
+  .sparkles {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stage {
+    height: 15.5rem;
+  }
+}

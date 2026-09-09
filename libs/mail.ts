@@ -20,7 +20,7 @@ export function brandedEmail({
   title: string;
   intro: string;
   content: string;
-  action?: { label: string; url: string };
+  action?: { label: string; url: any };
   footer?: string;
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
