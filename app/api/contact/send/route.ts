@@ -1,4 +1,5 @@
 import { brandedEmail, escapeHtml, transporter } from "@/libs/mail";
+import { createAdminClient } from "@/utils/supabase";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
@@ -6,11 +7,41 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const { name, email, message, phone, organization } = body?.values ?? {};
+    const normalizedEmail =
+      typeof email === "string" ? email.trim().toLowerCase() : "";
 
-    if (!name || !email || !message || !phone) {
+    if (
+      typeof name !== "string" ||
+      !name.trim() ||
+      !normalizedEmail ||
+      typeof message !== "string" ||
+      !message.trim() ||
+      typeof phone !== "string" ||
+      !phone.trim()
+    ) {
       return NextResponse.json(
         { message: "Name, email, phone, and message are required." },
         { status: 400 },
+      );
+    }
+
+    const supabase = createAdminClient();
+    const { error: insertError } = await supabase.from("Contact").insert({
+      name: name.trim(),
+      email: normalizedEmail,
+      phone: phone.trim(),
+      organization:
+        typeof organization === "string" && organization.trim()
+          ? organization.trim()
+          : null,
+      message: message.trim(),
+    });
+
+    if (insertError) {
+      console.error("Contact insert error:", insertError);
+      return NextResponse.json(
+        { message: "We could not save your message. Please try again." },
+        { status: 500 },
       );
     }
 
@@ -29,7 +60,7 @@ export async function POST(request: Request) {
         content: `
           <div style="padding:20px;background:#f5f3f6;border-left:4px solid #f6d648;">
             <p style="margin:0 0 10px;"><strong>Name:</strong> ${escapeHtml(name)}</p>
-            <p style="margin:0 0 10px;"><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}" style="color:#66009b;">${escapeHtml(email)}</a></p>
+            <p style="margin:0 0 10px;"><strong>Email:</strong> <a href="mailto:${escapeHtml(normalizedEmail)}" style="color:#66009b;">${escapeHtml(normalizedEmail)}</a></p>
             <p style="margin:0 0 10px;"><strong>Phone:</strong> ${escapeHtml(phone)}</p>
             <p style="margin:0 0 10px;"><strong>Organization:</strong> ${escapeHtml(organization || "Not provided")}</p>
             <p style="margin:0;"><strong>Message:</strong><br />${escapeHtml(message).replaceAll("\n", "<br />")}</p>

@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Contact_form() {
   const [sending, setSending] = useState<boolean>(false);
@@ -13,6 +14,8 @@ function Contact_form() {
       "Volunteer application submitted successfully. Check your inbox or spam folder for confirmation.",
     );
   const showError = () => toast.error("Error occur when sending email");
+
+  const navigation = useRouter();
 
   const schema = z.object({
     name: z
@@ -63,7 +66,7 @@ function Contact_form() {
       }
 
       setSending(true);
-      const response = await fetch("/api/email/send", {
+      const response = await fetch("/api/contact/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +80,7 @@ function Contact_form() {
 
       if (response.ok) {
         reset();
-        showSuccess();
+        navigation.push("/success-contact");
       } else {
         toast.error(result.message ?? "We could not send your message.");
       }

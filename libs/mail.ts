@@ -34,7 +34,7 @@ export function brandedEmail({
     <div style="margin:0;background:#f5f3f6;padding:32px 16px;font-family:Arial,sans-serif;color:#22002d;line-height:1.6;">
       <div style="max-width:600px;margin:0 auto;background:#ffffff;border:1px solid #eadfea;">
         <div style="padding:28px 32px;background:#66009b;text-align:left;color:#ffffff;font-size:24px;line-height:1.4;">
-          ${logoUrl ? `<div><img src="${escapeHtml(logoUrl)}" alt="Save a Village" style="height:35px;display:block;" /></div>` : "Save a Village"}
+          ${logoUrl ? `<div style="display:flex;width:100%;justify-content:center;"><img src="${escapeHtml(logoUrl)}" alt="Save a Village" style="height:35px;display:block;" /></div>` : "Save a Village"}
           <h1 style="margin:20px 20px 0 0;color:#ffffff;font-size:18px;line-height:1.2;">${escapeHtml(title)}</h1>
         </div>
         <div style="padding:32px; padding-top:40px;">
