@@ -1,12 +1,61 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* -------------------------------------------------------------------------- */
+/* Save a Village brand tokens (from main site globals)                         */
+/* -------------------------------------------------------------------------- */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary-color: #66009b;
+
+  /* Shared aliases used by thank-you + envelope components */
+  --brand-dark-purple: #260735;
+  --brand-light-purple: #66009b;
+  --brand-white: #ffffff;
+  --brand-off-white: #f8f6ef;
+  --brand-dark-text: #17231e;
+  --brand-soft-lavender: #efe6f7;
+  --brand-accent-gold: #d4a84b;
+  --ul-black: #000000;
+
+  /* shadcn theme mapped to brand */
+  --card: var(--brand-white);
+  --card-foreground: var(--brand-dark-text);
+  --popover: var(--brand-white);
+  --popover-foreground: var(--brand-dark-text);
+  --primary: var(--primary-color);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-soft-lavender);
+  --secondary-foreground: var(--brand-dark-purple);
+  --muted: #f1eee4;
+  --muted-foreground: color-mix(in srgb, var(--brand-dark-text) 65%, white);
+  --accent: var(--brand-soft-lavender);
+  --accent-foreground: var(--brand-dark-purple);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: color-mix(in srgb, var(--brand-dark-purple) 12%, white);
+  --input: color-mix(in srgb, var(--brand-dark-purple) 14%, white);
+  --ring: var(--primary-color);
+  --chart-1: var(--primary-color);
+  --chart-2: var(--brand-dark-purple);
+  --chart-3: var(--brand-accent-gold);
+  --chart-4: #8b5cf6;
+  --chart-5: #c4b5fd;
+  --radius: 0.75rem;
+  --sidebar: var(--brand-white);
+  --sidebar-foreground: var(--brand-dark-text);
+  --sidebar-primary: var(--primary-color);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--brand-soft-lavender);
+  --sidebar-accent-foreground: var(--brand-dark-purple);
+  --sidebar-border: color-mix(in srgb, var(--brand-dark-purple) 12%, white);
+  --sidebar-ring: var(--primary-color);
 }
 
 @theme inline {
+  /* Brand theme from main site */
   --color-primary: #66009b;
   --color-gradient-start: #260735;
   --color-gradient-end: #2607350a;
@@ -18,18 +67,60 @@
   --breakpoint-xsm: 280px;
   --breakpoint-sm: 480px;
   --breakpoint-600: 600px;
-
   --breakpoint-md: 768px;
   --breakpoint-800: 800px;
   --breakpoint-900: 900px;
-
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
-
   --breakpoint-3k: 1920px;
   --breakpoint-4k: 2568px;
+
+  /* App / shadcn theme bindings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-quicksand), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
+
+@custom-variant dark (&:is(.dark *));
+
 @custom-variant smLg {
   @media (min-width: 580px) and (max-width: 768px) {
     @slot;
@@ -65,17 +156,38 @@
   box-sizing: border-box;
 }
 
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  height: auto;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    max-width: 100vw;
+    overflow-x: hidden;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-quicksand), ui-sans-serif, system-ui, sans-serif;
+  }
 }
+
 .container {
   max-width: 1200px;
-  @media screen and (min-width: 12001px) {
+
+  @media screen and (min-width: 1201px) {
     max-width: 1800px;
   }
 }
+
 .sm-p-text {
   font-family: var(--font-manrope);
   font-weight: 300;
@@ -84,6 +196,7 @@ body {
   letter-spacing: 0%;
   font-size: clamp(14px, 0.84vw, 20px);
 }
+
 .bold-p-text {
   font-family: var(--font-manrope);
   font-weight: 500;
@@ -91,6 +204,7 @@ body {
   font-size: clamp(14px, 0.84vw, 20px);
   letter-spacing: 0%;
 }
+
 .p-text {
   font-family: var(--font-manrope);
   font-weight: 300;
@@ -106,10 +220,10 @@ body {
   letter-spacing: -0.02em;
   margin-bottom: clamp(18px, 1.42vw, 30px);
 }
+
 .hero-label {
   font-weight: 600;
   letter-spacing: 0.25em;
-  letter-spacing: -0.02em;
 }
 
 .hero-text {
@@ -127,6 +241,7 @@ body {
   color: var(--color-black);
   font-family: var(--font-quicksand);
 }
+
 .section-title-text {
   font-weight: 700;
   font-size: clamp(25px, 2.63vw, 54px);
@@ -136,8 +251,6 @@ body {
   font-family: var(--font-quicksand);
 }
 
-.btn-text {
-}
 .banner-title-text {
   font-family: var(--font-caveat);
   font-weight: 400;
@@ -155,6 +268,7 @@ body {
   font-size: clamp(13px, 0.84vw, 18px);
   position: relative;
 }
+
 .li-a {
   color: var(--color-black);
   font-size: clamp(13px, 0.84vw, 20px);
@@ -164,12 +278,9 @@ body {
 .hero-nav {
   position: relative;
   height: 70px;
-
   background: white;
-
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +292,6 @@ body {
   content: "";
   position: absolute;
   bottom: 0;
-
   width: 15px;
   height: 15px;
 }
@@ -189,7 +299,6 @@ body {
 .hero-nav::before {
   top: 55px;
   left: -15px;
-  /* transform: rotate(180deg); */
   border-bottom-right-radius: 10px;
   box-shadow: 5px 5px 0 #fff;
 }
@@ -203,10 +312,9 @@ body {
 }
 
 .swiper-wrapper {
-  transition-timing-function: ease-in-out !important; /* 👈 Makes start and stop smooth */
+  transition-timing-function: ease-in-out !important;
 }
 
-/* Container wrapper */
 .pagination-container {
   margin-top: 40px;
   display: flex;
@@ -216,15 +324,12 @@ body {
   justify-content: center;
 }
 
-/* Individual list item wrapper */
 .page-item {
   display: inline-block;
 }
 
-/* Clickable link elements */
 .page-link {
   border: 1px solid #ddd;
-  border-radius: 4px;
   color: var(--primary-color);
   text-decoration: none;
   cursor: pointer;
@@ -240,14 +345,12 @@ body {
   background-color: #f8f9fa;
 }
 
-/* Active page state */
 .page-item.active .page-link {
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
 }
 
-/* Disabled controls */
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
@@ -255,7 +358,6 @@ body {
   border-color: #dee2e6;
 }
 
-/* Break elements (...) */
 .page-item.break-item .page-link {
   border: none;
   background: transparent;
@@ -269,7 +371,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }

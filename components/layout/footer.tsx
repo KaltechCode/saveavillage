@@ -147,23 +147,7 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10  w-full bg-primary ">
-          <div
-            className="
-        container
-        mx-auto
-        px-4
-        py-5
-
-        flex
-        flex-col
-        gap-4
-        text-center
-
-        md:flex-row
-        md:justify-between
-        md:text-left
-      "
-          >
+          <div className="mx-auto py-5 flex flex-col gap-4 text-center md:flex-row md:justify-between md:text-left w-[95%] xl:max-w-[95%]">
             <p>© 2026 Save a Village. All rights reserved</p>
 
             <div className="flex justify-center gap-6">

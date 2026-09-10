@@ -85,10 +85,10 @@ function Join_form() {
     try {
       // Execute the mutation
       const response = await addVolunteer(values).unwrap();
-
       reset();
       handler(setStep(1));
-      toast.success(response.message ?? "Registration submitted successfully.");
+      navigate.push("/volunteer-confirmation");
+      // toast.success(response.message ?? "Registration submitted successfully.");
     } catch (err: any) {
       console.log(err);
       toast.error(err?.data.message);

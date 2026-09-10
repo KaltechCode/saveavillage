@@ -3,7 +3,7 @@ import { joinUsSchema } from "@/utils/schema";
 import { readVerificationToken } from "@/libs/volunteerVerification";
 import { brandedEmail, transporter } from "@/libs/mail";
 import { createAdminClient } from "@/utils/supabase";
-import { downloadCSV } from "@/libs/cvs";
+import { createVolunteerExportToken } from "@/libs/volunteerExport";
 
 function verificationError(message: string, status: number) {
   return new Response(
@@ -120,27 +120,32 @@ export async function GET(request: Request) {
       );
     }
 
-    const csvUrl = downloadCSV(data);
-
-    // await transporter.sendMail({
-    //   from: {
-    //     name: "Save a Village",
-    //     address: process.env.SMTP_FROM as string,
-    //   },
-    //   to: "test@kaltechconultancy.tech",
-    //   subject: "New volunteer application",
-    //   html: brandedEmail({
-    //     title: "New volunteer application",
-    //     intro: `A new volunteer application has been submitted.`,
-    //     content: '<p style="margin:0;color:#555555;">.</p>',
-    //     action: { label: "View new Application", url: csvUrl },
-    //   }),
-    // });
-
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
+    const exportToken = createVolunteerExportToken();
+    const exportUrl = `${siteUrl.replace(/\/$/, "")}/api/volunteers/export?token=${encodeURIComponent(exportToken)}`;
+
+    await transporter.sendMail({
+      from: {
+        name: "Save a Village",
+        address: process.env.SMTP_FROM as string,
+      },
+      to: "test@kaltechconsultancy.tech",
+      subject: "New volunteer application",
+      html: brandedEmail({
+        title: "New volunteer application",
+        intro: `A new volunteer application has been submitted.`,
+        content: '<p style="margin:0;color:#555555;">.</p>',
+        csv: true,
+        action: { label: "Download CSV", url: exportUrl },
+      }),
+    });
 
     return NextResponse.redirect(new URL("/thank-you", siteUrl));
+    // return NextResponse.json({
+    //   success: true,
+    //   message: "Your volunteer application has been submitted successfully.",
+    // });
   } catch (error) {
     console.error("Volunteer verification error:", error);
     return verificationError(

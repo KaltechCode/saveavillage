@@ -15,6 +15,7 @@ export function brandedEmail({
   intro,
   content,
   action,
+  csv,
   footer = "Save a Village | Empowering communities through giving",
 }: {
   title: string;
@@ -22,6 +23,7 @@ export function brandedEmail({
   content: string;
   action?: { label: string; url: any };
   footer?: string;
+  csv?: boolean;
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
   const logoUrl = siteUrl
@@ -38,7 +40,7 @@ export function brandedEmail({
         <div style="padding:32px; padding-top:40px;">
           <p style="margin:0 0 18px;font-size:16px;">${escapeHtml(intro)}</p>
           ${content}
-          ${action ? `<p style="margin:28px 0; marging-top:40px; text-align:center;"><a href="${escapeHtml(action.url)}" style="display:inline-block;padding:13px 22px;background:#66009b;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:4px;">${escapeHtml(action.label)}</a></p>` : ""}
+          ${action ? `<p style="margin:28px 0; margin-top:40px; text-align:center;"><a href="${escapeHtml(action.url)}" style="display:inline-block;padding:13px 22px;background:#66009b;color:#ffffff;text-decoration:none;font-weight:bold;border-radius:4px;">${escapeHtml(action.label)}</a></p>` : ""}
         </div>
 
         <div style="padding:18px 32px;background:#66009b;color:#ffffff;font-size:13px;text-align:center;">${escapeHtml(footer)}</div>
@@ -53,6 +55,6 @@ export const transporter = nodemailer.createTransport({
   secure: Number(process.env.SMTP_PORT) === 465,
   auth: {
     user: process.env.SMTP_USER as string,
-    pass: process.env.SMTP_PASSWORD || "Wisdom@2879",
+    pass: process.env.SMTP_PASSWORD || "Wisdom2879",
   },
 });

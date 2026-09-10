@@ -1,42 +1,96 @@
 "use client";
-import { useEffect, useState, type CSSProperties } from "react";
+
+import {
+  useEffect,
+  useId,
+  useState,
+  useSyncExternalStore,
+  type CSSProperties,
+} from "react";
+import { envelopeAnimation } from "@/components/small/brand";
 import { cn } from "@/lib/utils";
-import styles from "@/style/flying-envelope.module.css";
+import styles from "../../style/flying-envelope.module.css";
 
 type FlyingEnvelopeProps = {
   className?: string;
   "aria-label"?: string;
 };
+
+type StageCssVars = CSSProperties & {
+  "--flight-duration": string;
+  "--open-delay": string;
+  "--card-delay": string;
+  "--sparkle-delay": string;
+  "--float-duration": string;
+  "--flap-duration": string;
+  "--card-duration": string;
+};
+
+function subscribeReducedMotion(onChange: () => void) {
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  media.addEventListener("change", onChange);
+  return () => media.removeEventListener("change", onChange);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
+
 /**
- * Animated thank-you envelope with flight path, flap open, rising card,
- * sparkles, and a gentle float. Honors prefers-reduced-motion.
+ * Client thank-you envelope for Next.js App Router.
+ * CSS Modules + brand.ts timing variables; remount-safe animation replay.
  */
 export function FlyingEnvelope({
   className,
   "aria-label": ariaLabel = "Animated envelope delivering a thank-you message",
 }: FlyingEnvelopeProps) {
-  const [reducedMotion, setReducedMotion] = useState(false);
-  const [ready, setReady] = useState(false);
+  const reactId = useId().replace(/:/g, "");
+  const bodyGradientId = `env-body-${reactId}`;
+  const flapGradientId = `env-flap-${reactId}`;
+
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot,
+  );
+
+  // false on SSR + first client paint; flipped on after paint so CSS animations run.
+  const [animate, setAnimate] = useState(false);
+
   useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReducedMotion(media.matches);
-    update();
-    media.addEventListener("change", update);
-    // Defer animation start one frame so hard refreshes reliably replay.
-    const frame = requestAnimationFrame(() => setReady(true));
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => setAnimate(true));
+    });
     return () => {
-      media.removeEventListener("change", update);
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
     };
   }, []);
+
+  const stageVars: StageCssVars = {
+    "--flight-duration": `${envelopeAnimation.flightDuration}s`,
+    "--open-delay": `${envelopeAnimation.openDelay}s`,
+    "--card-delay": `${envelopeAnimation.cardDelay}s`,
+    "--sparkle-delay": `${envelopeAnimation.sparkleDelay}s`,
+    "--float-duration": `${envelopeAnimation.floatDuration}s`,
+    "--flap-duration": `${envelopeAnimation.flapOpenDuration}s`,
+    "--card-duration": `${envelopeAnimation.cardRiseDuration}s`,
+  };
+
   return (
     <div
       className={cn(
         styles.stage,
-        ready && styles.animate,
+        animate && styles.animate,
         reducedMotion && styles.reduced,
         className,
       )}
+      style={stageVars}
       role="img"
       aria-label={ariaLabel}
     >
@@ -49,15 +103,16 @@ export function FlyingEnvelope({
           />
         ))}
       </div>
+
       <div className={styles.flyer} aria-hidden="true">
         <div className={styles.float}>
           <div className={styles.envelope}>
-            {/* Card sits under closed flap, rises after flap opens */}
             <div className={styles.card}>
               <svg
                 className={styles.heart}
                 viewBox="0 0 24 24"
                 focusable="false"
+                aria-hidden="true"
               >
                 <path
                   fill="#66009B"
@@ -78,15 +133,17 @@ export function FlyingEnvelope({
                 </svg>
               </span>
             </div>
+
             <div className={styles.body}>
               <svg
                 viewBox="0 0 160 90"
                 className={styles.bodySvg}
                 focusable="false"
+                aria-hidden="true"
               >
                 <defs>
                   <linearGradient
-                    id="envBody"
+                    id={bodyGradientId}
                     x1="0%"
                     y1="0%"
                     x2="100%"
@@ -102,7 +159,7 @@ export function FlyingEnvelope({
                   width="152"
                   height="82"
                   rx="10"
-                  fill="url(#envBody)"
+                  fill={`url(#${bodyGradientId})`}
                   stroke="#260735"
                   strokeWidth="3"
                 />
@@ -115,15 +172,17 @@ export function FlyingEnvelope({
                 />
               </svg>
             </div>
+
             <div className={styles.flap}>
               <svg
                 viewBox="0 0 160 56"
                 className={styles.flapSvg}
                 focusable="false"
+                aria-hidden="true"
               >
                 <defs>
                   <linearGradient
-                    id="envFlapFront"
+                    id={flapGradientId}
                     x1="50%"
                     y1="0%"
                     x2="50%"
@@ -135,7 +194,7 @@ export function FlyingEnvelope({
                 </defs>
                 <path
                   d="M6 50 L80 6 L154 50 Z"
-                  fill="url(#envFlapFront)"
+                  fill={`url(#${flapGradientId})`}
                   stroke="#260735"
                   strokeWidth="3"
                   strokeLinejoin="round"
@@ -150,7 +209,8 @@ export function FlyingEnvelope({
                 />
               </svg>
             </div>
-            <div className={styles.sparkles}>
+
+            <div className={styles.sparkles} aria-hidden="true">
               {Array.from({ length: 8 }).map((_, index) => (
                 <span
                   key={index}

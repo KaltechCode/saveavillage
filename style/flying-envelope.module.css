@@ -1,94 +1,106 @@
+/*
+  Flying envelope — CSS Modules for Next.js App Router.
+  Timing defaults mirror src/lib/brand.ts (envelopeAnimation).
+  Runtime overrides are injected as CSS variables on .stage from the client component.
+*/
+
 .stage {
   --flight-duration: 3s;
-  --settle-duration: 0.5s;
-  --flap-open-duration: 0.8s;
-  --card-rise-duration: 0.95s;
-  --sparkle-duration: 1.4s;
-  --float-duration: 4.5s;
   --open-delay: 3.05s;
   --card-delay: 3.45s;
   --sparkle-delay: 3.6s;
+  --float-duration: 4.5s;
+  --flap-duration: 0.8s;
+  --card-duration: 0.95s;
 
   position: relative;
-  width: min(100%, 28rem);
-  height: 20rem;
+  width: min(100%, 24rem);
+  height: 17rem;
   margin-inline: auto;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
+  /* Reserve space so Next.js soft navigation does not shift layout */
+  flex-shrink: 0;
 }
 
-.trail {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Full-stage layers so trail-fade % translates move across the stage */
-.trailDot {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 18% 72%,
-    #66009b 0 0.28rem,
-    #efe6f7 0.28rem 0.38rem,
-    transparent 0.42rem
-  );
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-/* Full-stage wrapper so fly-in % translates travel across the stage */
 .flyer {
   position: absolute;
   inset: 0;
-  z-index: 1;
   display: grid;
   place-items: center;
+  transform: translate(-58%, 48%) rotate(-18deg);
   opacity: 0;
   will-change: transform, opacity;
 }
 
 .float {
-  display: grid;
-  place-items: center;
+  transform-origin: center;
 }
 
 .envelope {
   position: relative;
-  width: 10rem;
-  height: 5.625rem;
-  filter: drop-shadow(0 14px 22px rgb(38 7 53 / 0.28));
+  width: clamp(9.5rem, 46vw, 12rem);
+  height: 7.5rem;
+  margin-top: 2.5rem;
+}
+
+.body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  filter: drop-shadow(0 14px 22px rgb(38 7 53 / 0.18));
+}
+
+.bodySvg,
+.flapSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2.05rem;
+  z-index: 4;
+  height: 3.4rem;
+  transform-origin: 50% 92%;
+  filter: drop-shadow(0 6px 10px rgb(38 7 53 / 0.12));
+  will-change: transform;
 }
 
 .card {
   position: absolute;
   left: 50%;
-  bottom: 1.15rem;
-  z-index: 1;
+  top: 0.35rem;
+  z-index: 3;
   display: grid;
   place-items: center;
-  width: 5.25rem;
-  height: 3.5rem;
-  border-radius: 0.55rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f6ef 100%);
-  border: 2px solid #260735;
-  box-shadow: 0 8px 16px rgb(38 7 53 / 0.18);
+  width: 4.5rem;
+  height: 3.35rem;
+  border: 2px solid #66009b;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgb(38 7 53 / 0.16);
   opacity: 0;
   transform: translate(-50%, 1.6rem) scale(0.86);
+  will-change: transform, opacity;
 }
 
 .heart {
-  width: 1.65rem;
-  height: 1.65rem;
+  display: block;
+  width: 1.45rem;
+  height: 1.45rem;
 }
 
 .check {
   position: absolute;
   top: -0.4rem;
   right: -0.4rem;
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .check svg {
@@ -97,88 +109,147 @@
   height: 100%;
 }
 
-.body {
+.trail {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  pointer-events: none;
 }
 
-.bodySvg,
-.flapSvg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.flap {
+.trailDot {
+  --i: 0;
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 3;
-  width: 100%;
-  height: 3.5rem;
-  transform-origin: 50% 89%;
-  will-change: transform;
+  left: 8%;
+  top: 72%;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    #66009b 0%,
+    #260735 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 8px rgb(102 0 155 / 0.45);
+  opacity: 0;
 }
 
 .sparkles {
   position: absolute;
-  inset: -2rem -0.5rem auto;
-  height: 5rem;
-  z-index: 4;
+  inset: -55% -14% auto;
+  height: 100%;
+  z-index: 5;
   pointer-events: none;
 }
 
 .sparkle {
+  --s: 0;
+  --sparkle-offset: 0;
   position: absolute;
-  left: calc(6% + var(--s) * 12%);
-  top: calc(10% + var(--s) * 6%);
-  width: 0.45rem;
-  height: 0.45rem;
+  left: calc(10% + (var(--s) * 10%));
+  top: calc(30% + (var(--sparkle-offset) * 12%));
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
   background: #d4a84b;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
   opacity: 0;
 }
 
-.animate:not(.reduced) .flyer {
-  animation: fly-in var(--flight-duration) cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
+.sparkle:nth-child(3n + 1) {
+  --sparkle-offset: 0;
 }
 
-.animate:not(.reduced) .float {
-  animation: gentle-float var(--float-duration) ease-in-out
-    calc(var(--flight-duration) + var(--settle-duration)) infinite;
+.sparkle:nth-child(3n + 2) {
+  --sparkle-offset: 1;
 }
 
-.animate:not(.reduced) .flap {
-  animation: flap-open var(--flap-open-duration) cubic-bezier(0.22, 1, 0.36, 1)
+.sparkle:nth-child(odd) {
+  background: #66009b;
+  width: 0.28rem;
+  height: 0.28rem;
+}
+
+.sparkle:nth-child(3n) {
+  --sparkle-offset: 2;
+  background: #260735;
+  border-radius: 2px;
+  rotate: 45deg;
+}
+
+.sparkle:nth-child(5),
+.sparkle:nth-child(8) {
+  width: 0.55rem;
+  height: 0.28rem;
+  border-radius: 60% 0 60% 0;
+  background: color-mix(in srgb, #66009b 70%, #d4a84b);
+  rotate: -25deg;
+}
+
+/*
+  Prefer separate .animate / .reduced rules over :not() so CSS Modules
+  hashing stays reliable across Next.js / Turbopack / Lightning CSS.
+*/
+.animate .flyer {
+  animation: fly-in var(--flight-duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate .float {
+  animation: gentle-float var(--float-duration) ease-in-out var(--open-delay)
+    infinite;
+}
+
+.animate .flap {
+  animation: flap-open var(--flap-duration) cubic-bezier(0.34, 1.12, 0.64, 1)
     var(--open-delay) forwards;
 }
 
-.animate:not(.reduced) .card {
-  animation: card-rise 0.95s cubic-bezier(0.22, 1, 0.36, 1) var(--card-delay)
-    forwards;
+.animate .card {
+  animation: card-rise var(--card-duration) cubic-bezier(0.22, 1, 0.36, 1)
+    var(--card-delay) forwards;
 }
 
-.animate:not(.reduced) .trailDot {
+.animate .trailDot {
   animation: trail-fade calc(var(--flight-duration) + 0.15s) ease-out forwards;
   animation-delay: calc(var(--i) * 0.07s);
 }
 
-.animate:not(.reduced) .sparkle {
+.animate .sparkle {
   animation: sparkle 1.4s ease-out forwards;
   animation-delay: calc(var(--sparkle-delay) + (var(--s) * 0.06s));
+}
+
+/* Reduced motion wins over .animate (higher specificity) */
+.animate.reduced .flyer,
+.animate.reduced .float,
+.animate.reduced .flap,
+.animate.reduced .card,
+.animate.reduced .trailDot,
+.animate.reduced .sparkle,
+.reduced .flyer,
+.reduced .float,
+.reduced .flap,
+.reduced .card,
+.reduced .trailDot,
+.reduced .sparkle {
+  animation: none !important;
+}
+
+.reduced .flyer {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg);
+}
+
+.reduced .flap {
+  transform: rotate(180deg) translateY(-6px);
+}
+
+.reduced .card {
+  opacity: 1;
+  transform: translate(-50%, -3.35rem) scale(1);
+}
+
+.reduced .trail,
+.reduced .sparkles {
+  display: none;
 }
 
 @keyframes fly-in {
@@ -219,7 +290,6 @@
   }
 }
 
-/* Flip flap upward around its hinge so the underside faces up */
 @keyframes flap-open {
   0% {
     transform: rotate(0deg) translateY(0);
@@ -268,23 +338,6 @@
   }
 }
 
-/* Final settled state for reduced motion */
-.reduced .flyer {
-  opacity: 1;
-  transform: translate(0, 0) rotate(0deg);
-}
-.reduced .flap {
-  transform: rotate(180deg) translateY(-6px);
-}
-.reduced .card {
-  opacity: 1;
-  transform: translate(-50%, -3.35rem) scale(1);
-}
-.reduced .trail,
-.reduced .sparkles {
-  display: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .flyer,
   .float,
@@ -294,17 +347,21 @@
   .sparkle {
     animation: none !important;
   }
+
   .flyer {
     opacity: 1;
     transform: translate(0, 0) rotate(0deg);
   }
+
   .flap {
     transform: rotate(180deg) translateY(-6px);
   }
+
   .card {
     opacity: 1;
     transform: translate(-50%, -3.35rem) scale(1);
   }
+
   .trail,
   .sparkles {
     display: none;
