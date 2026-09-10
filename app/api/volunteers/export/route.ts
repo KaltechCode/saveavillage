@@ -100,7 +100,7 @@ export async function GET(request: Request) {
     }
 
     return new Response(
-      recordsToCsv((data ?? []) as Record<string, unknown>[]),
+      recordsToCsv((data ?? []) as unknown as Record<string, unknown>[]),
       {
         status: 200,
         headers: {
