@@ -119,8 +119,6 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@custom-variant dark (&:is(.dark *));
-
 @custom-variant smLg {
   @media (min-width: 580px) and (max-width: 768px) {
     @slot;
@@ -142,13 +140,6 @@
 @custom-variant md-portrait {
   @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
     @slot;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
   }
 }
 
