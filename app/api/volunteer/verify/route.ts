@@ -130,7 +130,7 @@ export async function GET(request: Request) {
         name: "Save a Village",
         address: process.env.SMTP_FROM as string,
       },
-      to: "test@kaltechconsultancy.tech",
+      to: "notifications@saveavillageusa.org",
       subject: "New volunteer application",
       html: brandedEmail({
         title: "New volunteer application",
