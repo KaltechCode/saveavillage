@@ -50,7 +50,7 @@ export async function POST(request: Request) {
         name: "Save a Village",
         address: process.env.SMTP_FROM as string,
       },
-      to: "info@saveavillageusa.org",
+      to: "notifications@saveavillageusa.org",
       replyTo: "admin@saveavillageusa.org",
       subject: `New contact message from ${name}`,
       html: brandedEmail({
