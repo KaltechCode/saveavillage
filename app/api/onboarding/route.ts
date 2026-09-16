@@ -44,7 +44,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           message:
-            "A Join Us application already exists for this email address.",
+            "A Save a Village Join Us application already exists for this email address.",
         },
         { status: 409 },
       );
@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     const token = createVerificationToken(verificationBody);
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL || request.url.split("/api/")[0];
-    const verificationUrl = `${siteUrl}/api/volunteer/verify?token=${encodeURIComponent(token)}`;
+    const verificationUrl = `${siteUrl}/api/onboarding/verify?token=${encodeURIComponent(token)}`;
 
     await transporter.sendMail({
       from: {
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
       subject: "Confirm your Join Us application",
       html: brandedEmail({
         title: "Confirm your Join Us Application",
-        intro: `Hello ${personalInfo.first_name}, please confirm your email address to submit your volunteer application.`,
+        intro: `Hello ${personalInfo.first_name}, please confirm your email address to submit your Join Us application.`,
         content:
           '<p style="margin:0;color:#555555;">This confirmation link expires in 30 minutes. If you did not start this application, you can safely ignore this email.</p>',
         action: { label: "Confirm my email address", url: verificationUrl },

@@ -141,7 +141,7 @@ export async function GET(request: Request) {
       }),
     });
 
-    return NextResponse.redirect(new URL("/thank-you", siteUrl));
+    return NextResponse.redirect(new URL("/thank-you/joining", siteUrl));
     // return NextResponse.json({
     //   success: true,
     //   message: "Your volunteer application has been submitted successfully.",

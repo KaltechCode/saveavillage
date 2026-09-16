@@ -6,6 +6,7 @@ import HeroBanner from "@/components/medium/HeroBanner";
 import { motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import JoinFormSection from "@/components/large/contact/JoinFormSection";
+import Join_form from "@/components/medium/Join_Form";
 
 function Page() {
   return (
@@ -20,40 +21,35 @@ function Page() {
           <div className="section-container  h-full">
             <div className="flex  flex-col justify-center items-center h-full">
               {/* section tittle*/}
-              <div className="">
-                {/* <motion.p
-                  className="text-center text-primary flex items-center justify-center gap-2"
-                  initial={{ y: 0 }}
-                  animate={{
-                    y: [0, -10, 0, -10, 0],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "easeOut",
-                  }}
-                >
-                  <span>
-                    <FaHeart className="text-primary" />{" "}
-                  </span>
-                  CONTACT US
-                </motion.p> */}
-                <motion.h2
-                  className="hero-title-text text-center text-primary!  mx-auto"
-                  whileInView={{ scaleY: 1, opacity: 1 }}
-                  initial={{ scaleY: 0, opacity: 0.5 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35 }}
-                  style={{ transformOrigin: "bottom" }}
-                >
-                  Join The Good Work of <br /> Impacting lives
-                </motion.h2>
-              </div>
+             
             </div>
           </div>
         </section>
 
-        <JoinFormSection />
+        
+
+        {/* <div className="w-full px-4 py-8 md:px-10 md:py-12">
+        <Join_form />
+              </div> */}
+
+              <div className="py-12 md:py-16">
+          <div className="w-full max-w-7xl mx-auto px-4">
+            <div className="bg-white rounded-md shadow-md overflow-hidden">
+              <div className="bg-primary p-6 md:p-8 text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
+                   Save a Village Join Us Application
+                </h2>
+                <p className="text-white/90 text-base md:text-lg">
+                  Join our team and impact lives.
+                </p>
+              </div>
+
+              <div className="w-full px-4 py-8 md:px-10 md:py-12">
+                <Join_form />
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* <AccordionSection /> */}
       </main>

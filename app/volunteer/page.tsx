@@ -32,15 +32,14 @@ const VolunteerPage = () => {
                 </h2>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   Volunteering with Save a Village offers an incredible opportunity
-                  to make a meaningful impact in the community by serving our
-                  young adults. Whether through hands-on outreach, organizing
+                  to make a meaningful impact in the community. Whether through hands-on outreach, organizing
                   events, or providing support to underserved individuals,
-                  volunteers play a vital role in fulfilling USFJ's mission to
+                  volunteers play a vital role in fulfilling save a village mission to
                   spread love, compassion, and the message of Christ. By
                   offering your time, skills, and resources, you not only help
                   meet the physical and emotional needs of others but also grow
                   spiritually and deepen your sense of purpose. Through the
-                  collaborative efforts of volunteers, United Servants for Jesus
+                  collaborative efforts of volunteers, Save a Village
                   creates a network of care and support that transforms lives,
                   uplifts our communities, and embodies the teachings of Christ
                   in action.

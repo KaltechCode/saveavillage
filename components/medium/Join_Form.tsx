@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { toast } from "react-toastify";
-import { useAddVolunteerMutation } from "@/services/volunteer";
+import { useAddJoinUsMutation, useAddVolunteerMutation } from "@/services/volunteer";
 import { joinUsSchema, JOINUSTYPE } from "@/utils/schema";
 
 import Emergency from "./stepForms/Emergency";
@@ -25,7 +25,7 @@ import { setStep, setTotalSteps } from "@/features/formSteps";
 
 function Join_form() {
   const [addVolunteer, { isLoading, isSuccess, isError, error }] =
-    useAddVolunteerMutation();
+    useAddJoinUsMutation();
 
   const {
     register: registerField,
@@ -104,11 +104,11 @@ function Join_form() {
   return (
     // <form className="mt-7" onSubmit={handleSubmit(onSubmit)}>
 
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-7">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-[98%] md:w-[90%] lg:w-[90%] mx-auto">
       <MultiStepControl />
 
-      <div className="">
-        <h3 className="title-text text-white!">{formTitles[step - 1]}</h3>
+      <div className="border border-[#f8f8f8] rounded-md p-4 md:p-6 lg:p-12 ">
+        <h3 className="title-text text-primary!">{formTitles[step - 1]}</h3>
 
         {step == 1 && (
           <Belief

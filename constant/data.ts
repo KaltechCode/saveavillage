@@ -29,6 +29,10 @@ export const footerLinks = [
     href: "events",
   },
   {
+    link: "Join Us",
+    href: "volunteer",
+  },
+  {
     link: "Contact Us",
     href: "contact-us",
   },

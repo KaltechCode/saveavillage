@@ -41,16 +41,7 @@ function JoinFormSection() {
             <Join_form />
           </motion.div>
 
-          <div className="rounded-md overflow-hidden relative border border-gray-300 bg-[#f5f5f5]  mobile-landscape:col-span-2 lg:col-span-2  md-landscape:order-3 h-full w-full bg-[url(/images/Community-Services.webp)] bg-cover bg-center">
-            <motion.div
-              className="h-full w-full bg-primary/70 left-0 top-0 absolute z-90"
-              initial={{ scaleY: 1 }}
-              whileInView={{ scaleY: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 1.5 }}
-              style={{ transformOrigin: "bottom" }}
-            ></motion.div>
-          </div>
+        
         </div>
       </div>
     </div>

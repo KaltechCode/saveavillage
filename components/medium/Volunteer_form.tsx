@@ -103,11 +103,11 @@ function Volunteer_form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-[95%] lg:w-[90%] mx-auto"
+      className="w-[98%] md:w-[95%] lg:w-[90%] mx-auto"
     >
       <MultiStepControl />
 
-      <div className="border border-[#f8f8f8] rounded-md p-12">
+      <div className="border border-[#f8f8f8] rounded-md p-4 md:p-6 lg:p-12">
         <h3 className="title-text text-primary!">{volunteerFormTitles[step - 1]}</h3>
 
         {step == 1 && (

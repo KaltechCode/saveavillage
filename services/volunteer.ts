@@ -6,6 +6,13 @@ export const volunteerApi = createApi({
   endpoints: (build) => ({
     addVolunteer: build.mutation({
       query: (body) => ({
+        url: "api/volunteer",
+        method: "POST",
+        body: body,
+      }),
+    }),
+    addJoinUs: build.mutation({
+      query: (body) => ({
         url: "api/onboarding",
         method: "POST",
         body: body,
@@ -14,4 +21,4 @@ export const volunteerApi = createApi({
   }),
 });
 
-export const { useAddVolunteerMutation } = volunteerApi;
+export const { useAddVolunteerMutation, useAddJoinUsMutation } = volunteerApi;

@@ -90,7 +90,7 @@ export default function ThankYouPage() {
                 Your application has been successfully submitted
               </h1>
               <p className="text-pretty text-base leading-relaxed text-[var(--brand-dark-text)]/80 sm:text-lg">
-                Thank you for applying to volunteer with Save a Village. 
+                Thank you for applying to join Save a Village.
               </p>
             </div>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center">

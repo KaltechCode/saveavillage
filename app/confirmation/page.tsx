@@ -20,7 +20,9 @@ export default function ThankYouPage() {
       />
 
       <section className="mx-auto flex w-full max-w-3xl flex-1 flex-col items-center px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
-        <div className="mb-6 sm:mb-8"></div>
+        <div className="mb-6 sm:mb-8">
+        
+        </div>
 
         <div
           className={cn(
@@ -29,6 +31,8 @@ export default function ThankYouPage() {
             "sm:p-10 md:p-12",
           )}
         >
+          <FlyingEnvelope className="mb-2 sm:mb-4" />
+
           <div className="mx-auto max-w-xl space-y-4 text-center">
             <h1 className="font-heading text-balance text-3xl font-semibold tracking-tight text-[var(--brand-dark-purple)] sm:text-4xl md:text-[2.65rem] md:leading-tight">
               Your application has been sent successfully!
@@ -41,7 +45,7 @@ export default function ThankYouPage() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row items-center">
             <Button
               label="Back to Home"
               primary={true}
