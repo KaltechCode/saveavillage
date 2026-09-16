@@ -137,7 +137,7 @@ export default function PersonalInterest({
   }, [involveValue]);
 
   return (
-    <div className="animate-[fadeIn_0.9s_ease-out] grid grid-cols-1 gap-7 bg-white lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-8 xl:gap-10 rounded-md border-[#ffffff25]">
+    <div className="animate-[fadeIn_0.9s_ease-out] grid grid-cols-1 gap-7 bg-white lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-8 xl:gap-10 rounded-md border-[#f3f3f3]">
       <div className="lg:col-span-6 md:col-span-6 mobile-landscape:col-span-6 space-y-2">
         <label className="block p-text text-primary">
           How would you like to get involved?

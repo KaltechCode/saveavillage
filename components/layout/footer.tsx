@@ -33,9 +33,10 @@ function Footer() {
                 creating opportunities to positively impact lives in education,
                 safe housing, and life skills development.
               </p>
+
               <div className="mt-7">
                 <Button
-                  url="/contact-us"
+                  url="/volunteer"
                   label="Become A Volunteer"
                   primary={false}
                   iconColor="text-white"

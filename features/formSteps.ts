@@ -11,11 +11,15 @@ const stepsSlice = createSlice({
   },
   reducers: {
     nextStep: (state) => {
-      state.step += 1;
+      if (state.step < state.StepperState.totalSteps) {
+        state.step += 1;
+      }
     },
 
     prevStep: (state) => {
-      state.step -= 1;
+      if (state.step > 1) {
+        state.step -= 1;
+      }
     },
     setStep: (state, action: PayloadAction<number>) => {
       if (
@@ -25,9 +29,16 @@ const stepsSlice = createSlice({
         state.step = action.payload;
       }
     },
+    setTotalSteps: (state, action: PayloadAction<number>) => {
+      state.StepperState.totalSteps = action.payload;
+      if (state.step > action.payload) {
+        state.step = action.payload;
+      }
+    },
   },
 });
 
-export const { nextStep, prevStep, setStep } = stepsSlice.actions;
+export const { nextStep, prevStep, setStep, setTotalSteps } =
+  stepsSlice.actions;
 
 export default stepsSlice.reducer;

@@ -10,10 +10,17 @@ export default function Emergency({
   errors,
   isLoading,
   isErr,
-}: RegisterErrorProps & { isLoading: boolean; isErr: boolean }) {
+  optional = false,
+}: RegisterErrorProps & { isLoading: boolean; isErr: boolean; optional?: boolean }) {
   const handler = useDispatch<AppDispatch>();
   return (
-    <div className="grid bg-white grid-cols-1 gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border mt-5 p-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10 rounded-md border-[#ffffff25]">
+    <div className="grid bg-white grid-cols-1 gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border mt-5 p-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10 rounded-md border-[#f3f3f3]">
+      {optional && (
+        <p className="md:col-span-6 mobile-landscape:col-span-6 p-text text-primary/70">
+          This step is optional. You can leave these fields blank and still
+          submit your application.
+        </p>
+      )}
       {/* First Name */}
       <div className="md:col-span-3 mobile-landscape:col-span-3">
         <input

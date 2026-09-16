@@ -12,11 +12,12 @@ function getEncryptionKey() {
   return crypto.createHash("sha256").update(secret).digest();
 }
 
-export function createVolunteerExportToken() {
+export function createVolunteerExportToken(volunteerId: string | number) {
   const iv = crypto.randomBytes(12);
   const cipher = crypto.createCipheriv("aes-256-gcm", getEncryptionKey(), iv);
   const payload = JSON.stringify({
     purpose: "volunteer-export",
+    volunteerId: String(volunteerId),
     expiresAt: Date.now() + EXPORT_TOKEN_TTL_MS,
   });
   const encrypted = Buffer.concat([
@@ -50,9 +51,16 @@ export function readVolunteerExportToken(token: string) {
   const parsed = JSON.parse(payload) as {
     purpose: string;
     expiresAt: number;
+    volunteerId?: string;
   };
 
-  if (parsed.purpose !== "volunteer-export" || parsed.expiresAt < Date.now()) {
+  if (
+    parsed.purpose !== "volunteer-export" ||
+    parsed.expiresAt < Date.now() ||
+    !parsed.volunteerId
+  ) {
     throw new Error("This export link has expired or is invalid.");
   }
+
+  return parsed.volunteerId;
 }

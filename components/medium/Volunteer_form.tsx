@@ -1,31 +1,28 @@
 "use client";
 import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, type Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { toast } from "react-toastify";
 import { useAddVolunteerMutation } from "@/services/volunteer";
-import { joinUsSchema, JOINUSTYPE } from "@/utils/schema";
+import { JOINUSTYPE, volunteerSchema } from "@/utils/schema";
 
 import Emergency from "./stepForms/Emergency";
-import BackgroundHistory from "./stepForms/BackgroundHistory";
 
 import { useSelector } from "react-redux";
-import Belief from "./stepForms/Believe";
 import PersonalInformation from "./stepForms/PersonalInformation";
 import PersonalInterest from "./stepForms/PersonalInterest";
 import Background from "./stepForms/Background";
 import { RootState } from "@/services/store";
 import MultiStepControl from "./stepForms/Stepper";
-import { formTitles } from "@/constant/data";
+import { volunteerFormTitles } from "@/constant/data";
 import { useRouter } from "next/navigation";
 import { AppDispatch } from "@/services/store";
 import { useDispatch } from "react-redux";
 import { setStep, setTotalSteps } from "@/features/formSteps";
 
-function Join_form() {
-  const [addVolunteer, { isLoading, isSuccess, isError, error }] =
-    useAddVolunteerMutation();
+function Volunteer_form() {
+  const [addVolunteer, { isLoading, isError }] = useAddVolunteerMutation();
 
   const {
     register: registerField,
@@ -37,7 +34,7 @@ function Join_form() {
     trigger,
     formState: { errors },
   } = useForm<JOINUSTYPE>({
-    resolver: zodResolver(joinUsSchema),
+    resolver: zodResolver(volunteerSchema) as Resolver<JOINUSTYPE>,
     defaultValues: {
       belief: false,
       personalInfo: {
@@ -83,18 +80,20 @@ function Join_form() {
   const navigate = useRouter();
 
   useEffect(() => {
-    handler(setTotalSteps(6));
+    handler(setTotalSteps(4));
     handler(setStep(1));
+    return () => {
+      handler(setTotalSteps(6));
+      handler(setStep(1));
+    };
   }, [handler]);
 
   async function onSubmit(values: JOINUSTYPE) {
     try {
-      // Execute the mutation
-      const response = await addVolunteer(values).unwrap();
+      await addVolunteer(values).unwrap();
       reset();
       handler(setStep(1));
       navigate.push("/confirmation");
-      // toast.success(response.message ?? "Registration submitted successfully.");
     } catch (err: any) {
       console.log(err);
       toast.error(err?.data.message);
@@ -102,25 +101,16 @@ function Join_form() {
   }
 
   return (
-    // <form className="mt-7" onSubmit={handleSubmit(onSubmit)}>
-
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-7">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="w-[95%] lg:w-[90%] mx-auto"
+    >
       <MultiStepControl />
 
-      <div className="">
-        <h3 className="title-text text-white!">{formTitles[step - 1]}</h3>
+      <div className="border border-[#f8f8f8] rounded-md p-12">
+        <h3 className="title-text text-primary!">{volunteerFormTitles[step - 1]}</h3>
 
         {step == 1 && (
-          <Belief
-            registerField={registerField}
-            errors={errors}
-            control={control}
-            setValue={setValue}
-            watch={watch}
-            trigger={trigger}
-          />
-        )}
-        {step == 2 && (
           <PersonalInformation
             registerField={registerField}
             errors={errors}
@@ -131,7 +121,7 @@ function Join_form() {
           />
         )}
 
-        {step == 3 && (
+        {step == 2 && (
           <PersonalInterest
             registerField={registerField}
             errors={errors}
@@ -141,7 +131,7 @@ function Join_form() {
             trigger={trigger}
           />
         )}
-        {step == 4 && (
+        {step == 3 && (
           <Background
             registerField={registerField}
             errors={errors}
@@ -151,22 +141,13 @@ function Join_form() {
             trigger={trigger}
           />
         )}
-        {step == 5 && (
-          <BackgroundHistory
-            registerField={registerField}
-            errors={errors}
-            control={control}
-            setValue={setValue}
-            watch={watch}
-            trigger={trigger}
-          />
-        )}
-        {step == 6 && (
+        {step == 4 && (
           <Emergency
             registerField={registerField}
             errors={errors}
             isLoading={isLoading}
             isErr={isError}
+            optional
           />
         )}
       </div>
@@ -174,4 +155,4 @@ function Join_form() {
   );
 }
 
-export default Join_form;
+export default Volunteer_form;

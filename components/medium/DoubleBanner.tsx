@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  becomePartnerLink,
   donationAmounts,
   paymentLink,
+  volunteerLinkLink,
 } from "@/constant/data";
 import { useState } from "react";
 import Button from "../small/Button";
@@ -116,7 +116,7 @@ export default function VolunteerDonateSection() {
               label="Become A Volunteer"
               primary={false}
               iconColor="text-white"
-              url={becomePartnerLink}
+              url={volunteerLinkLink}
               link={true}
             />
           </div>

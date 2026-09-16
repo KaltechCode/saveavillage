@@ -242,6 +242,13 @@
   font-family: var(--font-quicksand);
 }
 
+.bg-text {
+  font-family: var(--font-quicksand);
+  font-weight: 700;
+  font-size: clamp(25px, 3.2vw, 30px);
+  color: var(--color-primary);
+}
+
 .banner-title-text {
   font-family: var(--font-caveat);
   font-weight: 400;

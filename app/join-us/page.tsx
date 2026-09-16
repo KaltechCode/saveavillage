@@ -12,7 +12,7 @@ function Page() {
     <>
       <Header />
       <HeroBanner
-        text=" Become a Volunteer"
+        text="Join Save a Village"
         image="bg-[url(/images/Educational-Support.webp)]"
       />
       <main>

@@ -323,6 +323,7 @@ export const paymentLink =
   "https://www.paypal.com/donate/?hosted_button_id=L3H6DYJGXZDLW";
 
 export const becomePartnerLink = "/join-us";
+export const volunteerLinkLink = "/volunteer";
 
 export const formTitles = [
   "Our Core Belief",
@@ -331,4 +332,11 @@ export const formTitles = [
   "Your Christian Background",
   "Background History",
   "Emergency Contact",
+];
+
+export const volunteerFormTitles = [
+  "Personal Information",
+  "Your Personal Interest",
+  "Your Christian Background",
+  "Emergency Contact (optional)",
 ];

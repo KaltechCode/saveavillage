@@ -21,7 +21,7 @@ export default function Belief({
     }
   };
   return (
-    <div className=" bg-white  gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10  rounded-md border-[#ffffff25] ">
+    <div className=" bg-white  gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10  border-[#f3f3f3] rounded-md ">
       {/* input container */}
       <SaveAVillageBeliefs />
       <div className="border-t border-slate-200 py-5">

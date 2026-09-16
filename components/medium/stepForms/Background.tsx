@@ -73,7 +73,7 @@ export default function Background({
   });
 
   return (
-    <div className="grid grid-cols-1 bg-white  gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10  rounded-md border-[#ffffff25] ">
+    <div className="grid grid-cols-1 bg-white  gap-7 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-12 xl:mt-12 xl:gap-10  rounded-md border-[#f3f3f3] ">
       {/* 1. Faith Community Enum Select Dropdown */}
       <div className="lg:col-span-6 md:col-span-6 mobile-landscape:col-span-6 space-y-3">
         <div>

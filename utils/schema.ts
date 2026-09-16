@@ -111,7 +111,43 @@ export const joinUsSchema = z.object({
 
 // export type JoinUsInputs = z.infer<typeof joinUsSchema>;
 
+const optionalName = z
+  .string()
+  .trim()
+  .refine((val) => val.length === 0 || (val.length >= 3 && val.length <= 30), {
+    message: "Name must be at least 3 characters.",
+  });
+
+const optionalEmail = z.union([
+  z.literal(""),
+  z.string().trim().email("Please enter a valid email address."),
+]);
+
+export const volunteerSchema = joinUsSchema
+  .omit({
+    belief: true,
+    background_history: true,
+    emergency_contact: true,
+  })
+  .extend({
+    belief: z.boolean(),
+    background_history: z.object({
+      crime: z.enum(CRIMES_OPTIONS),
+      crime_details: z.string().optional(),
+      background_check: z.boolean(),
+    }),
+    emergency_contact: z.object({
+      first_name: optionalName,
+      last_name: optionalName,
+      email: optionalEmail,
+      phone: z.string(),
+      relationship: z.string(),
+      terms: z.boolean(),
+    }),
+  });
+
 export type JOINUSTYPE = z.infer<typeof joinUsSchema>;
+export type VOLUNTEERTYPE = z.infer<typeof volunteerSchema>;
 
 export interface RegisterErrorProps {
   registerField: UseFormRegister<JOINUSTYPE>;

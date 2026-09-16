@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { volunteerSchema } from "@/utils/schema";
+import { joinUsSchema } from "@/utils/schema";
 import { readVerificationToken } from "@/libs/volunteerVerification";
 import { brandedEmail, transporter } from "@/libs/mail";
 import { createAdminClient } from "@/utils/supabase";
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const parsed = volunteerSchema.safeParse(readVerificationToken(token));
+    const parsed = joinUsSchema.safeParse(readVerificationToken(token));
 
     if (!parsed.success) {
       return verificationError(
@@ -55,28 +55,28 @@ export async function GET(request: Request) {
     const supabase = createAdminClient();
     const email = personalInfo.email.trim().toLowerCase();
     const { data: existingVolunteer, error: lookupError } = await supabase
-      .from("Volunteer")
+      .from("join")
       .select("email")
       .ilike("email", email)
       .maybeSingle();
 
     if (lookupError) {
-      console.error("Volunteer email lookup error:", lookupError);
+      console.error("Join Us email lookup error:", lookupError);
       return verificationError(
-        "We could not submit your volunteer application right now.",
+        "We could not submit your Join Us application right now.",
         500,
       );
     }
 
     if (existingVolunteer) {
       return verificationError(
-        "A volunteer application already exists for this email address.",
+        "A Join Us application already exists for this email address.",
         409,
       );
     }
 
     const { data, error } = await supabase
-      .from("Volunteer")
+      .from("join")
       .insert({
         name: `${personalInfo.first_name} ${personalInfo.last_name}`,
         email,
@@ -87,16 +87,20 @@ export async function GET(request: Request) {
         address_2: personalInfo.address_2 ?? "",
         country: personalInfo.country,
         zipcode: personalInfo.zipcode,
+        belief,
         get_involve: personalInterest.involved.join(", "),
         experience_areas: personalInterest.experience.join(", "),
         inspire: personalInterest.inspired,
         member_faith_community: background.faith_community,
         faith_community: background.faith_journey,
         hear_about_us: background.hear_about.join(", "),
-        emergency_name: `${emergency_contact?.first_name ?? ""} ${emergency_contact?.last_name ?? ""}`.trim(),
-        emergency_email: emergency_contact?.email ?? "",
-        emergency_phone: emergency_contact?.phone ?? "",
-        emergency_relationship: emergency_contact?.relationship ?? "",
+        convicted_crime: background_history.crime,
+        crime: background_history.crime_details ?? "",
+        background_check: background_history.background_check,
+        emergency_name: `${emergency_contact.first_name} ${emergency_contact.last_name}`,
+        emergency_email: emergency_contact.email,
+        emergency_phone: emergency_contact.phone,
+        emergency_relationship: emergency_contact.relationship,
       })
       .select()
       .single();
@@ -104,14 +108,14 @@ export async function GET(request: Request) {
     if (error) {
       if (error.code === "23505") {
         return verificationError(
-          "A volunteer application already exists for this email address.",
+          "A Join Us application already exists for this email address.",
           409,
         );
       }
 
-      console.error("Volunteer application error:", error);
+      console.error("Join Us application error:", error);
       return verificationError(
-        "We could not submit your volunteer application right now.",
+        "We could not submit your Join Us application right now.",
         500,
       );
     }
@@ -127,10 +131,10 @@ export async function GET(request: Request) {
         address: process.env.SMTP_FROM as string,
       },
       to: "notifications@saveavillageusa.org",
-      subject: "New volunteer application",
+      subject: "New Join Us application",
       html: brandedEmail({
-        title: "New volunteer application",
-        intro: `A new volunteer application has been submitted.`,
+        title: "New Join Us application",
+        intro: `A new Join Us application has been submitted.`,
         content: '<p style="margin:0;color:#555555;">.</p>',
         csv: true,
         action: { label: "Download CSV", url: exportUrl },
@@ -143,9 +147,9 @@ export async function GET(request: Request) {
     //   message: "Your volunteer application has been submitted successfully.",
     // });
   } catch (error) {
-    console.error("Volunteer verification error:", error);
+      console.error("Join Us verification error:", error);
     return verificationError(
-      "We could not confirm this volunteer application.",
+      "We could not confirm this Join Us application.",
       400,
     );
   }

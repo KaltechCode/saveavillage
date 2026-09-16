@@ -17,7 +17,7 @@ function JoinFormSection() {
             transition={{ duration: 0.9 }}
           >
             <div className="">
-              <motion.p
+              {/* <motion.p
                 className="flex gap-2 subtitle font-openSans justify-start! items-center text-white! hero-label"
                 animate={{
                   y: [0, -10, 0, -10, 0],
@@ -32,8 +32,8 @@ function JoinFormSection() {
                   <FaHeart />
                 </span>
                 Contact us
-              </motion.p>
-              <h2 className="title-text text-white! w-[80%] lg:w-[70%] 2xl:w-[60%]">
+              </motion.p> */}
+              <h2 className="bg-text text-white! w-[80%] lg:w-[70%] 2xl:w-[60%]">
                 Join Save a Village.
               </h2>
             </div>

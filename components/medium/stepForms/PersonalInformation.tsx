@@ -1,11 +1,8 @@
 import Button, { NextButton, PrevButton } from "@/components/small/Button";
 import { nextStep, prevStep } from "@/features/formSteps";
-import { AppDispatch } from "@/services/store";
-import {
-  RegisterErrorControlTriggerValueProps,
-  RegisterErrorProps,
-} from "@/utils/schema";
-import { useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "@/services/store";
+import { RegisterErrorControlTriggerValueProps } from "@/utils/schema";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function PersonalInformation({
   registerField,
@@ -13,6 +10,7 @@ export default function PersonalInformation({
   trigger,
 }: RegisterErrorControlTriggerValueProps) {
   const handler = useDispatch<AppDispatch>();
+  const step = useSelector((state: RootState) => state.steps.step);
 
   const validateNext = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -25,7 +23,7 @@ export default function PersonalInformation({
     }
   };
   return (
-    <div className="grid bg-white gap-7  grid-cols-1 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-10 xl:mt-8 xl:gap-10 rounded-md border-[#ffffff25]">
+    <div className="grid bg-white gap-7  grid-cols-1 lg:grid-cols-6 mobile-landscape:grid-cols-6 md:grid-cols-6 border p-5 mt-5 lg:py-10 xl:p-10 xl:mt-8 xl:gap-10 rounded-md border-[#f3f3f3] ">
       {/* First Name */}
       <div className="col-span-1 md:col-span-3 mobile-landscape:col-span-3">
         <input
@@ -178,7 +176,11 @@ export default function PersonalInformation({
 
       {/* Form Submission Action Target Button wrapper UI */}
       <div className="flex gap-10 justify-between w-full mt-7 col-span-1 md:col-span-6 mobile-landscape:col-span-6">
-        <PrevButton handler={() => handler(prevStep())} />
+        {step > 1 ? (
+          <PrevButton handler={() => handler(prevStep())} />
+        ) : (
+          <span />
+        )}
 
         <NextButton handler={validateNext} />
       </div>

@@ -80,8 +80,10 @@ export async function GET(request: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
+  let volunteerId: string;
+
   try {
-    readVolunteerExportToken(token);
+    volunteerId = readVolunteerExportToken(token);
   } catch (error) {
     console.error("Volunteer export token error:", error);
     return new Response("Unauthorized", { status: 401 });
@@ -92,20 +94,25 @@ export async function GET(request: Request) {
     const { data, error } = await supabase
       .from("Volunteer")
       .select(VOLUNTEER_COLUMNS.join(", "))
-      .order("created_at", { ascending: false });
+      .eq("id", volunteerId)
+      .maybeSingle();
 
     if (error) {
       console.error("Volunteer export query error:", error);
       return new Response("Could not export volunteer data", { status: 500 });
     }
 
+    if (!data) {
+      return new Response("Volunteer not found", { status: 404 });
+    }
+
     return new Response(
-      recordsToCsv((data ?? []) as unknown as Record<string, unknown>[]),
+      recordsToCsv([data as unknown as Record<string, unknown>]),
       {
         status: 200,
         headers: {
           "Content-Type": "text/csv; charset=utf-8",
-          "Content-Disposition": 'attachment; filename="volunteers.csv"',
+          "Content-Disposition": `attachment; filename="volunteer-${volunteerId}.csv"`,
         },
       },
     );
