@@ -470,3 +470,350 @@ By accessing or using this Website, you acknowledge that you have read, understo
 
 
 `
+
+export const privacyPolicyContent = `
+<h1 class="terms-title-text">PRIVACY POLICY</h1>
+<p class="p-text">Effective Date: September 17, 2026</p>
+<p class="p-text">Last Updated: September 17, 2026</p>
+<br />
+<p class="p-text">Save a Village (“Save a Village,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you share with us.</p>
+<br />
+<p class="p-text">This Privacy Policy explains how we collect, use, store, disclose, and protect information when you visit or interact with our website at https://saveavillageusa.org, make a donation, register for an event, volunteer, subscribe to communications, submit a form, or otherwise engage with our organization.</p>
+<br />
+<p class="p-text">By using our website or providing information to us, you acknowledge the practices described in this Privacy Policy.</p>
+<br />
+<h2 class="title-text">1. WHO WE ARE</h2>
+<br />
+<p class="p-text">Save a Village is a nonprofit and community focused organization supporting charitable, humanitarian, educational, outreach, and community development initiatives.</p>
+<br />
+<p class="big-p-text">Our contact information is:</p>
+<br />
+<p class="p-text">Save a Village</p>
+<p class="p-text">2733 Franklin Dr, Apartment 1525</p>
+<p class="p-text">Mesquite, TX 75150</p>
+<p class="p-text">United States</p>
+<br />
+<p class="p-text"><span class="bold-p-text">Email</span>: <a class="text-blue" href="info@saveavillageusa.org">info@saveavillageusa.org</a></p>
+<p class="p-text"><span class="bold-p-text">Phone</span>: <a href="tel:+12146427635">+1 (214) 642-7635</a></p>
+<p class="p-text"><span class="bold-p-text">Website</span>: <a class="text-blue" href="https://saveavillageusa.org">https://saveavillageusa.org</a></p>
+<br />
+<h2 class="title-text">2. INFORMATION WE MAY COLLECT</h2>
+<br />
+<p class="p-text">We may collect information that   you voluntarily provide to us as well as certain information automatically collected when you use our website.</p>
+<br />
+<h2 class="title-text">A. Personal Information You Provide</h2>
+<br />
+<p class="p-text">Depending on how you interact with Save a Village, we may collect information such as:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Full name</li>
+<li class="p-text">Email address</li>
+<li class="p-text">Telephone number</li>
+<li class="p-text">Mailing address</li>
+<li class="p-text">Donation amount</li>
+<li class="p-text">Donation frequency</li>
+<li class="p-text">Event registration information</li>
+<li class="p-text">Volunteer application information</li>
+<li class="p-text">Organization or company name</li>
+<li class="p-text">Partnership or sponsorship information</li>
+<li class="p-text">Messages submitted through contact forms</li>
+<li class="p-text">Newsletter subscription information</li>
+<li class="p-text">Information provided through surveys</li>
+<li class="p-text">Information submitted through assistance or beneficiary forms</li>
+<li class="p-text">Comments, testimonials, stories, photographs, or other materials you voluntarily provide</li>
+</ul>
+<br />
+<p class="p-text">We only request information that is reasonably relevant to the purpose for which it is being collected.</p>
+
+<br />
+<h2 class="title-text">3. DONATION AND PAYMENT INFORMATION</h2>
+<br />
+<p class="p-text">When you make a donation or other payment through our website, payment transactions may be processed by a third-party payment processor.</p>
+<br />
+<p class="p-text">Depending on the payment provider used, information may include:</p> 
+<br />
+<ul class="terms-ul">
+<li class="p-text">Name</li>
+<li class="p-text">Billing address</li>
+<li class="p-text">Payment card information</li>
+<li class="p-text">Bank account information</li>
+<li class="p-text">Transaction amount</li>
+<li class="p-text">Transaction date</li>
+<li class="p-text">Payment method</li>
+<li class="p-text">Transaction identification information</li>
+</ul>
+<br />
+<p class="p-text">Save a Village may not directly receive or store your complete credit or debit card number.</p>
+<br />
+<p class="p-text">Payment providers process financial information according to their own privacy policies and security practices.</p>
+<br />
+<p class="p-text">We encourage you to review the privacy policy of any payment provider before completing a transaction.</p>
+<br />
+
+<h2 class="title-text">4. INFORMATION COLLECTED AUTOMATICALLY</h2>
+<br />
+<p class="p-text">When you visit our website, certain information may be collected automatically through server logs, cookies, analytics technologies, or similar tools.</p>
+<br />
+<p class="p-text">This information may include:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Internet Protocol address</li>
+<li class="p-text">Browser type</li>
+<li class="p-text">Device type</li>
+<li class="p-text">Operating system</li>
+<li class="p-text">Approximate geographic location based on IP address</li>
+<li class="p-text">Pages visited</li>
+<li class="p-text">Date and time of visits</li>
+<li class="p-text">Referring website</li>
+<li class="p-text">Links clicked</li>
+<li class="p-text">Time spent on pages</li>
+<li class="p-text">Website interactions</li>
+<li class="p-text">Device identifiers</li>
+<li class="p-text">General usage information</li>
+</ul>
+<br />
+<p class="p-text">This information helps us understand how visitors use our website and enables us to improve performance, security, accessibility, and user experience.</p>
+<br />
+<h2 class="title-text">5. COOKIES AND SIMILAR TECHNOLOGIES</h2>
+<br />
+<p class="p-text">Our website may use cookies, pixels, local storage, analytics technologies, and similar tools.</p>
+<br />
+<p class="p-text">Cookies are small files stored on your device that help websites remember information about your visit.</p>
+<br />
+<p class="p-text">We may use cookies for purposes including:</p>
+<ul class="terms-ul">
+<li class="p-text">Essential website functionality</li>
+<li class="p-text">Website security</li>
+<li class="p-text">Remembering user preferences</li>
+<li class="p-text">Measuring website traffic</li>
+<li class="p-text">Understanding visitor behavior</li>
+    <li class="p-text">Improving website performance</li>
+<li class="p-text">Supporting donation or registration functionality</li>
+<li class="p-text">Measuring outreach or campaign performance</li>
+</ul>
+<br />
+<p class="p-text">Some cookies may be placed by third-party services used on our website.</p>
+<br />
+<p class="p-text">Where required by applicable law, we may request your consent before placing non-essential cookies.</p>
+<br />
+<p class="p-text">You may adjust your browser settings to reject, block, or delete cookies. However, disabling certain cookies may affect website functionality.</p>
+<br />
+
+<h2 class="title-text">6. ANALYTICS</h2>
+<br />
+<p class="p-text">We may use website analytics services to understand how people interact with our website.</p>
+<br />
+<p class="p-text">Analytics providers may collect information such as:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Pages viewed</li>
+<li class="p-text">Time spent on the website</li>
+<li class="p-text">General geographic location</li>
+<li class="p-text">Browser information</li>
+<li class="p-text">Device information</li>
+<li class="p-text">Referral source</li>
+<li class="p-text">User interactions</li>
+</ul>
+<br />
+<p class="p-text">We use this information to evaluate website performance, improve content, understand audience needs, and identify technical issues.</p>
+<br />
+<p class="p-text">Analytics providers may process data according to their own privacy policies.</p>
+<br />
+<h2 class="title-text">7. HOW WE USE YOUR INFORMATION</h2>
+<br />
+<p class="p-text">Save a Village may use personal information for purposes including:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Processing donations</li>
+<li class="p-text">Issuing donation receipts or acknowledgments</li>
+<li class="p-text">Responding to inquiries</li>
+<li class="p-text">Communicating with donors</li>
+<li class="p-text">Managing volunteer applications</li>
+<li class="p-text">Coordinating events and programs</li>
+<li class="p-text">Processing registrations</li>
+<li class="p-text">Managing partnerships and sponsorships</li>
+<li class="p-text">Providing information about our programs and initiatives</li>
+<li class="p-text">Sending newsletters or organizational updates</li>
+<li class="p-text">Managing fundraising campaigns</li>
+<li class="p-text">Responding to requests for assistance</li>
+<li class="p-text">Maintaining donor and supporter records</li>
+<li class="p-text">Improving our website</li>
+<li class="p-text">Protecting our website from fraud, abuse, or cybersecurity threats</li>
+<li class="p-text">Analyzing website usage</li>
+<li class="p-text">Maintaining organizational records</li>
+<li class="p-text">Complying with legal and regulatory obligations</li>
+<li class="p-text">Enforcing our Terms and Conditions</li>
+<li class="p-text">Protecting the rights, safety, and interests of Save a Village and others</li>
+</ul>
+<br />
+<p class="p-text">We will not use personal information in a manner materially inconsistent with the purposes for which it was collected unless permitted or required by law.</p>
+<br />
+<h2 class="title-text">8. COMMUNICATIONS AND EMAIL</h2>
+<br />
+<p class="p-text">If you subscribe to our newsletter, donate, volunteer, register for an event, or otherwise provide your contact information, we may communicate with you regarding:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Donations</li>
+<li class="p-text">Events</li>
+<li class="p-text">Volunteer opportunities</li>
+<li class="p-text">Program updates</li>
+<li class="p-text">Fundraising campaigns</li>
+<li class="p-text">Community initiatives</li>
+<li class="p-text">Organizational news</li>
+<li class="p-text">Administrative matters</li>
+<li class="p-text">Security matters</li>
+<li class="p-text">Other Save a Village activities</li>
+</ul>
+<br />
+<p class="p-text">You may unsubscribe from promotional emails by using the unsubscribe link provided in those communications, where available.</p>
+<br />
+<p class="p-text">You may also contact:</p>
+<br />
+<a class="text-blue" href="info@saveavillageusa.org">info@saveavillageusa.org</a>
+<br />
+<br />
+<p class="p-text">to request removal from promotional mailing lists.</p>
+<br />
+<p class="p-text">Please note that we may still send administrative, transactional, donation-related, legal, or security communications when necessary.</p>
+<br />
+<h2 class="title-text">9. DONOR PRIVACY</h2>
+<br />
+<p class="p-text">Save a Village respects the privacy of donors.</p>
+<br />
+<p class="p-text">We do not intend to sell donor personal information to third parties for their independent marketing purposes.</p>
+<br />
+<p class="p-text">Donor information may be used for:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Processing contributions</li>
+<li class="p-text">Maintaining financial records</li>
+<li class="p-text">Providing donation receipts</li>
+<li class="p-text">Communicating about our work
+</li>
+<li class="p-text">Meeting legal and accounting obligations
+</li>
+<li class="p-text">Preventing fraud</li>
+<li class="p-text">Supporting donor relations</li>
+</ul>
+<br />
+<p class="p-text">Where appropriate, donors may request that their names not be publicly recognized in donor listings or publications.</p>
+<br />
+<p class="p-text">Such requests may be submitted to:.</p>
+<br />
+<a class="text-blue" href="info@saveavillageusa.org">info@saveavillageusa.org</a>
+<br />
+<br />
+<h2 class="title-text">10. DISCLOSURE OF PERSONAL INFORMATION</h2>
+<br />
+<p class="p-text">We may share personal information with third parties when reasonably necessary to operate our organization and website.</p>
+<br />
+<p class="p-text">These parties may include:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Payment processors</li>
+<li class="p-text">Website hosting providers</li>
+<li class="p-text">Email service providers</li>
+<li class="p-text">Donor management platforms</li>
+<li class="p-text">Customer relationship management systems</li>
+<li class="p-text">Event registration services</li>
+<li class="p-text">Analytics providers</li>
+<li class="p-text">Information technology providers</li>
+<li class="p-text">Accountants</li>
+<li class="p-text">Auditors</li>
+<li class="p-text">Attorneys</li>
+<li class="p-text">Consultants</li>
+<li class="p-text">Contractors</li>
+<li class="p-text">Professional advisors</li>
+</ul>
+<br />
+<p class="p-text">We expect service providers handling personal information on our behalf to use it only as necessary to provide their services and in accordance with applicable obligations.</p>
+<br />
+
+<h2 class="title-text">11. LEGAL DISCLOSURES</h2>
+<br />
+<p class="p-text">We may disclose personal information when we reasonably believe disclosure is necessary to:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Comply with applicable law</li>
+<li class="p-text">Respond to subpoenas or court orders</li>
+<li class="p-text">Respond to lawful government requests</li>
+<li class="p-text">Cooperate with law enforcement</li>
+<li class="p-text">Protect against fraud</li>
+<li class="p-text">Investigate security incidents</li>
+<li class="p-text">Protect our legal rights</li>
+<li class="p-text">Protect the safety of individuals</li>
+<li class="p-text">Enforce our agreements or policies</li>
+<li class="p-text">Comply with tax, nonprofit, accounting, or regulatory requirements</li>
+</ul>
+<br />
+<h2 class="title-text">12. WE DO NOT SELL PERSONAL INFORMATION</h2> 
+<br />
+<p class="p-text">Save a Village does not intend to sell personal information in exchange for monetary compensation.</p>
+<br />
+<p class="p-text">We also do not intend to sell donor information to commercial mailing lists or marketing organizations.</p>
+<br />
+<p class="p-text">Certain digital advertising or analytics technologies may be treated as “sharing” or similar activity under some privacy laws. Where applicable, we will provide appropriate notices or choices as required by law.</p>
+<br />
+<h2 class="title-text">13. CHILDREN'S PRIVACY</h2>
+<br />
+<p class="p-text">Our general website is not directed to children under the age of 13 for the purpose of collecting personal information directly from them without appropriate parental or guardian consent.</p>
+<br />
+<p class="p-text">Save a Village may operate programs that benefit children and families.</p>
+<br />
+<p class="p-text">Where personal information about children is collected as part of a program, event, application, photograph, video, story, or other activity, we seek to handle such information with appropriate care and obtain parental or guardian authorization where required.</p>
+<br />
+<p class="p-text">If you believe that a child under 13 has submitted personal information to us without appropriate authorization, please contact us at:</p>
+<br />
+<a class="text-blue" href="info@saveavillageusa.org">info@saveavillageusa.org</a>
+<br />
+<br />
+<p class="p-text">We will review the request and take appropriate action consistent with applicable law.</p>
+<br />
+<h2 class="title-text">14. PHOTOGRAPHS, VIDEOS, AND TESTIMONIALS</h2>       
+<br />
+<p class="p-text">Save a Village may document events, programs, community activities, and charitable projects through photographs, videos, testimonials, and written stories.</p>
+<br />
+<p class="p-text">Where appropriate or legally required, we seek permission before publicly using identifiable personal images, stories, testimonials, or similar materials.</p>
+<br />
+<p class="p-text">If you believe that an image, video, testimonial, or story involving you has been used improperly, please contact us.</p>
+<br />
+<p class="p-text">We will review reasonable removal or correction requests.</p>
+<br />
+
+<h2 class="title-text">15. VOLUNTEER INFORMATION</h2>
+<br />
+<p class="p-text">  If you apply to volunteer with Save a Village, we may collect information necessary to evaluate, coordinate, and administer volunteer activities.</p>
+<br />
+<p class="p-text">Depending on the position, this may include:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Contact information</li>
+<li class="p-text">Availability</li>
+<li class="p-text">Skills</li>
+<li class="p-text">Interests</li>
+<li class="p-text">Professional experience</li>
+<li class="p-text">Emergency contact information</li>
+<li class="p-text">References</li>
+<li class="p-text">Other information relevant to the volunteer role</li>
+</ul>
+<br />
+<p class="p-text">Certain volunteer positions may require additional screening or background checks where permitted by law.</p>
+<br />
+<p class="p-text">If a third-party provider conducts a background check, that provider may operate under separate privacy practices.</p>
+<br />
+
+<h2 class="title-text">16. EVENT REGISTRATION INFORMATION</h2>
+<br />
+<p class="p-text">When you register for an event, we may collect information including:</p>
+<br />
+<ul class="terms-ul">
+<li class="p-text">Name</li>
+<li class="p-text">Email address</li>
+<li class="p-text">Phone number</li>
+<li class="p-text">Number of attendees</li>
+<li class="p-text">Accessibility needs</li>
+<li class="p-text">Dietary preferences</li>
+<li class="p-text">Emergency contact</li>
+</ul>
+<br />
+`
