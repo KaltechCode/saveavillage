@@ -152,8 +152,8 @@ function Footer() {
             <p>© 2026 Save a Village. All rights reserved</p>
 
             <div className="flex justify-center gap-6">
-              <a href="#">Terms & Conditions</a>
-              <a href="#">Privacy Policy</a>
+              <a href="/terms-conditions">Terms & Conditions</a>
+              <a href="/privacy-policy">Privacy Policy</a>
               <p>
                 Designed by{" "}
                 <Link

@@ -3,7 +3,7 @@ import { volunteerSchema } from "@/utils/schema";
 import { readVerificationToken } from "@/libs/volunteerVerification";
 import { brandedEmail, transporter } from "@/libs/mail";
 import { createAdminClient } from "@/utils/supabase";
-import { createVolunteerExportToken } from "@/libs/volunteerExport";
+import { createVolunteerExportToken } from "@/libs/exportTokens";
 
 function verificationError(message: string, status: number) {
   return new Response(

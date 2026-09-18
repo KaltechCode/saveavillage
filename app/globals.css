@@ -211,7 +211,27 @@
   letter-spacing: -0.02em;
   margin-bottom: clamp(18px, 1.42vw, 30px);
 }
+.terms-title-text {
+  font-weight: 700;
+  font-size: clamp(28px, 4.2vw, 50px);
+  font-family: var(--font-quicksand);
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(18px, 1.42vw, 30px);
+  text-align: center;
 
+}
+
+.terms-ul{
+  margin-left: 20px;
+  li{
+    list-style-type: disc;
+    margin-left: 20px;
+    line-height: 2 !important;
+  }
+}
+.text-blue{
+  color: #0000FF;
+}
 .hero-label {
   font-weight: 600;
   letter-spacing: 0.25em;

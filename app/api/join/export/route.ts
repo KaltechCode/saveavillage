@@ -1,6 +1,6 @@
 import { createAdminClient } from "@/utils/supabase";
 import { applicationRecordToCsv } from "@/libs/csvExport";
-import { readVolunteerExportToken } from "@/libs/exportTokens";
+import { readJoinExportToken } from "@/libs/exportTokens";
 
 export async function GET(request: Request) {
   const token = new URL(request.url).searchParams.get("token");
@@ -9,30 +9,30 @@ export async function GET(request: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  let volunteerId: string;
+  let joinId: string;
 
   try {
-    volunteerId = readVolunteerExportToken(token);
+    joinId = readJoinExportToken(token);
   } catch (error) {
-    console.error("Volunteer export token error:", error);
+    console.error("Join Us export token error:", error);
     return new Response("Unauthorized", { status: 401 });
   }
 
   try {
     const supabase = createAdminClient();
     const { data, error } = await supabase
-      .from("Volunteer")
+      .from("join")
       .select("*")
-      .eq("id", volunteerId)
+      .eq("id", joinId)
       .maybeSingle();
 
     if (error) {
-      console.error("Volunteer export query error:", error);
-      return new Response("Could not export volunteer data", { status: 500 });
+      console.error("Join Us export query error:", error);
+      return new Response("Could not export Join Us data", { status: 500 });
     }
 
     if (!data) {
-      return new Response("Volunteer not found", { status: 404 });
+      return new Response("Join Us application not found", { status: 404 });
     }
 
     return new Response(
@@ -41,12 +41,12 @@ export async function GET(request: Request) {
         status: 200,
         headers: {
           "Content-Type": "text/csv; charset=utf-8",
-          "Content-Disposition": `attachment; filename="volunteer-${volunteerId}.csv"`,
+          "Content-Disposition": `attachment; filename="join-us-${joinId}.csv"`,
         },
       },
     );
   } catch (error) {
-    console.error("Volunteer export error:", error);
-    return new Response("Could not export volunteer data", { status: 500 });
+    console.error("Join Us export error:", error);
+    return new Response("Could not export Join Us data", { status: 500 });
   }
 }

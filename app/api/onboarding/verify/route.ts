@@ -3,7 +3,7 @@ import { joinUsSchema } from "@/utils/schema";
 import { readVerificationToken } from "@/libs/volunteerVerification";
 import { brandedEmail, transporter } from "@/libs/mail";
 import { createAdminClient } from "@/utils/supabase";
-import { createVolunteerExportToken } from "@/libs/volunteerExport";
+import { createJoinExportToken } from "@/libs/exportTokens";
 
 function verificationError(message: string, status: number) {
   return new Response(
@@ -122,8 +122,8 @@ export async function GET(request: Request) {
 
     const siteUrl =
       process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
-    const exportToken = createVolunteerExportToken(data.id);
-    const exportUrl = `${siteUrl.replace(/\/$/, "")}/api/volunteers/export?token=${encodeURIComponent(exportToken)}`;
+    const exportToken = createJoinExportToken(data.id);
+    const exportUrl = `${siteUrl.replace(/\/$/, "")}/api/join/export?token=${encodeURIComponent(exportToken)}`;
 
     await transporter.sendMail({
       from: {

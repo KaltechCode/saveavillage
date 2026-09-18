@@ -18,11 +18,11 @@ import {
 export const footerLinks = [
   {
     link: "About Us",
-    href: "/about-us",
+    href: "about-us",
   },
   {
     link: "Our Program",
-    href: "/programs",
+    href: "programs",
   },
   {
     link: "Events",
@@ -30,7 +30,7 @@ export const footerLinks = [
   },
   {
     link: "Join Us",
-    href: "volunteer",
+    href: "join-us",
   },
   {
     link: "Contact Us",
